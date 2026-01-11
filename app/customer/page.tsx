@@ -572,7 +572,7 @@ export default function CustomerHome() {
                         <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
                       </div>
                       <p className="text-left">
-                        Must be a registered IIX Node Partner
+                        Registered IIX Node Partner status required
                       </p>
                     </li>
                     <li className="flex items-start text-left ">
@@ -580,8 +580,7 @@ export default function CustomerHome() {
                         <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
                       </div>
                       <p className="text-left">
-                        Must hold a valid and official telecommunications
-                        license
+                        Valid telecommunications operating license required
                       </p>
                     </li>
                     <li className="flex items-start text-left">
@@ -589,7 +588,7 @@ export default function CustomerHome() {
                         <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
                       </div>
                       <p className="text-left">
-                        Must comply with TIA-942 Data Center standards
+                        TIA-942 Data Center certification compliance
                       </p>
                     </li>
                     <li className="flex items-start text-left">
@@ -597,7 +596,7 @@ export default function CustomerHome() {
                         <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
                       </div>
                       <p className="text-left">
-                        Must meet ISO 27001 and ISO 9001 standards
+                        ISO 27001 and ISO 9001 certification required
                       </p>
                     </li>
                   </ul>
@@ -642,8 +641,7 @@ export default function CustomerHome() {
                         </span>
                       </div>
                       <p className="text-left">
-                        Application: Members submit service requests through
-                        the APJII DC Portal
+                        Submit: Initiate service requests via the APJII DC Portal
                       </p>
                     </li>
                     <li className="flex items-start ">
@@ -653,8 +651,7 @@ export default function CustomerHome() {
                         </span>
                       </div>
                       <p className="text-left">
-                        Processing: APJII processes requests based on available
-                        capacity from Partners
+                        Review: APJII evaluates requests based on Partner capacity
                       </p>
                     </li>
                     <li className="flex items-start ">
@@ -664,8 +661,7 @@ export default function CustomerHome() {
                         </span>
                       </div>
                       <p className="text-left">
-                        Payment: All service payments are made by Members
-                        directly to APJII
+                        Settlement: Service payments remitted directly to APJII
                       </p>
                     </li>
                   </ul>
