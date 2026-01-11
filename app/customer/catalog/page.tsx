@@ -438,7 +438,7 @@ export default function CatalogPage() {
               Server Rack Solutions
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-              Discover the perfect rack configuration for your infrastructure needs
+              Explore enterprise-grade rack solutions tailored to your infrastructure requirements
             </p>
           </motion.div>
         </div>
