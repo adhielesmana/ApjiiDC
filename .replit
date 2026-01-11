@@ -17,10 +17,6 @@ author = "agent"
 task = "workflow.run"
 args = "Next.js Dev Server"
 
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "Backend API Server"
-
 [[workflows.workflow]]
 name = "Next.js Dev Server"
 author = "agent"
@@ -30,20 +26,8 @@ outputType = "webview"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "npx next dev -p 5000 -H 0.0.0.0"
+args = "npm run dev"
 waitForPort = 5000
-
-[[workflows.workflow]]
-name = "Backend API Server"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "cd backend && npm run start"
-waitForPort = 3000
-
-[workflows.workflow.metadata]
-outputType = "console"
 
 [[ports]]
 localPort = 3000
@@ -53,13 +37,9 @@ externalPort = 3001
 localPort = 5000
 externalPort = 80
 
-[[ports]]
-localPort = 5200
-externalPort = 3000
-
 [deployment]
-deploymentTarget = "autoscale"
-run = ["npm", "run", "start", "--", "-p", "5000", "-H", "0.0.0.0"]
+deploymentTarget = "vm"
+run = ["npm", "run", "start"]
 build = ["npm", "run", "build"]
 
 [userenv]
