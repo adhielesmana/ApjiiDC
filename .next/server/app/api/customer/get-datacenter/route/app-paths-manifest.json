@@ -1,0 +1,3 @@
+{
+  "/api/customer/get-datacenter/route": "app/api/customer/get-datacenter/route.js"
+}

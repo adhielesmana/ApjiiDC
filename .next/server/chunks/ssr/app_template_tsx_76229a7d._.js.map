@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///home/runner/workspace/app/template.tsx"],"sourcesContent":["\"use client\";\n\nimport { useEffect } from \"react\";\nimport { useDispatch } from \"react-redux\";\nimport { setCredentials } from \"@/lib/store/auth/authSlice\";\n\nexport default function Template({ children }: { children: React.ReactNode }) {\n  const dispatch = useDispatch();\n\n  useEffect(() => {\n    const token = localStorage.getItem(\"token\");\n    const user = localStorage.getItem(\"user\");\n\n    if (token && user) {\n      dispatch(\n        setCredentials({\n          token,\n          user: JSON.parse(user),\n        })\n      );\n    }\n  }, [dispatch]);\n\n  return <>{children}</>;\n}\n"],"names":[],"mappings":";;;;;AAEA;AACA;AACA;AAJA;;;;;AAMe,SAAS,SAAS,EAAE,QAAQ,EAAiC;IAC1E,MAAM,WAAW,IAAA,wKAAW;IAE5B,IAAA,kNAAS,EAAC;QACR,MAAM,QAAQ,aAAa,OAAO,CAAC;QACnC,MAAM,OAAO,aAAa,OAAO,CAAC;QAElC,IAAI,SAAS,MAAM;YACjB,SACE,IAAA,mJAAc,EAAC;gBACb;gBACA,MAAM,KAAK,KAAK,CAAC;YACnB;QAEJ;IACF,GAAG;QAAC;KAAS;IAEb,qBAAO;kBAAG;;AACZ","debugId":null}}]
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 19, "column": 0}, "map": {"version":3,"sources":["file:///home/runner/workspace/app/page.tsx"],"sourcesContent":["// app/page.tsx\nimport { cookies } from \"next/headers\";\nimport { redirect } from \"next/navigation\";\n\nexport default async function Home() {\n  const cookieStore = await cookies();\n  const token = cookieStore.get(\"token\")?.value;\n\n  redirect(\"/customer\");\n\n  return null;\n}\n"],"names":[],"mappings":"AAAA,eAAe;;;;;AACf;AACA;AAAA;;;AAEe,eAAe;IAC5B,MAAM,cAAc,MAAM,IAAA,0IAAO;IACjC,MAAM,QAAQ,YAAY,GAAG,CAAC,UAAU;IAExC,IAAA,iMAAQ,EAAC;IAET,OAAO;AACT","debugId":null}}]
+}
