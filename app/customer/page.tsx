@@ -280,7 +280,7 @@ export default function CustomerHome() {
                   DATACENTER
                 </h1>
 
-                <p className="text-lg md:text-xl text-justify text-blue-100 mb-8 leading-relaxed max-w-lg font-normal">
+                <p className="text-lg md:text-xl text-left text-blue-100 mb-8 leading-relaxed max-w-lg font-normal">
                   A strategic collaboration program to strengthen national
                   internet infrastructure and enhance the quality of internet
                   services in Indonesia
@@ -463,7 +463,7 @@ export default function CustomerHome() {
           <Card className="border border-blue-100 dark:border-blue-900 shadow-md overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-blue-100/50 dark:from-blue-950/50 dark:to-blue-900/50 z-0" />
             <CardBody className="relative z-10 p-8">
-              <p className="leading-relaxed text-base font-normal text-justify">
+              <p className="leading-relaxed text-base font-normal text-left">
                 APJII plays a strategic role in supporting the growth and
                 equitable distribution of internet infrastructure in Indonesia.
                 Through the APJII Data Center Program, we formulate better
@@ -471,7 +471,7 @@ export default function CustomerHome() {
                 the interest of all Members.
               </p>
               <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="flex items-start text-justify">
+                <div className="flex items-start text-left">
                   <div className="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-full mr-3">
                     <FiRefreshCw className="text-xl text-blue-600 dark:text-blue-400" />
                   </div>
@@ -479,13 +479,13 @@ export default function CustomerHome() {
                     <h4 className="font-semibold text-base mb-1">
                       IIX Traffic Enhancement
                     </h4>
-                    <p className="text-sm font-normal text-justify">
+                    <p className="text-sm font-normal text-left">
                       Driving increased interconnection traffic across various
                       regions
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start text-justify">
+                <div className="flex items-start text-left">
                   <div className="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-full mr-3">
                     <HiOutlineScale className="text-xl text-blue-600 dark:text-blue-400" />
                   </div>
@@ -493,13 +493,13 @@ export default function CustomerHome() {
                     <h4 className="font-semibold text-base mb-1">
                       Network Efficiency
                     </h4>
-                    <p className="text-sm font-normal text-justify">
+                    <p className="text-sm font-normal text-left">
                       Supporting efficiency and quality of internet services
                       for end users
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start text-justify">
+                <div className="flex items-start text-left">
                   <div className="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-full mr-3">
                     <FiShield className="text-xl text-blue-600 dark:text-blue-400" />
                   </div>
@@ -507,13 +507,13 @@ export default function CustomerHome() {
                     <h4 className="font-semibold text-base mb-1">
                       Guaranteed Standards
                     </h4>
-                    <p className="text-sm font-normal text-justify">
+                    <p className="text-sm font-normal text-left">
                       Ensuring Data Center partners meet high technical and
                       operational qualifications
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start text-justify">
+                <div className="flex items-start text-left">
                   <div className="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-full mr-3">
                     <FiGlobe className="text-xl text-blue-600 dark:text-blue-400" />
                   </div>
@@ -521,7 +521,7 @@ export default function CustomerHome() {
                     <h4 className="font-semibold text-base mb-1">
                       Strategic Collaboration
                     </h4>
-                    <p className="text-sm font-normal text-justify">
+                    <p className="text-sm font-normal text-left">
                       Building partnerships with leading Data Center providers
                       for strong national infrastructure
                     </p>
@@ -567,36 +567,36 @@ export default function CustomerHome() {
                     Key Requirements to Become a Partner
                   </h3>
                   <ul className="text-gray-700 dark:text-gray-300 space-y-4 text-base font-normal">
-                    <li className="flex items-start text-justify">
+                    <li className="flex items-start text-left">
                       <div className="flex-shrink-0 w-5 h-5 bg-blue-100 dark:bg-blue-900/50 rounded-full flex items-center justify-center mr-3 mt-1">
                         <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
                       </div>
-                      <p className="text-justify">
+                      <p className="text-left">
                         Must be a registered IIX Node Partner
                       </p>
                     </li>
-                    <li className="flex items-start text-justify ">
+                    <li className="flex items-start text-left ">
                       <div className="flex-shrink-0 w-5 h-5 bg-blue-100 dark:bg-blue-900/50 rounded-full flex items-center justify-center mr-3 mt-1">
                         <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
                       </div>
-                      <p className="text-justify">
+                      <p className="text-left">
                         Must hold a valid and official telecommunications
                         license
                       </p>
                     </li>
-                    <li className="flex items-start text-justify">
+                    <li className="flex items-start text-left">
                       <div className="flex-shrink-0 w-5 h-5 bg-blue-100 dark:bg-blue-900/50 rounded-full flex items-center justify-center mr-3 mt-1">
                         <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
                       </div>
-                      <p className="text-justify">
+                      <p className="text-left">
                         Must comply with TIA-942 Data Center standards
                       </p>
                     </li>
-                    <li className="flex items-start text-justify">
+                    <li className="flex items-start text-left">
                       <div className="flex-shrink-0 w-5 h-5 bg-blue-100 dark:bg-blue-900/50 rounded-full flex items-center justify-center mr-3 mt-1">
                         <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
                       </div>
-                      <p className="text-justify">
+                      <p className="text-left">
                         Must meet ISO 27001 and ISO 9001 standards
                       </p>
                     </li>
@@ -641,7 +641,7 @@ export default function CustomerHome() {
                           1
                         </span>
                       </div>
-                      <p className="text-justify">
+                      <p className="text-left">
                         Application: Members submit service requests through
                         the APJII DC Portal
                       </p>
@@ -652,7 +652,7 @@ export default function CustomerHome() {
                           2
                         </span>
                       </div>
-                      <p className="text-justify">
+                      <p className="text-left">
                         Processing: APJII processes requests based on available
                         capacity from Partners
                       </p>
@@ -663,7 +663,7 @@ export default function CustomerHome() {
                           3
                         </span>
                       </div>
-                      <p className="text-justify">
+                      <p className="text-left">
                         Payment: All service payments are made by Members
                         directly to APJII
                       </p>
@@ -982,7 +982,7 @@ export default function CustomerHome() {
                         <h3 className="font-semibold text-blue-700 dark:text-blue-400 mb-1">
                           {item.service}
                         </h3>
-                        <p className="text-sm font-normal text-justify text-gray-700 dark:text-gray-300">
+                        <p className="text-sm font-normal text-left text-gray-700 dark:text-gray-300">
                           {item.description}
                         </p>
                       </CardBody>
