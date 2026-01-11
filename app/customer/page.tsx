@@ -273,10 +273,10 @@ export default function CustomerHome() {
                   DIGITAL CONNECTIVITY
                 </p>
 
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight  text-white">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
                   APJII
                 </h1>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light leading-tight mb-6 text-white">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight mb-6 text-white/90">
                   DATACENTER
                 </h1>
 
