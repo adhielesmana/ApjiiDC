@@ -68,3 +68,4 @@ build = ["npm", "run", "build"]
 ADMIN_USERNAME = "adhielesmana"
 ADMIN_EMAIL = "adhielesmana@gmail.com"
 ADMIN_PASS = "admin123"
+AWS_USE_PATH_STYLE_ENDPOINT = "true"
