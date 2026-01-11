@@ -40,16 +40,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/customer/page.js"
-    ],
-    "/customer/catalog/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/customer/catalog/page.js"
-    ],
-    "/api/setting/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/setting/route.js"
     ]
   }
 }
