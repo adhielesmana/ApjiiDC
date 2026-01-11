@@ -281,9 +281,9 @@ export default function CustomerHome() {
                 </h1>
 
                 <p className="text-lg md:text-xl text-justify text-blue-100 mb-8 leading-relaxed max-w-lg font-normal">
-                  Program kolaborasi strategis untuk memperkuat infrastruktur
-                  internet nasional dan meningkatkan kualitas layanan internet
-                  di Indonesia
+                  A strategic collaboration program to strengthen national
+                  internet infrastructure and enhance the quality of internet
+                  services in Indonesia
                 </p>
                 <motion.div
                   className="flex flex-wrap gap-4"
@@ -300,7 +300,7 @@ export default function CustomerHome() {
                           "bg-white text-blue-700 hover:bg-blue-50 font-medium px-6 py-3",
                       })}
                     >
-                      Pelajari Lebih Lanjut
+                      Learn More
                     </Link>
                   </motion.div>
                   <motion.div variants={fadeIn}>
@@ -314,7 +314,7 @@ export default function CustomerHome() {
                           "border-white text-white hover:bg-white/10 font-medium px-6 py-3",
                       })}
                     >
-                      Jadi Mitra Kami
+                      Become Our Partner
                     </Link>
                   </motion.div>
                 </motion.div>
@@ -386,10 +386,10 @@ export default function CustomerHome() {
           className="text-center mb-10"
         >
           <Chip color="primary" variant="flat" className="mb-4">
-            <span className="font-medium">Lokasi Data Center</span>
+            <span className="font-medium">Data Center Locations</span>
           </Chip>
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-900 dark:text-white">
-            APJII Datacenter Partner di Indonesia
+            APJII Datacenter Partners in Indonesia
           </h2>
           <Divider className="max-w-xs mx-auto my-4" />
         </motion.div>
@@ -420,7 +420,7 @@ export default function CustomerHome() {
                   <div className="flex flex-col items-center">
                     <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
                     <p className="mt-4 text-blue-600 dark:text-blue-400">
-                      Memuat peta...
+                      Loading map...
                     </p>
                   </div>
                 </div>
@@ -430,7 +430,7 @@ export default function CustomerHome() {
 
           <p className="text-center text-sm font-normal mt-2">
             <FiMapPin className="inline mr-1" />
-            Menampilkan {datacenters.length} lokasi data center di seluruh
+            Displaying {datacenters.length} data center locations across
             Indonesia
           </p>
         </motion.div>
@@ -445,7 +445,7 @@ export default function CustomerHome() {
           className="text-center mb-10"
         >
           <Chip color="primary" variant="flat" className="mb-4">
-            <span className="font-medium">Mengapa Program Ini Penting</span>
+            <span className="font-medium">Why This Program Matters</span>
           </Chip>
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-900 dark:text-white">
             Program APJII Data Center
@@ -464,11 +464,11 @@ export default function CustomerHome() {
             <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-blue-100/50 dark:from-blue-950/50 dark:to-blue-900/50 z-0" />
             <CardBody className="relative z-10 p-8">
               <p className="leading-relaxed text-base font-normal text-justify">
-                APJII memiliki peran strategis dalam mendukung pertumbuhan dan
-                pemerataan infrastruktur internet di Indonesia. Melalui Program
-                APJII Data Center, kami merumuskan kebijakan dan tata kelola
-                layanan IIX dan Data Center yang lebih baik demi kepentingan
-                seluruh Anggota.
+                APJII plays a strategic role in supporting the growth and
+                equitable distribution of internet infrastructure in Indonesia.
+                Through the APJII Data Center Program, we formulate better
+                policies and governance for IIX and Data Center services in
+                the interest of all Members.
               </p>
               <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex items-start text-justify">
@@ -477,11 +477,11 @@ export default function CustomerHome() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-base mb-1">
-                      Peningkatan Trafik IIX
+                      IIX Traffic Enhancement
                     </h4>
                     <p className="text-sm font-normal text-justify">
-                      Mendorong peningkatan lalu lintas interkoneksi di berbagai
-                      wilayah
+                      Driving increased interconnection traffic across various
+                      regions
                     </p>
                   </div>
                 </div>
@@ -491,11 +491,11 @@ export default function CustomerHome() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-base mb-1">
-                      Efisiensi Jaringan
+                      Network Efficiency
                     </h4>
                     <p className="text-sm font-normal text-justify">
-                      Mendukung efisiensi dan kualitas layanan internet bagi
-                      pengguna akhir
+                      Supporting efficiency and quality of internet services
+                      for end users
                     </p>
                   </div>
                 </div>
@@ -505,11 +505,11 @@ export default function CustomerHome() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-base mb-1">
-                      Standar Terjamin
+                      Guaranteed Standards
                     </h4>
                     <p className="text-sm font-normal text-justify">
-                      Memastikan mitra Data Center memenuhi kualifikasi teknis
-                      dan operasional yang tinggi
+                      Ensuring Data Center partners meet high technical and
+                      operational qualifications
                     </p>
                   </div>
                 </div>
@@ -519,11 +519,11 @@ export default function CustomerHome() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-base mb-1">
-                      Kolaborasi Strategis
+                      Strategic Collaboration
                     </h4>
                     <p className="text-sm font-normal text-justify">
-                      Membangun kemitraan dengan penyedia Data Center terkemuka
-                      untuk infrastruktur nasional yang kuat
+                      Building partnerships with leading Data Center providers
+                      for strong national infrastructure
                     </p>
                   </div>
                 </div>
@@ -543,10 +543,10 @@ export default function CustomerHome() {
             className="text-center mb-12"
           >
             <Chip color="primary" variant="flat" className="mb-4">
-              <span className="font-medium">Peluang Kemitraan</span>
+              <span className="font-medium">Partnership Opportunities</span>
             </Chip>
             <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-900 dark:text-white">
-              Menjadi Mitra APJII Data Center
+              Become an APJII Data Center Partner
             </h2>
             <Divider className="max-w-xs mx-auto my-4" />
           </motion.div>
@@ -564,7 +564,7 @@ export default function CustomerHome() {
                 <CardBody className="relative z-10 p-8">
                   <h3 className="text-xl font-bold mb-4 text-blue-700 dark:text-blue-300 flex items-center">
                     <HiOutlineServer className="mr-2 text-blue-600 dark:text-blue-400" />
-                    Syarat Utama Menjadi Mitra
+                    Key Requirements to Become a Partner
                   </h3>
                   <ul className="text-gray-700 dark:text-gray-300 space-y-4 text-base font-normal">
                     <li className="flex items-start text-justify">
@@ -572,7 +572,7 @@ export default function CustomerHome() {
                         <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
                       </div>
                       <p className="text-justify">
-                        Merupakan Mitra Node IIX yang telah terdaftar
+                        Must be a registered IIX Node Partner
                       </p>
                     </li>
                     <li className="flex items-start text-justify ">
@@ -580,8 +580,8 @@ export default function CustomerHome() {
                         <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
                       </div>
                       <p className="text-justify">
-                        Memiliki izin penyelenggaraan telekomunikasi yang resmi
-                        dan berlaku
+                        Must hold a valid and official telecommunications
+                        license
                       </p>
                     </li>
                     <li className="flex items-start text-justify">
@@ -589,7 +589,7 @@ export default function CustomerHome() {
                         <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
                       </div>
                       <p className="text-justify">
-                        Mengikuti standar kualifikasi TIA-942 untuk Data Center
+                        Must comply with TIA-942 Data Center standards
                       </p>
                     </li>
                     <li className="flex items-start text-justify">
@@ -597,7 +597,7 @@ export default function CustomerHome() {
                         <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"></div>
                       </div>
                       <p className="text-justify">
-                        Memenuhi standar ISO 27001 dan ISO 9001
+                        Must meet ISO 27001 and ISO 9001 standards
                       </p>
                     </li>
                   </ul>
@@ -612,7 +612,7 @@ export default function CustomerHome() {
                           "bg-blue-600 text-white hover:bg-blue-700 font-medium",
                       })}
                     >
-                      Pelajari Selengkapnya
+                      Learn More
                     </Link>
                   </div>
                 </CardBody>
@@ -625,14 +625,14 @@ export default function CustomerHome() {
                 <CardBody className="relative z-10 p-8">
                   <h3 className="text-xl font-bold mb-4 text-blue-700 dark:text-blue-300 flex items-center">
                     <FiUsers className="mr-2 text-blue-600 dark:text-blue-400" />
-                    Layanan untuk Anggota APJII
+                    Services for APJII Members
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-4 text-base font-normal">
-                    Anggota APJII kini dapat memanfaatkan layanan colocation di
-                    Data Center mitra kami yang telah terverifikasi.
+                    APJII members can now utilize colocation services at
+                    our verified partner Data Centers.
                   </p>
                   <h4 className="font-semibold text-blue-700 dark:text-blue-300 mb-2 text-base">
-                    Alur Pengajuan Layanan:
+                    Service Application Process:
                   </h4>
                   <ul className="text-gray-700 dark:text-gray-300 space-y-3 text-base font-normal">
                     <li className="flex items-start ">
@@ -642,8 +642,8 @@ export default function CustomerHome() {
                         </span>
                       </div>
                       <p className="text-justify">
-                        Pengajuan: Anggota mengajukan permohonan layanan melalui
-                        Portal APJII DC
+                        Application: Members submit service requests through
+                        the APJII DC Portal
                       </p>
                     </li>
                     <li className="flex items-start ">
@@ -653,8 +653,8 @@ export default function CustomerHome() {
                         </span>
                       </div>
                       <p className="text-justify">
-                        Proses: APJII akan memproses permintaan sesuai kapasitas
-                        yang tersedia dari Mitra
+                        Processing: APJII processes requests based on available
+                        capacity from Partners
                       </p>
                     </li>
                     <li className="flex items-start ">
@@ -664,8 +664,8 @@ export default function CustomerHome() {
                         </span>
                       </div>
                       <p className="text-justify">
-                        Pembayaran: Seluruh pembayaran atas layanan dibayarkan
-                        oleh Anggota kepada APJII
+                        Payment: All service payments are made by Members
+                        directly to APJII
                       </p>
                     </li>
                   </ul>
@@ -680,7 +680,7 @@ export default function CustomerHome() {
                           "bg-blue-600 text-white hover:bg-blue-700 font-medium",
                       })}
                     >
-                      Akses Portal APJII DC
+                      Access APJII DC Portal
                     </Link>
                   </div>
                 </CardBody>
@@ -878,10 +878,10 @@ export default function CustomerHome() {
             variants={fadeIn}
           >
             <Chip color="primary" variant="flat" className="mb-4">
-              <span className="font-medium">Layanan Mitra</span>
+              <span className="font-medium">Partner Services</span>
             </Chip>
             <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-900 dark:text-white">
-              Layanan APJII Data Center
+              APJII Data Center Services
             </h2>
             <Divider className="max-w-xs mx-auto my-4" />
           </motion.div>
@@ -934,39 +934,39 @@ export default function CustomerHome() {
             {(
               [
                 {
-                  service: "Infrastruktur Data Center",
+                  service: "Data Center Infrastructure",
                   description:
-                    "Penyediaan fasilitas data center yang memenuhi standar TIA-942 dan ISO",
+                    "Provision of data center facilities that meet TIA-942 and ISO standards",
                   icon: <HiOutlineServer />,
                 },
                 {
-                  service: "Konektivitas",
+                  service: "Connectivity",
                   description:
-                    "Layanan koneksi jaringan berkualitas tinggi dengan redundansi",
+                    "High-quality network connection services with redundancy",
                   icon: <FiRefreshCw />,
                 },
                 {
                   service: "Colocation",
                   description:
-                    "Layanan colocation server dan perangkat untuk anggota APJII",
+                    "Server and equipment colocation services for APJII members",
                   icon: <HiOutlineDatabase />,
                 },
                 {
-                  service: "Dukungan Teknis",
+                  service: "Technical Support",
                   description:
-                    "Layanan dukungan teknis 24/7 untuk memastikan ketersediaan layanan",
+                    "24/7 technical support services to ensure service availability",
                   icon: <BsChatDots />,
                 },
                 {
-                  service: "Keamanan Fasilitas",
+                  service: "Facility Security",
                   description:
-                    "Sistem keamanan fisik dan digital untuk melindungi aset pelanggan",
+                    "Physical and digital security systems to protect customer assets",
                   icon: <FiShield />,
                 },
                 {
                   service: "Monitoring & Reporting",
                   description:
-                    "Pemantauan performa dan pelaporan layanan secara berkala",
+                    "Performance monitoring and regular service reporting",
                   icon: <BsFileEarmarkText />,
                 },
               ] as const
@@ -1007,15 +1007,15 @@ export default function CustomerHome() {
             variants={fadeIn}
             className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6"
           >
-            Bergabunglah dengan APJII
+            Join APJII
           </motion.h2>
 
           <motion.p
             variants={fadeIn}
             className="mb-8 text-base md:text-lg font-normal text-gray-800"
           >
-            Dapatkan manfaat keanggotaan dan berkontribusilah dalam pengembangan
-            internet Indonesia
+            Get membership benefits and contribute to the development of
+            Indonesia&apos;s internet
           </motion.p>
 
           <motion.div variants={fadeIn}>
@@ -1030,7 +1030,7 @@ export default function CustomerHome() {
                   "bg-white text-blue-700 hover:bg-blue-50 font-medium px-8",
               })}
             >
-              Hubungi Kami
+              Contact Us
             </Link>
           </motion.div>
         </motion.div>

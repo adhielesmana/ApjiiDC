@@ -318,7 +318,7 @@ function CustomerHome() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "text-lg md:text-xl text-justify text-blue-100 mb-8 leading-relaxed max-w-lg font-normal",
-                                            children: "Program kolaborasi strategis untuk memperkuat infrastruktur internet nasional dan meningkatkan kualitas layanan internet di Indonesia"
+                                            children: "A strategic collaboration program to strengthen national internet infrastructure and enhance the quality of internet services in Indonesia"
                                         }, void 0, false, {
                                             fileName: "[project]/app/customer/page.tsx",
                                             lineNumber: 283,
@@ -338,7 +338,7 @@ function CustomerHome() {
                                                             size: "lg",
                                                             className: "bg-white text-blue-700 hover:bg-blue-50 font-medium px-6 py-3"
                                                         }),
-                                                        children: "Pelajari Lebih Lanjut"
+                                                        children: "Learn More"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/customer/page.tsx",
                                                         lineNumber: 293,
@@ -359,7 +359,7 @@ function CustomerHome() {
                                                             size: "lg",
                                                             className: "border-white text-white hover:bg-white/10 font-medium px-6 py-3"
                                                         }),
-                                                        children: "Jadi Mitra Kami"
+                                                        children: "Become Our Partner"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/customer/page.tsx",
                                                         lineNumber: 307,
@@ -472,7 +472,7 @@ function CustomerHome() {
                                 className: "mb-4",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "font-medium",
-                                    children: "Lokasi Data Center"
+                                    children: "Data Center Locations"
                                 }, void 0, false, {
                                     fileName: "[project]/app/customer/page.tsx",
                                     lineNumber: 389,
@@ -485,7 +485,7 @@ function CustomerHome() {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                 className: "text-2xl sm:text-3xl font-bold mb-4 text-gray-900 dark:text-white",
-                                children: "APJII Datacenter Partner di Indonesia"
+                                children: "APJII Datacenter Partners in Indonesia"
                             }, void 0, false, {
                                 fileName: "[project]/app/customer/page.tsx",
                                 lineNumber: 391,
@@ -555,7 +555,7 @@ function CustomerHome() {
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             className: "mt-4 text-blue-600 dark:text-blue-400",
-                                                            children: "Memuat peta..."
+                                                            children: "Loading map..."
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/customer/page.tsx",
                                                             lineNumber: 422,
@@ -594,9 +594,9 @@ function CustomerHome() {
                                         lineNumber: 432,
                                         columnNumber: 13
                                     }, this),
-                                    "Menampilkan ",
+                                    "Displaying ",
                                     datacenters.length,
-                                    " lokasi data center di seluruh Indonesia"
+                                    " data center locations across Indonesia"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/customer/page.tsx",
@@ -634,7 +634,7 @@ function CustomerHome() {
                                 className: "mb-4",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "font-medium",
-                                    children: "Mengapa Program Ini Penting"
+                                    children: "Why This Program Matters"
                                 }, void 0, false, {
                                     fileName: "[project]/app/customer/page.tsx",
                                     lineNumber: 448,
@@ -690,7 +690,7 @@ function CustomerHome() {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                             className: "leading-relaxed text-base font-normal text-justify",
-                                            children: "APJII memiliki peran strategis dalam mendukung pertumbuhan dan pemerataan infrastruktur internet di Indonesia. Melalui Program APJII Data Center, kami merumuskan kebijakan dan tata kelola layanan IIX dan Data Center yang lebih baik demi kepentingan seluruh Anggota."
+                                            children: "APJII plays a strategic role in supporting the growth and equitable distribution of internet infrastructure in Indonesia. Through the APJII Data Center Program, we formulate better policies and governance for IIX and Data Center services in the interest of all Members."
                                         }, void 0, false, {
                                             fileName: "[project]/app/customer/page.tsx",
                                             lineNumber: 466,
@@ -720,7 +720,7 @@ function CustomerHome() {
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
                                                                     className: "font-semibold text-base mb-1",
-                                                                    children: "Peningkatan Trafik IIX"
+                                                                    children: "IIX Traffic Enhancement"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/customer/page.tsx",
                                                                     lineNumber: 479,
@@ -728,7 +728,7 @@ function CustomerHome() {
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                     className: "text-sm font-normal text-justify",
-                                                                    children: "Mendorong peningkatan lalu lintas interkoneksi di berbagai wilayah"
+                                                                    children: "Driving increased interconnection traffic across various regions"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/customer/page.tsx",
                                                                     lineNumber: 482,
@@ -767,7 +767,7 @@ function CustomerHome() {
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
                                                                     className: "font-semibold text-base mb-1",
-                                                                    children: "Efisiensi Jaringan"
+                                                                    children: "Network Efficiency"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/customer/page.tsx",
                                                                     lineNumber: 493,
@@ -775,7 +775,7 @@ function CustomerHome() {
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                     className: "text-sm font-normal text-justify",
-                                                                    children: "Mendukung efisiensi dan kualitas layanan internet bagi pengguna akhir"
+                                                                    children: "Supporting efficiency and quality of internet services for end users"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/customer/page.tsx",
                                                                     lineNumber: 496,
@@ -814,7 +814,7 @@ function CustomerHome() {
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
                                                                     className: "font-semibold text-base mb-1",
-                                                                    children: "Standar Terjamin"
+                                                                    children: "Guaranteed Standards"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/customer/page.tsx",
                                                                     lineNumber: 507,
@@ -822,7 +822,7 @@ function CustomerHome() {
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                     className: "text-sm font-normal text-justify",
-                                                                    children: "Memastikan mitra Data Center memenuhi kualifikasi teknis dan operasional yang tinggi"
+                                                                    children: "Ensuring Data Center partners meet high technical and operational qualifications"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/customer/page.tsx",
                                                                     lineNumber: 510,
@@ -861,7 +861,7 @@ function CustomerHome() {
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
                                                                     className: "font-semibold text-base mb-1",
-                                                                    children: "Kolaborasi Strategis"
+                                                                    children: "Strategic Collaboration"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/customer/page.tsx",
                                                                     lineNumber: 521,
@@ -869,7 +869,7 @@ function CustomerHome() {
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                     className: "text-sm font-normal text-justify",
-                                                                    children: "Membangun kemitraan dengan penyedia Data Center terkemuka untuk infrastruktur nasional yang kuat"
+                                                                    children: "Building partnerships with leading Data Center providers for strong national infrastructure"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/customer/page.tsx",
                                                                     lineNumber: 524,
@@ -937,7 +937,7 @@ function CustomerHome() {
                                     className: "mb-4",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "font-medium",
-                                        children: "Peluang Kemitraan"
+                                        children: "Partnership Opportunities"
                                     }, void 0, false, {
                                         fileName: "[project]/app/customer/page.tsx",
                                         lineNumber: 546,
@@ -950,7 +950,7 @@ function CustomerHome() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                     className: "text-2xl sm:text-3xl font-bold mb-4 text-gray-900 dark:text-white",
-                                    children: "Menjadi Mitra APJII Data Center"
+                                    children: "Become an APJII Data Center Partner"
                                 }, void 0, false, {
                                     fileName: "[project]/app/customer/page.tsx",
                                     lineNumber: 548,
@@ -1003,7 +1003,7 @@ function CustomerHome() {
                                                                 lineNumber: 566,
                                                                 columnNumber: 21
                                                             }, this),
-                                                            "Syarat Utama Menjadi Mitra"
+                                                            "Key Requirements to Become a Partner"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/customer/page.tsx",
@@ -1032,7 +1032,7 @@ function CustomerHome() {
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                         className: "text-justify",
-                                                                        children: "Merupakan Mitra Node IIX yang telah terdaftar"
+                                                                        children: "Must be a registered IIX Node Partner"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/customer/page.tsx",
                                                                         lineNumber: 574,
@@ -1063,7 +1063,7 @@ function CustomerHome() {
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                         className: "text-justify",
-                                                                        children: "Memiliki izin penyelenggaraan telekomunikasi yang resmi dan berlaku"
+                                                                        children: "Must hold a valid and official telecommunications license"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/customer/page.tsx",
                                                                         lineNumber: 582,
@@ -1094,7 +1094,7 @@ function CustomerHome() {
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                         className: "text-justify",
-                                                                        children: "Mengikuti standar kualifikasi TIA-942 untuk Data Center"
+                                                                        children: "Must comply with TIA-942 Data Center standards"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/customer/page.tsx",
                                                                         lineNumber: 591,
@@ -1125,7 +1125,7 @@ function CustomerHome() {
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                         className: "text-justify",
-                                                                        children: "Memenuhi standar ISO 27001 dan ISO 9001"
+                                                                        children: "Must meet ISO 27001 and ISO 9001 standards"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/customer/page.tsx",
                                                                         lineNumber: 599,
@@ -1153,7 +1153,7 @@ function CustomerHome() {
                                                                 size: "md",
                                                                 className: "bg-blue-600 text-white hover:bg-blue-700 font-medium"
                                                             }),
-                                                            children: "Pelajari Selengkapnya"
+                                                            children: "Learn More"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/customer/page.tsx",
                                                             lineNumber: 605,
@@ -1206,7 +1206,7 @@ function CustomerHome() {
                                                                 lineNumber: 627,
                                                                 columnNumber: 21
                                                             }, this),
-                                                            "Layanan untuk Anggota APJII"
+                                                            "Services for APJII Members"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/customer/page.tsx",
@@ -1215,7 +1215,7 @@ function CustomerHome() {
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         className: "text-gray-700 dark:text-gray-300 mb-4 text-base font-normal",
-                                                        children: "Anggota APJII kini dapat memanfaatkan layanan colocation di Data Center mitra kami yang telah terverifikasi."
+                                                        children: "APJII members can now utilize colocation services at our verified partner Data Centers."
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/customer/page.tsx",
                                                         lineNumber: 630,
@@ -1223,7 +1223,7 @@ function CustomerHome() {
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
                                                         className: "font-semibold text-blue-700 dark:text-blue-300 mb-2 text-base",
-                                                        children: "Alur Pengajuan Layanan:"
+                                                        children: "Service Application Process:"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/customer/page.tsx",
                                                         lineNumber: 634,
@@ -1252,7 +1252,7 @@ function CustomerHome() {
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                         className: "text-justify",
-                                                                        children: "Pengajuan: Anggota mengajukan permohonan layanan melalui Portal APJII DC"
+                                                                        children: "Application: Members submit service requests through the APJII DC Portal"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/customer/page.tsx",
                                                                         lineNumber: 644,
@@ -1284,7 +1284,7 @@ function CustomerHome() {
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                         className: "text-justify",
-                                                                        children: "Proses: APJII akan memproses permintaan sesuai kapasitas yang tersedia dari Mitra"
+                                                                        children: "Processing: APJII processes requests based on available capacity from Partners"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/customer/page.tsx",
                                                                         lineNumber: 655,
@@ -1316,7 +1316,7 @@ function CustomerHome() {
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                         className: "text-justify",
-                                                                        children: "Pembayaran: Seluruh pembayaran atas layanan dibayarkan oleh Anggota kepada APJII"
+                                                                        children: "Payment: All service payments are made by Members directly to APJII"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/customer/page.tsx",
                                                                         lineNumber: 666,
@@ -1344,7 +1344,7 @@ function CustomerHome() {
                                                                 size: "md",
                                                                 className: "bg-blue-600 text-white hover:bg-blue-700 font-medium"
                                                             }),
-                                                            children: "Akses Portal APJII DC"
+                                                            children: "Access APJII DC Portal"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/customer/page.tsx",
                                                             lineNumber: 673,
@@ -1410,7 +1410,7 @@ function CustomerHome() {
                                     className: "mb-4",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "font-medium",
-                                        children: "Layanan Mitra"
+                                        children: "Partner Services"
                                     }, void 0, false, {
                                         fileName: "[project]/app/customer/page.tsx",
                                         lineNumber: 881,
@@ -1423,7 +1423,7 @@ function CustomerHome() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                     className: "text-2xl sm:text-3xl font-bold mb-4 text-gray-900 dark:text-white",
-                                    children: "Layanan APJII Data Center"
+                                    children: "APJII Data Center Services"
                                 }, void 0, false, {
                                     fileName: "[project]/app/customer/page.tsx",
                                     lineNumber: 883,
@@ -1452,8 +1452,8 @@ function CustomerHome() {
                             variants: staggerChildren,
                             children: [
                                 {
-                                    service: "Infrastruktur Data Center",
-                                    description: "Penyediaan fasilitas data center yang memenuhi standar TIA-942 dan ISO",
+                                    service: "Data Center Infrastructure",
+                                    description: "Provision of data center facilities that meet TIA-942 and ISO standards",
                                     icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$hi$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["HiOutlineServer"], {}, void 0, false, {
                                         fileName: "[project]/app/customer/page.tsx",
                                         lineNumber: 940,
@@ -1461,8 +1461,8 @@ function CustomerHome() {
                                     }, this)
                                 },
                                 {
-                                    service: "Konektivitas",
-                                    description: "Layanan koneksi jaringan berkualitas tinggi dengan redundansi",
+                                    service: "Connectivity",
+                                    description: "High-quality network connection services with redundancy",
                                     icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiRefreshCw"], {}, void 0, false, {
                                         fileName: "[project]/app/customer/page.tsx",
                                         lineNumber: 946,
@@ -1471,7 +1471,7 @@ function CustomerHome() {
                                 },
                                 {
                                     service: "Colocation",
-                                    description: "Layanan colocation server dan perangkat untuk anggota APJII",
+                                    description: "Server and equipment colocation services for APJII members",
                                     icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$hi$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["HiOutlineDatabase"], {}, void 0, false, {
                                         fileName: "[project]/app/customer/page.tsx",
                                         lineNumber: 952,
@@ -1479,8 +1479,8 @@ function CustomerHome() {
                                     }, this)
                                 },
                                 {
-                                    service: "Dukungan Teknis",
-                                    description: "Layanan dukungan teknis 24/7 untuk memastikan ketersediaan layanan",
+                                    service: "Technical Support",
+                                    description: "24/7 technical support services to ensure service availability",
                                     icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$bs$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["BsChatDots"], {}, void 0, false, {
                                         fileName: "[project]/app/customer/page.tsx",
                                         lineNumber: 958,
@@ -1488,8 +1488,8 @@ function CustomerHome() {
                                     }, this)
                                 },
                                 {
-                                    service: "Keamanan Fasilitas",
-                                    description: "Sistem keamanan fisik dan digital untuk melindungi aset pelanggan",
+                                    service: "Facility Security",
+                                    description: "Physical and digital security systems to protect customer assets",
                                     icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiShield"], {}, void 0, false, {
                                         fileName: "[project]/app/customer/page.tsx",
                                         lineNumber: 964,
@@ -1498,7 +1498,7 @@ function CustomerHome() {
                                 },
                                 {
                                     service: "Monitoring & Reporting",
-                                    description: "Pemantauan performa dan pelaporan layanan secara berkala",
+                                    description: "Performance monitoring and regular service reporting",
                                     icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$bs$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["BsFileEarmarkText"], {}, void 0, false, {
                                         fileName: "[project]/app/customer/page.tsx",
                                         lineNumber: 970,
@@ -1605,7 +1605,7 @@ function CustomerHome() {
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].h2, {
                             variants: fadeIn,
                             className: "text-2xl sm:text-3xl md:text-4xl font-bold mb-6",
-                            children: "Bergabunglah dengan APJII"
+                            children: "Join APJII"
                         }, void 0, false, {
                             fileName: "[project]/app/customer/page.tsx",
                             lineNumber: 1006,
@@ -1614,7 +1614,7 @@ function CustomerHome() {
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].p, {
                             variants: fadeIn,
                             className: "mb-8 text-base md:text-lg font-normal text-gray-800",
-                            children: "Dapatkan manfaat keanggotaan dan berkontribusilah dalam pengembangan internet Indonesia"
+                            children: "Get membership benefits and contribute to the development of Indonesia's internet"
                         }, void 0, false, {
                             fileName: "[project]/app/customer/page.tsx",
                             lineNumber: 1013,
@@ -1631,7 +1631,7 @@ function CustomerHome() {
                                     size: "lg",
                                     className: "bg-white text-blue-700 hover:bg-blue-50 font-medium px-8"
                                 }),
-                                children: "Hubungi Kami"
+                                children: "Contact Us"
                             }, void 0, false, {
                                 fileName: "[project]/app/customer/page.tsx",
                                 lineNumber: 1022,
