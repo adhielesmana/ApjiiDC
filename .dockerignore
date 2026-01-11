@@ -1,0 +1,34 @@
+# Exclude node modules
+node_modules
+npm-debug.log
+
+# Exclude development files
+.git
+.github
+.gitignore
+.env*
+.editorconfig
+.eslintrc
+.prettierrc
+README.md
+CHANGELOG.md
+LICENSE.md
+docker-compose*.yml
+
+# Exclude build output
+.next
+out
+build
+dist
+
+# Exclude other unnecessary files
+**/.DS_Store
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+**/.vscode
+**/.idea
+**/*.log
+**/*.bak
+**/coverage

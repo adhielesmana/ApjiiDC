@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  nextjs:
+    build:
+      context: .
+      args:
+        - NEXT_PUBLIC_BACKEND_URL=${NEXT_PUBLIC_BACKEND_URL}
+    container_name: nextjs-app
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+      - NEXT_PUBLIC_BACKEND_URL=${NEXT_PUBLIC_BACKEND_URL}
+      - NEXT_PUBLIC_OAUTH_CLIENT_ID=${NEXT_PUBLIC_OAUTH_CLIENT_ID}
+      - NEXT_PUBLIC_OAUTH_REDIRECT_URL=${NEXT_PUBLIC_OAUTH_REDIRECT_URL}
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
