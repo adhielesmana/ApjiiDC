@@ -2020,7 +2020,7 @@ function CustomerLayout(param) {
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             className: "text-gray-600 dark:text-gray-300 mb-6",
-                                                            children: "Mohon maaf atas ketidaknyamanannya. Sistem sedang dalam pemeliharaan untuk meningkatkan kualitas layanan kami. Silakan coba kembali beberapa saat lagi."
+                                                            children: "We apologize for the inconvenience. The system is currently undergoing maintenance to improve our service quality. Please try again shortly."
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/customer/layout.tsx",
                                                             lineNumber: 249,
@@ -2039,7 +2039,7 @@ function CustomerLayout(param) {
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                        children: "Silahkan Coba Lagi Dalam Beberapa Jam"
+                                                                        children: "Please Try Again In A Few Hours"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/customer/layout.tsx",
                                                                         lineNumber: 258,
@@ -2079,7 +2079,7 @@ function CustomerLayout(param) {
                                                                     lineNumber: 271,
                                                                     columnNumber: 37
                                                                 }, void 0),
-                                                                children: "Coba Kembali"
+                                                                children: "Try Again"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/customer/layout.tsx",
                                                                 lineNumber: 266,

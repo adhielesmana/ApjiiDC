@@ -114,7 +114,7 @@ export default function BecomeProviderPage() {
         addToast({
           title: "Error",
           color: "danger",
-          description: "Format data provinsi tidak valid",
+          description: "Invalid province data format",
         });
         setProvinces([]);
       }
@@ -123,7 +123,7 @@ export default function BecomeProviderPage() {
       addToast({
         title: "Error",
         color: "danger",
-        description: "Gagal mengambil data provinsi",
+        description: "Failed to retrieve province data",
       });
       setProvinces([]);
     } finally {
@@ -149,7 +149,7 @@ export default function BecomeProviderPage() {
         addToast({
           title: "Error",
           color: "danger",
-          description: "Format data kabupaten/kota tidak valid",
+          description: "Invalid city/regency data format",
         });
         setRegencies([]);
       }
@@ -174,7 +174,7 @@ export default function BecomeProviderPage() {
       addToast({
         title: "Error",
         color: "danger",
-        description: "Gagal mengambil data kabupaten/kota",
+        description: "Failed to retrieve city/regency data",
       });
     } finally {
       setLoadingRegencies(false);
@@ -199,7 +199,7 @@ export default function BecomeProviderPage() {
         addToast({
           title: "Error",
           color: "danger",
-          description: "Format data kecamatan tidak valid",
+          description: "Invalid district data format",
         });
         setDistricts([]);
       }
@@ -221,7 +221,7 @@ export default function BecomeProviderPage() {
       addToast({
         title: "Error",
         color: "danger",
-        description: "Gagal mengambil data kecamatan",
+        description: "Failed to retrieve district data",
       });
     } finally {
       setLoadingDistricts(false);
@@ -250,7 +250,7 @@ export default function BecomeProviderPage() {
         addToast({
           title: "Error",
           color: "danger",
-          description: "Format data kelurahan/desa tidak valid",
+          description: "Invalid village/subdistrict data format",
         });
         setVillages([]);
       }
@@ -269,7 +269,7 @@ export default function BecomeProviderPage() {
       addToast({
         title: "Error",
         color: "danger",
-        description: "Gagal mengambil data kelurahan/desa",
+        description: "Failed to retrieve village/subdistrict data",
       });
     } finally {
       setLoadingVillages(false);
@@ -292,7 +292,7 @@ export default function BecomeProviderPage() {
       addToast({
         title: "Error",
         color: "danger",
-        description: "File harus berupa gambar (JPG, PNG, etc.)",
+        description: "File must be an image (JPG, PNG, etc.)",
       });
       return;
     }
@@ -303,7 +303,7 @@ export default function BecomeProviderPage() {
       addToast({
         title: "Error",
         color: "danger",
-        description: `Ukuran file tidak boleh lebih dari ${MAX_FILE_SIZE / (1024 * 1024)}MB. File yang dipilih: ${(file.size / (1024 * 1024)).toFixed(2)}MB`,
+        description: `File size must not exceed ${MAX_FILE_SIZE / (1024 * 1024)}MB. Selected file: ${(file.size / (1024 * 1024)).toFixed(2)}MB`,
       });
       return;
     }
@@ -318,9 +318,9 @@ export default function BecomeProviderPage() {
     reader.readAsDataURL(file);
 
     addToast({
-      title: "Logo dipilih",
+      title: "Logo Selected",
       color: "success",
-      description: `File ${file.name} (${(file.size / 1024).toFixed(2)}KB) berhasil dipilih`,
+      description: `File ${file.name} (${(file.size / 1024).toFixed(2)}KB) successfully selected`,
     });
   };
   const handleSubmit = async (e: React.FormEvent) => {
@@ -331,16 +331,16 @@ export default function BecomeProviderPage() {
     try {
       // Basic validation
       if (!formData.name.trim()) {
-        throw new Error("Nama partner harus diisi");
+        throw new Error("Partner name is required");
       }
 
       if (!isValidEmail(formData.contact.email)) {
-        throw new Error("Format email tidak valid");
+        throw new Error("Invalid email format");
       }
 
       // if (!isValidPhone(formData.contact.phone)) {
       //   throw new Error(
-      //     "Format nomor telepon tidak valid (gunakan format: 08xx atau +62xx)"
+      //     "Invalid phone number format (use format: 08xx or +62xx)"
       //   );
       // }
 
@@ -377,9 +377,9 @@ export default function BecomeProviderPage() {
       // Add toast to inform user the upload is in progress
       if (logoFile) {
         addToast({
-          title: "Mengunggah Data",
+          title: "Uploading Data",
           color: "default",
-          description: `Sedang mengunggah logo (${(logoFile.size / 1024).toFixed(2)}KB), mohon tunggu...`,
+          description: `Uploading logo (${(logoFile.size / 1024).toFixed(2)}KB), please wait...`,
         });
       }
 
@@ -401,9 +401,9 @@ export default function BecomeProviderPage() {
       );
 
       addToast({
-        title: "Berhasil",
+        title: "Success",
         color: "success",
-        description: "Anda Berhasil Membuat partner",
+        description: "Partner registration submitted successfully",
       });
       router.push("/customer");
     } catch (error: any) {
@@ -412,11 +412,11 @@ export default function BecomeProviderPage() {
       // Handle 413 Payload Too Large specifically
       if (error.response?.status === 413) {
         addToast({
-          title: "Error - File Terlalu Besar",
+          title: "Error - File Too Large",
           color: "danger",
           description:
             error.response?.data?.message ||
-            "Ukuran file logo terlalu besar. Gunakan file dengan ukuran kurang dari 1MB.",
+            "Logo file size is too large. Please use a file smaller than 1MB.",
         });
         setLoading(false);
         return;
@@ -434,15 +434,15 @@ export default function BecomeProviderPage() {
         setFieldErrors(newFieldErrors);
 
         addToast({
-          title: "Validasi Gagal",
+          title: "Validation Failed",
           color: "danger",
-          description: "Harap periksa kembali form isian Anda",
+          description: "Please review and correct the form fields",
         });
       } else {
         let errorMessage =
           error.response?.data?.message ||
           error.message ||
-          "Partner Gagal Dibuat";
+          "Partner registration failed";
 
         // Display additional details if available
         if (error.response?.data?.details) {
@@ -455,11 +455,11 @@ export default function BecomeProviderPage() {
           errorMessage.toLowerCase().includes("karakter") ||
           errorMessage.toLowerCase().includes("nama")
         ) {
-          errorMessage = `Ada masalah dengan nama partner "${formData.name}". Coba gunakan nama yang lebih sederhana tanpa karakter khusus.`;
+          errorMessage = `There is an issue with the partner name "${formData.name}". Please try a simpler name without special characters.`;
         }
 
         addToast({
-          title: "Gagal",
+          title: "Failed",
           color: "danger",
           description: errorMessage,
         });
@@ -607,24 +607,24 @@ export default function BecomeProviderPage() {
       {/* Page Header with Gradient */}
       <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl shadow-lg overflow-hidden mb-8 max-w-4xl mx-auto">
         <div className="px-8 py-10 text-white">
-          <h1 className="text-3xl font-bold mb-3">Daftar Sebagai Partner</h1>
+          <h1 className="text-3xl font-bold mb-3">Register as a Partner</h1>
           <p className="opacity-90">
-            Lengkapi informasi di bawah untuk mendaftar sebagai partner. Semua
-            informasi akan diperiksa oleh tim kami.
+            Complete the information below to register as a partner. All
+            submissions will be reviewed by our team.
           </p>
         </div>
       </div>
 
       <Card className="max-w-4xl mx-auto border-0 shadow-lg rounded-xl overflow-hidden">
         <CardHeader className="bg-gray-50 border-b px-6 py-5">
-          <h2 className="text-xl font-semibold">Informasi Partner</h2>
+          <h2 className="text-xl font-semibold">Partner Information</h2>
         </CardHeader>
         <CardBody className="p-6">
           <form onSubmit={handleSubmit} className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="md:col-span-2">
                 <Input
-                  label="Nama Partner"
+                  label="Partner Name"
                   value={formData.name}
                   onChange={handleNameChange}
                   required
@@ -635,14 +635,14 @@ export default function BecomeProviderPage() {
                     input: "text-lg",
                     label: "text-base font-medium",
                   }}
-                  description="Gunakan nama sederhana tanpa karakter khusus seperti tanda petik (') jika terjadi masalah"
+                  description="Use a simple name without special characters such as quotation marks (') if issues occur"
                 />
               </div>
 
               {/* Logo Upload Section */}
               <div className="md:col-span-2 space-y-2">
                 <label className="block text-base font-medium mb-2">
-                  Logo Partner
+                  Partner Logo
                 </label>
                 <div className="flex flex-col space-y-4">
                   {logoPreview && (
@@ -668,14 +668,14 @@ export default function BecomeProviderPage() {
                       cursor-pointer"
                   />
                   <p className="text-sm text-gray-500">
-                    Upload logo partner (format JPG/PNG, max 2MB)
+                    Upload partner logo (JPG/PNG format, max 2MB)
                   </p>
                 </div>
               </div>
 
               <div className="md:col-span-2">
                 <Textarea
-                  label="Deskripsi"
+                  label="Description"
                   value={formData.description}
                   onChange={handleDescriptionChange}
                   required
@@ -696,20 +696,20 @@ export default function BecomeProviderPage() {
                 required
                 isInvalid={Boolean(fieldErrors["contact.email"])}
                 errorMessage={fieldErrors["contact.email"]}
-                description="Format: nama@domain.com"
+                description="Format: name@domain.com"
                 classNames={{
                   label: "text-base font-medium",
                 }}
               />
 
               <Input
-                label="Nomor Telepon"
+                label="Phone Number"
                 value={formData.contact.phone}
                 onChange={(e) => handleContactChange("phone", e.target.value)}
                 required
                 isInvalid={Boolean(fieldErrors["contact.phone"])}
                 errorMessage={fieldErrors["contact.phone"]}
-                description="Format: 08xxxxxxxxxx atau +62xxxxxxxxxx"
+                description="Format: 08xxxxxxxxxx or +62xxxxxxxxxx"
                 placeholder="08xxxxxxxxxx"
                 classNames={{
                   label: "text-base font-medium",
@@ -718,19 +718,19 @@ export default function BecomeProviderPage() {
             </div>
 
             <div className="border-t border-gray-200 pt-6 pb-2">
-              <h3 className="text-lg font-medium mb-4">Alamat</h3>
+              <h3 className="text-lg font-medium mb-4">Address</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Province Selection */}
                 <div>
                   <label className="block text-sm font-medium mb-2">
-                    Provinsi{loadingProvinces && " (Loading...)"}
+                    Province{loadingProvinces && " (Loading...)"}
                   </label>
                   <Select
                     className="w-full"
                     value={formData.addressDetail.province}
                     onChange={handleProvinceChange}
                     isDisabled={loadingProvinces}
-                    placeholder="Pilih Provinsi"
+                    placeholder="Select Province"
                     required
                     size="lg"
                   >
@@ -748,7 +748,7 @@ export default function BecomeProviderPage() {
                 {/* Regency Selection */}
                 <div>
                   <label className="block text-sm font-medium mb-2">
-                    Kabupaten/Kota{loadingRegencies && " (Loading...)"}
+                    City/Regency{loadingRegencies && " (Loading...)"}
                   </label>
                   <Select
                     className="w-full"
@@ -757,7 +757,7 @@ export default function BecomeProviderPage() {
                     isDisabled={
                       !formData.addressDetail.province || loadingRegencies
                     }
-                    placeholder="Pilih Kabupaten/Kota"
+                    placeholder="Select City/Regency"
                     required
                     size="lg"
                   >
@@ -775,7 +775,7 @@ export default function BecomeProviderPage() {
                 {/* District Selection */}
                 <div>
                   <label className="block text-sm font-medium mb-2">
-                    Kecamatan{loadingDistricts && " (Loading...)"}
+                    District{loadingDistricts && " (Loading...)"}
                   </label>
                   <Select
                     className="w-full"
@@ -784,7 +784,7 @@ export default function BecomeProviderPage() {
                     isDisabled={
                       !formData.addressDetail.regency || loadingDistricts
                     }
-                    placeholder="Pilih Kecamatan"
+                    placeholder="Select District"
                     required
                     size="lg"
                   >
@@ -802,7 +802,7 @@ export default function BecomeProviderPage() {
                 {/* Village Selection */}
                 <div>
                   <label className="block text-sm font-medium mb-2">
-                    Kelurahan/Desa{loadingVillages && " (Loading...)"}
+                    Village/Subdistrict{loadingVillages && " (Loading...)"}
                   </label>
                   <Select
                     className="w-full"
@@ -811,7 +811,7 @@ export default function BecomeProviderPage() {
                     isDisabled={
                       !formData.addressDetail.district || loadingVillages
                     }
-                    placeholder="Pilih Kelurahan/Desa"
+                    placeholder="Select Village/Subdistrict"
                     required
                     size="lg"
                   >
@@ -827,7 +827,7 @@ export default function BecomeProviderPage() {
                 </div>
 
                 <Input
-                  label="Kode Pos"
+                  label="Postal Code"
                   value={formData.pos}
                   onChange={handlePosChange}
                   required
@@ -835,7 +835,7 @@ export default function BecomeProviderPage() {
                   errorMessage={fieldErrors["pos"]}
                   maxLength={5}
                   pattern="\d{5}"
-                  placeholder="Contoh: 12345"
+                  placeholder="Example: 12345"
                   classNames={{
                     label: "text-base font-medium",
                   }}
@@ -843,7 +843,7 @@ export default function BecomeProviderPage() {
 
                 <div className="md:col-span-2">
                   <Input
-                    label="Detail Alamat (Jalan, Nomor, RT/RW)"
+                    label="Street Address (Street Name, Number, Building)"
                     value={formData.addressDetail.detail}
                     onChange={handleAddressDetailChange}
                     required
@@ -865,7 +865,7 @@ export default function BecomeProviderPage() {
                 className="w-full py-6 text-lg font-semibold rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
                 isLoading={loading}
               >
-                {loading ? "Memproses..." : "Daftar Sebagai Partner"}
+                {loading ? "Processing..." : "Register as Partner"}
               </Button>
 
               <div className="mt-4 text-center">
@@ -875,7 +875,7 @@ export default function BecomeProviderPage() {
                   className="text-sm"
                   onClick={() => router.push("/customer")}
                 >
-                  Kembali ke Dashboard
+                  Back to Dashboard
                 </Button>
               </div>
             </div>

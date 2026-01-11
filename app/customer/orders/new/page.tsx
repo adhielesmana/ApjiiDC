@@ -719,7 +719,7 @@ export default function NewOrderPage() {
             <div className="p-6">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                  Syarat dan Ketentuan
+                  Terms and Conditions
                 </h3>
                 <button
                   onClick={() => setIsTermsModalOpen(false)}
@@ -731,286 +731,275 @@ export default function NewOrderPage() {
 
               <div className="text-gray-700 dark:text-gray-300 space-y-4 text-sm">
                 <h4 className="font-bold text-lg text-blue-600 dark:text-blue-400">
-                  Syarat dan Ketentuan Program APJII Data Center
+                  APJII Data Center Program Terms and Conditions
                 </h4>
                 <p>
-                  Dokumen Syarat dan Ketentuan ini disusun berdasarkan Surat
-                  Keputusan Ketua Umum Asosiasi Penyelenggara Jasa Internet
-                  Indonesia Nomor 47 Tahun 2025 tentang Pedoman Teknis
-                  Pelaksanaan Program APJII Data Center. Syarat dan Ketentuan
-                  ini berlaku bagi perusahaan penyedia layanan Data Center yang
-                  hendak menjadi mitra dan bagi Anggota APJII yang menggunakan
-                  layanan dalam program ini.
+                  This Terms and Conditions document is prepared based on the
+                  Decree of the Chairman of the Indonesian Internet Service
+                  Provider Association Number 47 of 2025 concerning Technical
+                  Guidelines for the Implementation of the APJII Data Center Program.
+                  These Terms and Conditions apply to data center service providers
+                  seeking to become partners and to APJII Members using services
+                  within this program.
                 </p>
 
                 <div className="space-y-4">
                   <div>
                     <h5 className="font-bold text-gray-900 dark:text-white">
-                      Pasal 1: Definisi
+                      Article 1: Definitions
                     </h5>
                     <ul className="list-disc pl-5 space-y-2 mt-2">
                       <li>
-                        Program APJII Data Center adalah program kolaborasi
-                        antara APJII dengan perusahaan penyedia layanan Data
-                        Center yang dilaksanakan sebagai bentuk pelaksanaan
-                        program kerja Bidang IIX dan Data Center APJII.
+                        The APJII Data Center Program is a collaborative initiative
+                        between APJII and data center service providers, implemented
+                        as part of the IIX and Data Center Division's work program
+                        under APJII.
                       </li>
                       <li>
-                        Mitra APJII Data Center ("Mitra APJII DC") adalah
-                        perusahaan penyedia layanan Data Center yang memiliki
-                        izin penyelenggaraan telekomunikasi resmi dan masih
-                        berlaku.
+                        An APJII Data Center Partner ("APJII DC Partner") is a
+                        data center service provider that holds a valid
+                        telecommunications operating license.
                       </li>
                       <li>
-                        Indonesia Internet Exchange (IIX) adalah jaringan
-                        interkoneksi internet yang dimiliki dan dikelola oleh
-                        APJII.
+                        Indonesia Internet Exchange (IIX) is an internet
+                        interconnection network owned and managed by APJII.
                       </li>
                       <li>
-                        Node IIX adalah simpul perpanjangan IIX-APJII yang
-                        menghubungkan konektivitas antar IIX.
+                        An IIX Node is an extension node of IIX-APJII that
+                        connects inter-IIX connectivity.
                       </li>
                       <li>
-                        Anggota adalah anggota Asosiasi Penyelenggara Jasa
-                        Internet Indonesia (APJII).
+                        A Member is a member of the Indonesian Internet Service
+                        Provider Association (APJII).
                       </li>
                     </ul>
                   </div>
 
                   <div>
                     <h5 className="font-bold text-gray-900 dark:text-white">
-                      Pasal 2: Persyaratan Menjadi Mitra APJII DC
+                      Article 2: Requirements to Become an APJII DC Partner
                     </h5>
                     <p className="mt-2">
-                      Untuk dapat menjadi Mitra APJII DC, calon mitra wajib
-                      memenuhi persyaratan sebagai berikut:
+                      To become an APJII DC Partner, prospective partners must
+                      meet the following requirements:
                     </p>
                     <ul className="list-disc pl-5 space-y-2 mt-2">
                       <li>
-                        Calon Mitra APJII DC merupakan Mitra Node IIX yang
-                        mengikuti aturan pada Surat Keputusan Ketua Umum Nomor
-                        29 Tahun 2022 tentang Petunjuk Teknis Pembentukan Node
-                        IIX.
+                        Prospective APJII DC Partners must be IIX Node Partners
+                        in compliance with Chairman's Decree Number 29 of 2022
+                        concerning Technical Guidelines for IIX Node Establishment.
                       </li>
                       <li>
-                        Calon Mitra APJII DC harus mengikuti standar tier Data
-                        Center sesuai dengan TIA-942.
+                        Prospective APJII DC Partners must comply with data center
+                        tier standards in accordance with TIA-942.
                       </li>
                       <li>
-                        Calon Mitra APJII DC harus mengikuti standar ISO 27001
-                        dan ISO 9001.
+                        Prospective APJII DC Partners must comply with ISO 27001
+                        and ISO 9001 standards.
                       </li>
                     </ul>
                   </div>
 
                   <div>
                     <h5 className="font-bold text-gray-900 dark:text-white">
-                      Pasal 3: Spesifikasi dan Standar Teknis Mitra
+                      Article 3: Partner Technical Specifications and Standards
                     </h5>
                     <p className="mt-2">
-                      Mitra APJII DC wajib memenuhi dan memelihara spesifikasi
-                      serta standar teknis yang merujuk pada kualifikasi standar
-                      TIA-942, sebagai berikut:
+                      APJII DC Partners must meet and maintain technical specifications
+                      and standards that reference TIA-942 standard qualifications,
+                      as follows:
                     </p>
 
                     <p className="mt-2 font-medium">
-                      Kualifikasi Tier Data Center:
+                      Data Center Tier Qualifications:
                     </p>
                     <ul className="list-disc pl-5 space-y-2 mt-1">
                       <li>
                         <span className="font-medium">TIER 1 - Basic:</span>
-                        Menggunakan sistem single path untuk power dan
-                        pendinginan (N). Estimasi downtime maksimal adalah 28.8
-                        jam per tahun.
+                        Uses a single path system for power and cooling (N).
+                        Maximum estimated downtime is 28.8 hours per year.
                       </li>
                       <li>
                         <span className="font-medium">
                           TIER 2 - Redundant Components:
                         </span>
-                        Menggunakan sistem single path untuk power dan
-                        pendinginan, namun mencakup komponen redundansi (N+1).
-                        Memiliki raised floor, UPS, dan generator cadangan.
-                        Estimasi downtime maksimal adalah 22 jam per tahun.
+                        Uses a single path system for power and cooling, but
+                        includes redundant components (N+1). Features raised floor,
+                        UPS, and backup generator. Maximum estimated downtime is
+                        22 hours per year.
                       </li>
                       <li>
                         <span className="font-medium">
                           TIER 3 - Concurrently Maintainable:
                         </span>
-                        Memiliki jalur distribusi daya dan pendinginan ganda
-                        (satu jalur aktif) dengan komponen redundansi (N+1).
-                        Memungkinkan aktivitas pemeliharaan terencana tanpa
-                        mengganggu operasi. Estimasi downtime maksimal adalah
-                        1,6 jam per tahun.
+                        Features dual power and cooling distribution paths (one
+                        active path) with redundant components (N+1). Enables
+                        planned maintenance activities without disrupting operations.
+                        Maximum estimated downtime is 1.6 hours per year.
                       </li>
                       <li>
                         <span className="font-medium">
                           TIER 4 - Fault Tolerant:
                         </span>
-                        Memiliki beberapa jalur distribusi daya dan pendinginan
-                        yang aktif secara bersamaan dengan komponen redundansi
-                        2(N+1). Dirancang untuk dapat menahan setidaknya satu
-                        kejadian tidak terencana tanpa dampak pada critical
-                        load. Estimasi downtime maksimal adalah 0,4 jam per
-                        tahun.
+                        Features multiple power and cooling distribution paths
+                        active simultaneously with 2(N+1) redundant components.
+                        Designed to withstand at least one unplanned event without
+                        impact on critical load. Maximum estimated downtime is
+                        0.4 hours per year.
                       </li>
                     </ul>
 
-                    <p className="mt-3 font-medium">Pertimbangan Lingkungan:</p>
+                    <p className="mt-3 font-medium">Environmental Considerations:</p>
                     <p>
-                      Mitra APJII DC harus mempertimbangkan keamanan lingkungan
-                      Data Center, mencakup:
+                      APJII DC Partners must consider data center environmental
+                      security, including:
                     </p>
                     <ul className="list-disc pl-5 space-y-2 mt-1">
                       <li>
-                        Resiko bencana alam seperti banjir, gempa bumi, atau
-                        kebakaran hutan.
+                        Natural disaster risks such as flooding, earthquakes, or
+                        forest fires.
                       </li>
                       <li>
-                        Akses terhadap infrastruktur pendukung seperti utilitas
-                        listrik, jaringan komunikasi, dan transportasi.
+                        Access to supporting infrastructure such as electrical
+                        utilities, communication networks, and transportation.
                       </li>
                       <li>
-                        Kepatuhan terhadap peraturan pusat dan daerah terkait
-                        zonasi dan perlindungan lingkungan.
+                        Compliance with national and regional regulations regarding
+                        zoning and environmental protection.
                       </li>
                       <li>
-                        Dampak lingkungan jangka panjang dan kemungkinan
-                        penggunaan sumber energi terbarukan.
+                        Long-term environmental impact and potential use of
+                        renewable energy sources.
                       </li>
                     </ul>
 
-                    <p className="mt-3 font-medium">Daya (Power):</p>
+                    <p className="mt-3 font-medium">Power:</p>
                     <p>
-                      Mitra APJII DC harus memastikan keandalan daya dengan
-                      ketentuan:
+                      APJII DC Partners must ensure power reliability with the
+                      following provisions:
                     </p>
                     <ul className="list-disc pl-5 space-y-2 mt-1">
                       <li>
-                        Sistem distribusi daya dirancang dengan redundansi
-                        sesuai level tier.
+                        Power distribution systems are designed with redundancy
+                        according to tier level.
                       </li>
                       <li>
-                        Penggunaan Uninterruptible Power Supply (UPS) dan
-                        generator adalah wajib untuk menjaga kontinuitas
-                        layanan.
+                        Use of Uninterruptible Power Supply (UPS) and generators
+                        is required to maintain service continuity.
                       </li>
                       <li>
-                        Jalur distribusi dirancang untuk meminimalkan single
-                        point of failure.
+                        Distribution paths are designed to minimize single
+                        points of failure.
                       </li>
                       <li>
-                        Harus ada perhitungan kapasitas daya untuk kebutuhan
-                        saat ini dan perluasan di masa depan.
+                        Power capacity calculations for current and future
+                        expansion needs are required.
                       </li>
                     </ul>
 
-                    <p className="mt-3 font-medium">Pendinginan (Cooling):</p>
+                    <p className="mt-3 font-medium">Cooling:</p>
                     <p>
-                      Mitra APJII DC harus memiliki sistem pendinginan yang
-                      krusial dengan standar:
+                      APJII DC Partners must have critical cooling systems with
+                      the following standards:
                     </p>
                     <ul className="list-disc pl-5 space-y-2 mt-1">
                       <li>
-                        Sistem pendinginan dirancang dengan redundansi yang
-                        sesuai (N, N+1, atau 2N).
+                        Cooling systems are designed with appropriate redundancy
+                        (N, N+1, or 2N).
                       </li>
                       <li>
-                        Distribusi pendinginan harus mempertimbangkan
-                        kontinuitas aliran udara, seperti konfigurasi hot
-                        aisle/cold aisle.
+                        Cooling distribution must consider airflow continuity,
+                        such as hot aisle/cold aisle configurations.
                       </li>
                       <li>
-                        Untuk level yang lebih tinggi, sistem harus mampu
-                        menjalankan pendinginan tanpa henti selama pemeliharaan.
+                        For higher tier levels, systems must be capable of
+                        continuous cooling operation during maintenance.
                       </li>
                     </ul>
 
-                    <p className="mt-3 font-medium">Ketentuan Operasional:</p>
+                    <p className="mt-3 font-medium">Operational Requirements:</p>
                     <ul className="list-disc pl-5 space-y-2 mt-1">
                       <li>
-                        Mitra APJII DC harus menyediakan akses 24 jam untuk
-                        layanan yang diberikan.
+                        APJII DC Partners must provide 24-hour access for
+                        the services provided.
                       </li>
                       <li>
-                        Mitra APJII DC harus menyediakan helpdesk yang dapat
-                        dihubungi selama 24 jam untuk layanan yang diberikan.
+                        APJII DC Partners must provide a 24-hour helpdesk
+                        for the services provided.
                       </li>
                       <li>
-                        Ketentuan mengenai cross connect disesuaikan dengan
-                        kebijakan internal masing-masing Mitra APJII DC.
+                        Cross-connect provisions are adjusted according to
+                        each APJII DC Partner's internal policies.
                       </li>
                     </ul>
                   </div>
 
                   <div>
                     <h5 className="font-bold text-gray-900 dark:text-white">
-                      Pasal 4: Mekanisme Kerja Sama dan Layanan
+                      Article 4: Partnership and Service Mechanisms
                     </h5>
 
-                    <p className="mt-2 font-medium">Proses Kemitraan:</p>
+                    <p className="mt-2 font-medium">Partnership Process:</p>
                     <ul className="list-disc pl-5 space-y-2 mt-1">
                       <li>
-                        Calon Mitra mengajukan permohonan kerja sama kepada
-                        APJII dengan melampirkan dokumen yang menunjukkan
-                        pemenuhan syarat.
+                        Prospective partners submit a cooperation application to
+                        APJII with documents demonstrating compliance with
+                        requirements.
                       </li>
                       <li>
-                        APJII akan melakukan asesmen terhadap pemenuhan
-                        persyaratan tersebut.
+                        APJII will conduct an assessment of requirement
+                        fulfillment.
                       </li>
                       <li>
-                        Apabila seluruh persyaratan terpenuhi, APJII akan
-                        menunjuk Mitra APJII Data Center melalui sebuah
-                        Perjanjian Kerja Sama.
+                        If all requirements are met, APJII will appoint the
+                        APJII Data Center Partner through a Cooperation Agreement.
                       </li>
                       <li>
-                        APJII akan memberikan akses Dashboard Portal APJII DC
-                        kepada Mitra untuk mengelola tenant.
+                        APJII will provide Dashboard Portal APJII DC access
+                        to Partners to manage tenants.
                       </li>
                     </ul>
 
                     <p className="mt-3 font-medium">
-                      Proses Layanan untuk Anggota:
+                      Service Process for Members:
                     </p>
                     <ul className="list-disc pl-5 space-y-2 mt-1">
                       <li>
-                        Anggota APJII yang ingin menggunakan layanan wajib
-                        mengajukan permohonan melalui Portal APJII DC.
+                        APJII Members who wish to use services must submit an
+                        application through the APJII DC Portal.
                       </li>
                       <li>
-                        APJII akan memproses layanan sesuai dengan kapasitas
-                        yang disediakan oleh Mitra APJII DC.
+                        APJII will process services according to the capacity
+                        provided by the APJII DC Partner.
                       </li>
                       <li>
-                        Seluruh pembayaran atas layanan yang digunakan oleh
-                        Anggota, wajib dibayarkan oleh Anggota kepada APJII.
+                        All payments for services used by Members must be
+                        remitted by Members to APJII.
                       </li>
                     </ul>
                   </div>
 
                   <div>
                     <h5 className="font-bold text-gray-900 dark:text-white">
-                      Pasal 5: Ketentuan Umum
+                      Article 5: General Provisions
                     </h5>
                     <ul className="list-disc pl-5 space-y-2 mt-2">
                       <li>
-                        <span className="font-medium">Evaluasi:</span> APJII dan
-                        Mitra APJII Data Center akan melakukan evaluasi secara
-                        berkala terhadap layanan guna memastikan standar yang
-                        disepakati terpenuhi.
+                        <span className="font-medium">Evaluation:</span> APJII and
+                        APJII Data Center Partners will conduct periodic evaluations
+                        of services to ensure agreed standards are met.
                       </li>
                       <li>
                         <span className="font-medium">
-                          Perubahan Ketentuan:
+                          Amendment of Provisions:
                         </span>
-                        Apabila di kemudian hari terdapat kekeliruan dalam
-                        penetapan Surat Keputusan yang menjadi dasar dokumen
-                        ini, maka akan diadakan perbaikan seperlunya.
+                        If errors are subsequently found in the Decree that forms
+                        the basis of this document, necessary corrections will be made.
                       </li>
                       <li>
-                        <span className="font-medium">Lain-lain:</span> Hal-hal
-                        lain yang belum diatur dalam Syarat dan Ketentuan ini
-                        akan disesuaikan dengan ketentuan yang berlaku.
+                        <span className="font-medium">Miscellaneous:</span> Other
+                        matters not covered in these Terms and Conditions will be
+                        adjusted according to applicable regulations.
                       </li>
                     </ul>
                   </div>

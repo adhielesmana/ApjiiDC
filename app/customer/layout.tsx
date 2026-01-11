@@ -247,15 +247,15 @@ export default function CustomerLayout({
                   <div className="h-1 w-20 bg-blue-500 rounded mb-5"></div>
 
                   <p className="text-gray-600 dark:text-gray-300 mb-6">
-                    Mohon maaf atas ketidaknyamanannya. Sistem sedang dalam
-                    pemeliharaan untuk meningkatkan kualitas layanan kami.
-                    Silakan coba kembali beberapa saat lagi.
+                    We apologize for the inconvenience. The system is currently
+                    undergoing maintenance to improve our service quality.
+                    Please try again shortly.
                   </p>
 
                   <div className="flex items-center mb-6 text-sm">
                     <div className="inline-flex items-center gap-1.5 py-1 px-3 rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">
                       <div className="h-2 w-2 rounded-full bg-blue-600 dark:bg-blue-400 animate-pulse"></div>
-                      <span>Silahkan Coba Lagi Dalam Beberapa Jam</span>
+                      <span>Please Try Again In A Few Hours</span>
                     </div>
                   </div>
                 </div>
@@ -270,7 +270,7 @@ export default function CustomerLayout({
                       onClick={() => window.location.reload()}
                       startContent={<RefreshCw className="w-4 h-4" />}
                     >
-                      Coba Kembali
+                      Try Again
                     </Button>
 
                     {/* Only show Admin Dashboard button if user is logged in and is admin */}

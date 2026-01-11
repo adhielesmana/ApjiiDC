@@ -25,7 +25,7 @@ export default function JoinProviderPage() {
 
     // Basic validation
     if (!referralCode.trim()) {
-      setError("Kode referral tidak boleh kosong");
+      setError("Referral code is required");
       setLoading(false);
       return;
     }
@@ -40,10 +40,10 @@ export default function JoinProviderPage() {
       );
 
       addToast({
-        title: "Berhasil",
+        title: "Success",
         color: "success",
         description:
-          "Anda berhasil bergabung dengan provider silahkan login ulang",
+          "You have successfully joined the provider. Please log in again.",
       });
 
       // Redirect back to customer dashboard after successful join
@@ -54,12 +54,12 @@ export default function JoinProviderPage() {
       const errorMessage =
         error.response?.data?.message ||
         error.message ||
-        "Gagal bergabung dengan provider";
+        "Failed to join provider";
 
       setError(errorMessage);
 
       addToast({
-        title: "Gagal",
+        title: "Failed",
         color: "danger",
         description: errorMessage,
       });
@@ -76,11 +76,11 @@ export default function JoinProviderPage() {
           {/* Card Header with Accent Background */}
           <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-6 text-white">
             <h1 className="text-xl font-bold mb-2">
-              Bergabung dengan Provider
+              Join a Provider
             </h1>
             <p className="opacity-90">
-              Masukkan kode referral yang diberikan oleh provider untuk
-              bergabung
+              Enter the referral code provided by the provider to join
+              their network
             </p>
           </div>
 
@@ -107,10 +107,10 @@ export default function JoinProviderPage() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
                 <Input
-                  label="Kode Referral"
+                  label="Referral Code"
                   value={referralCode}
                   onChange={(e) => setReferralCode(e.target.value)}
-                  placeholder="Masukkan kode referral dari provider"
+                  placeholder="Enter the referral code from provider"
                   required
                   isInvalid={!!error}
                   errorMessage={error}
@@ -131,8 +131,7 @@ export default function JoinProviderPage() {
                   }
                 />
                 <p className="text-sm text-gray-500 ml-1">
-                  Kode ini diberikan oleh Provider yang ingin Anda bergabung
-                  dengannya
+                  This code is provided by the Provider you wish to join
                 </p>
               </div>
 
@@ -142,7 +141,7 @@ export default function JoinProviderPage() {
                 className="w-full py-6 text-lg font-semibold rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
                 isLoading={loading}
               >
-                {loading ? "Memproses..." : "Bergabung dengan Provider"}
+                {loading ? "Processing..." : "Join Provider"}
               </Button>
             </form>
 
@@ -153,7 +152,7 @@ export default function JoinProviderPage() {
                 className="text-sm"
                 onClick={() => router.push("/customer")}
               >
-                Kembali ke Dashboard
+                Back to Dashboard
               </Button>
             </div>
           </CardBody>
@@ -178,8 +177,8 @@ export default function JoinProviderPage() {
                 </svg>
               </div>
               <p className="text-sm text-indigo-800">
-                Bergabung dengan Provider akan memberi Anda akses ke layanan
-                yang mereka sediakan
+                Joining a Provider will grant you access to the services
+                they offer
               </p>
             </div>
           </CardBody>

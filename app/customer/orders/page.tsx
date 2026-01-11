@@ -177,7 +177,7 @@ export default function OrdersPage() {
       addToast({
         title: "Warning",
         color: "warning",
-        description: "Silakan pilih metode pembayaran",
+        description: "Please select a payment method",
       });
       return;
     }
@@ -187,7 +187,7 @@ export default function OrdersPage() {
       addToast({
         title: "Warning",
         color: "warning",
-        description: "Silakan pilih bank tujuan",
+        description: "Please select a destination bank",
       });
       return;
     }
@@ -197,7 +197,7 @@ export default function OrdersPage() {
       addToast({
         title: "Warning",
         color: "warning",
-        description: "Silakan upload bukti pembayaran",
+        description: "Please upload payment proof",
       });
       return;
     }
@@ -229,8 +229,8 @@ export default function OrdersPage() {
           color: "success",
           description:
             selectedPaymentMethod === "qris"
-              ? "Pembayaran QRIS terdeteksi. Terima kasih!"
-              : "Bukti pembayaran berhasil dikirim",
+              ? "QRIS payment detected. Thank you!"
+              : "Payment proof submitted successfully",
         });
         onClose();
         fetchOrders();
@@ -238,7 +238,7 @@ export default function OrdersPage() {
         addToast({
           title: "Error",
           color: "danger",
-          description: response.data.message || "Gagal melakukan pembayaran",
+          description: response.data.message || "Payment submission failed",
         });
       }
     } catch (error: any) {
@@ -247,7 +247,7 @@ export default function OrdersPage() {
         title: "Error",
         color: "danger",
         description:
-          error.response?.data?.message || "Gagal melakukan pembayaran",
+          error.response?.data?.message || "Payment submission failed",
       });
     } finally {
       setSubmitting(false);
@@ -1382,7 +1382,7 @@ export default function OrdersPage() {
                             title: "Warning",
                             color: "warning",
                             description:
-                              "QR Code telah kadaluarsa. Silakan tutup modal dan buka kembali untuk mendapatkan QR Code baru.",
+                              "QR Code has expired. Please close the modal and reopen to generate a new QR Code.",
                           });
                         }}
                       />

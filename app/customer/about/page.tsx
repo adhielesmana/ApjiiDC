@@ -92,13 +92,13 @@ export default function AboutPage() {
             className="max-w-3xl mx-auto text-center"
           >
             <p className="text-sm uppercase tracking-wider text-blue-100 mb-2">
-              Program APJII Data Center
+              APJII Data Center Program
             </p>
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-              Tentang Data Center
+              About Data Center
             </h1>
             <p className="text-xl text-blue-100">
-              Kolaborasi Strategis untuk Infrastruktur Internet Nasional
+              Strategic Collaboration for National Internet Infrastructure
             </p>
           </motion.div>
         </div>
@@ -124,10 +124,10 @@ export default function AboutPage() {
             className="text-center mb-12"
           >
             <Chip color="primary" variant="flat" className="mb-4">
-              Pengenalan
+              Introduction
             </Chip>
             <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
-              Tentang Program APJII Data Center
+              About the APJII Data Center Program
             </h2>
             <Divider className="max-w-xs mx-auto my-4" />
           </motion.div>
@@ -155,26 +155,24 @@ export default function AboutPage() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeIn}
-              className="text-gray-700 dark:text-gray-300 space-y-4 text-justify"
+              className="text-gray-700 dark:text-gray-300 space-y-4 text-left"
             >
               <p className="leading-relaxed">
-                Program APJII Data Center adalah program kolaborasi antara APJII
-                dengan perusahaan penyedia layanan Data Center yang dilaksanakan
-                sebagai bentuk pelaksanaan program kerja Bidang IIX dan Data
-                Center APJII. Program ini ditetapkan melalui Surat Keputusan
-                Ketua Umum APJII Nomor 47 Tahun 2025.
+                The APJII Data Center Program is a collaborative initiative between APJII
+                and data center service providers, implemented as part of the IIX and Data
+                Center Division's work program. This program was established through
+                APJII Chairman's Decree Number 47 of 2025.
               </p>
               <p className="leading-relaxed">
-                Dalam rangka meningkatkan pengelolaan layanan Indonesia Internet
-                Exchange (IIX) dan Data Center, Badan Pengurus Pusat APJII
-                memandang perlu adanya sebuah program kolaborasi untuk
-                kepentingan Anggota.
+                To enhance the management of Indonesia Internet Exchange (IIX) and
+                Data Center services, the APJII Central Executive Board recognizes
+                the importance of establishing a collaborative program for the benefit
+                of its members.
               </p>
               <p className="leading-relaxed">
-                Selamat datang di Program APJII Data Center, sebuah inisiatif
-                kolaborasi antara Asosiasi Penyelenggara Jasa Internet Indonesia
-                (APJII) dengan perusahaan penyedia layanan Data Center terkemuka
-                di Indonesia.
+                Welcome to the APJII Data Center Program, a collaborative initiative
+                between the Indonesian Internet Service Provider Association (APJII)
+                and leading data center service providers across Indonesia.
               </p>
             </motion.div>
           </div>
@@ -192,10 +190,10 @@ export default function AboutPage() {
             className="text-center mb-12"
           >
             <Chip color="primary" variant="flat" className="mb-4">
-              Visi & Misi
+              Vision & Mission
             </Chip>
             <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
-              Tujuan Program
+              Program Objectives
             </h2>
             <Divider className="max-w-xs mx-auto my-4" />
           </motion.div>
@@ -214,7 +212,7 @@ export default function AboutPage() {
                   <CardBody className="relative z-10 p-8">
                     <h3 className="text-xl font-bold mb-4 text-blue-700 dark:text-blue-300 flex items-center">
                       <FiCpu className="mr-2 text-blue-600 dark:text-blue-400" />
-                      Tujuan Utama Program
+                      Primary Objectives
                     </h3>
                     <div className="space-y-3">
                       <div className="flex items-start">
@@ -222,8 +220,8 @@ export default function AboutPage() {
                           <HiOutlineLightningBolt className="w-4 h-4 text-blue-600 dark:text-blue-300" />
                         </div>
                         <p>
-                          Mendukung pertumbuhan dan pemerataan infrastruktur
-                          internet nasional
+                          Support the growth and equitable distribution of
+                          national internet infrastructure
                         </p>
                       </div>
 
@@ -232,7 +230,7 @@ export default function AboutPage() {
                           <FiRefreshCw className="w-4 h-4 text-blue-600 dark:text-blue-300" />
                         </div>
                         <p>
-                          Memperkuat konektivitas antar anggota melalui
+                          Strengthen inter-member connectivity through the
                           Indonesia Internet Exchange (IIX)
                         </p>
                       </div>
@@ -242,7 +240,7 @@ export default function AboutPage() {
                           <FiGlobe className="w-4 h-4 text-blue-600 dark:text-blue-300" />
                         </div>
                         <p>
-                          Mendorong peningkatan trafik IIX di berbagai wilayah
+                          Promote increased IIX traffic across various regions
                         </p>
                       </div>
 
@@ -251,8 +249,8 @@ export default function AboutPage() {
                           <HiOutlineScale className="w-4 h-4 text-blue-600 dark:text-blue-300" />
                         </div>
                         <p>
-                          Mendukung efisiensi jaringan dan peningkatan kualitas
-                          layanan internet secara keseluruhan
+                          Enable network efficiency and enhance overall
+                          internet service quality
                         </p>
                       </div>
                     </div>
@@ -274,48 +272,48 @@ export default function AboutPage() {
                   <CardBody className="relative z-10 p-8">
                     <h3 className="text-xl font-bold mb-4 text-blue-700 dark:text-blue-300 flex items-center">
                       <FiFileText className="mr-2 text-blue-600 dark:text-blue-400" />
-                      Definisi Kunci
+                      Key Definitions
                     </h3>
                     <ul className="space-y-3">
-                      <li className="pb-3 border-b text-justify border-gray-200 dark:border-gray-700">
+                      <li className="pb-3 border-b text-left border-gray-200 dark:border-gray-700">
                         <span className="font-semibold text-blue-700  dark:text-blue-300">
-                          Program APJII Data Center:
+                          APJII Data Center Program:
                         </span>{" "}
-                        Program kolaborasi antara APJII dan perusahaan penyedia
-                        layanan Data Center
+                        A collaborative program between APJII and data center
+                        service providers
                       </li>
 
-                      <li className="py-3 text-justify border-b border-gray-200 dark:border-gray-700">
+                      <li className="py-3 text-left border-b border-gray-200 dark:border-gray-700">
                         <span className="font-semibold text-blue-700  dark:text-blue-300">
-                          Mitra APJII Data Center (Mitra APJII DC):
+                          APJII Data Center Partner (APJII DC Partner):
                         </span>{" "}
-                        Perusahaan penyedia layanan Data Center yang memiliki
-                        izin telekomunikasi resmi dan masih berlaku
+                        Data center service providers holding a valid
+                        telecommunications operating license
                       </li>
 
-                      <li className="py-3 text-justify border-b border-gray-200 dark:border-gray-700">
+                      <li className="py-3 text-left border-b border-gray-200 dark:border-gray-700">
                         <span className="font-semibold text-blue-700  dark:text-blue-300">
                           Indonesia Internet Exchange (IIX):
                         </span>{" "}
-                        Jaringan interkoneksi internet yang dimiliki dan
-                        dikelola oleh APJII
+                        Internet interconnection network owned and managed
+                        by APJII
                       </li>
 
-                      <li className="py-3 text-justify border-b border-gray-200 dark:border-gray-700">
+                      <li className="py-3 text-left border-b border-gray-200 dark:border-gray-700">
                         <span className="font-semibold text-blue-700  dark:text-blue-300">
-                          Node IIX:
+                          IIX Node:
                         </span>{" "}
-                        Simpul perpanjangan IIX-APJII yang menghubungkan
-                        konektivitas antar IIX
+                        An extension node of IIX-APJII that connects
+                        inter-IIX connectivity
                       </li>
 
-                      <li className="pt-3 text-justify">
+                      <li className="pt-3 text-left">
                         <span className="font-semibold text-blue-700  dark:text-blue-300">
-                          Standar TIA-942:
+                          TIA-942 Standard:
                         </span>{" "}
-                        Standar internasional yang menetapkan persyaratan dan
-                        pedoman untuk desain dan instalasi datacenter dengan
-                        klasifikasi tier reliability dari Tier 1 (dasar) hingga
+                        International standard establishing requirements and
+                        guidelines for data center design and installation with
+                        tier reliability classifications from Tier 1 (basic) to
                         Tier 4 (fault tolerant)
                       </li>
                     </ul>
@@ -341,12 +339,12 @@ export default function AboutPage() {
               Legal
             </Chip>
             <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
-              Landasan Hukum
+              Legal Framework
             </h2>
             <Divider className="max-w-xs mx-auto my-4" />
             <p className="text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-              Program APJII Data Center didasarkan pada beberapa landasan hukum
-              dan regulasi yang menjamin legalitas dan keabsahan pelaksanaannya.
+              The APJII Data Center Program is established upon several legal
+              foundations and regulations that ensure the legitimacy and validity of its implementation.
             </p>
           </motion.div>
 
@@ -366,11 +364,11 @@ export default function AboutPage() {
                       <BsFileEarmarkText className="text-2xl text-blue-600 dark:text-blue-300" />
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 dark:text-white">
-                      Anggaran Dasar APJII
+                      APJII Articles of Association
                     </h3>
                   </div>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Akta Nomor 05 tanggal 26 September 2023
+                    Deed Number 05 dated September 26, 2023
                   </p>
                 </CardBody>
               </Card>
@@ -385,11 +383,11 @@ export default function AboutPage() {
                       <BsFileEarmarkText className="text-2xl text-indigo-600 dark:text-indigo-300" />
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 dark:text-white">
-                      Anggaran Rumah Tangga APJII
+                      APJII Bylaws
                     </h3>
                   </div>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Akta Nomor 06 tanggal 26 September 2023
+                    Deed Number 06 dated September 26, 2023
                   </p>
                 </CardBody>
               </Card>
@@ -404,12 +402,12 @@ export default function AboutPage() {
                       <BsFileEarmarkText className="text-2xl text-purple-600 dark:text-purple-300" />
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 dark:text-white">
-                      Peraturan APJII
+                      APJII Regulation
                     </h3>
                   </div>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Peraturan Asosiasi Penyelenggara Jasa Internet Indonesia
-                    Nomor 5 Tahun 2024 tentang Penggunaan Fasilitas APJII
+                    Indonesian Internet Service Provider Association Regulation
+                    Number 5 of 2024 concerning the Use of APJII Facilities
                   </p>
                 </CardBody>
               </Card>
@@ -424,12 +422,12 @@ export default function AboutPage() {
                       <BsFileEarmarkText className="text-2xl text-blue-600 dark:text-blue-300" />
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 dark:text-white">
-                      Surat Keputusan Ketua Umum
+                      Chairman's Decree
                     </h3>
                   </div>
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    Surat Keputusan Ketua Umum Nomor 29 Tahun 2022 tentang
-                    Petunjuk Teknis Pembentukan Node IIX
+                    Chairman's Decree Number 29 of 2022 concerning
+                    Technical Guidelines for IIX Node Establishment
                   </p>
                 </CardBody>
               </Card>
@@ -449,16 +447,16 @@ export default function AboutPage() {
             className="text-center mb-12"
           >
             <Chip color="primary" variant="flat" className="mb-4">
-              Mitra
+              Partners
             </Chip>
             <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
-              Data Center yang Tersedia
+              Available Data Centers
             </h2>
             <Divider className="max-w-xs mx-auto my-4" />
             <p className="text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-              Jelajahi pilihan penyedia data center kami, masing-masing
-              menawarkan infrastruktur dan layanan khusus untuk memenuhi
-              kebutuhan bisnis Anda.
+              Explore our selection of data center providers, each offering
+              specialized infrastructure and services tailored to meet
+              your business requirements.
             </p>
           </motion.div>
 
