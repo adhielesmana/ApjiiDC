@@ -41,68 +41,55 @@ export default function CustomerLayout({
   const [isMaintenance, setIsMaintenance] = useState<boolean>(false);
   const dispatch = useDispatch();
 
-  // Check for stored maintenance status immediately
-  const storedMaintenance =
-    typeof window !== "undefined"
-      ? localStorage.getItem("isMaintenance")
-      : null;
-
   // Add useAuthData hook to get user information - this is not required for the maintenance page
   const { user, isAdmin } = useAuthData();
+  
   useEffect(() => {
-    // First, check if we already know this is a maintenance mode from localStorage
+    // Check for stored maintenance status
+    const storedMaintenance = localStorage.getItem("isMaintenance");
     if (storedMaintenance === "true") {
       setIsMaintenance(true);
     }
+    console.log("Initial maintenance status:", storedMaintenance === "true");
 
     // Fetch settings and PPN data
     const fetchSettings = async () => {
       try {
-        // Use no-cache option to ensure we always get fresh data about maintenance status
         const response = await fetch("/api/setting", { cache: "no-store" });
         const data = await response.json();
+        console.log("Settings response:", data.status);
         setSettings(data);
 
         if (data.status === "ok") {
           if (data.data?.ppn) {
             setPpn(data.data.ppn);
           }
-          // Store maintenance status in localStorage to persist it
           localStorage.setItem("isMaintenance", "false");
-          setIsMaintenance(false); // Not in maintenance if status is "ok"
+          setIsMaintenance(false);
         } else if (
           data.status === "error" &&
           data.message === "Server is under maintenance"
         ) {
-          // Store maintenance status in localStorage to persist it
           localStorage.setItem("isMaintenance", "true");
-          setIsMaintenance(true); // In maintenance if we get this specific error
-        } else if (data.status === "error" && data.requiresAuth === true) {
-          // This is not a maintenance error but an auth error
-          // Don't set maintenance mode, but we still need to update loading state
+          setIsMaintenance(true);
+        } else {
           localStorage.setItem("isMaintenance", "false");
           setIsMaintenance(false);
         }
       } catch (error) {
         console.error("Failed to fetch settings:", error);
-
-        // Check if the error is due to a network issue, which could indicate
-        // the backend is down (potential maintenance situation)
         if (!navigator.onLine || error instanceof TypeError) {
           localStorage.setItem("isMaintenance", "true");
           setIsMaintenance(true);
         }
       } finally {
-        // Always stop the loading state after fetch attempt completes
+        console.log("Settings fetch complete, setting isLoading to false");
         setIsLoading(false);
       }
     };
 
     fetchSettings();
-
-    // Log maintenance status
-    console.log("Initial maintenance status:", storedMaintenance === "true");
-  }, [storedMaintenance]);
+  }, []);
 
   // Add router for navigation and hooks need to be at the top level
   const router = useRouter();

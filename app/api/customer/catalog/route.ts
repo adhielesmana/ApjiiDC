@@ -6,7 +6,7 @@ export async function GET(req: Request) {
     const { searchParams } = new URL(req.url);
     const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
-    const url = new URL(`${BACKEND_URL}/catalogue/space`);
+    const url = new URL(`${BACKEND_URL}/catalogue`);
 
     // Copy all search parameters directly to maintain &search= format
     searchParams.forEach((value, key) => {

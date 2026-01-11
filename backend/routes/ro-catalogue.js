@@ -9,8 +9,37 @@ import { Space } from '../mongoose/schemas/space.js'
 import multer from 'multer'
 import { s3Con } from '../utils/s3.js'
 import { Provider } from '../mongoose/schemas/provider.js'
+import { Setting } from '../mongoose/schemas/setting.js'
+import { Datacenter } from '../mongoose/schemas/datacenter.js'
 
 const router = Router()
+
+router.get('/settings', async (req, res) => {
+  try {
+    let settings = await Setting.findOne();
+    if (!settings) {
+      settings = await Setting.create({
+        ppn: 11,
+        maintenance_mode: false,
+        allow_manual_entry: true,
+        allow_override: false,
+        allow_skip: false,
+        allow_reopen: false
+      });
+    }
+    return res.status(200).json({
+      status: 'ok',
+      data: settings
+    });
+  } catch (error) {
+    console.log('err@settings', error);
+    return res.status(500).json({
+      status: 'error',
+      message: 'Internal Server Error',
+      error: error.message
+    });
+  }
+})
 
 
 router.get('/', async (req, res) => {
@@ -142,5 +171,44 @@ router.get('/provider/:id/spaces', async (req, res) => {
   }
 })
 
+router.get('/datacenter', async (req, res) => {
+  try {
+    const datacenters = await Datacenter.find({ status: 'active' }).lean();
+    return res.status(200).json({
+      status: 'ok',
+      data: datacenters
+    });
+  } catch (error) {
+    console.log('err@datacenter', error);
+    return res.status(500).json({
+      status: 'error',
+      message: 'Internal Server Error',
+      error: error.message
+    });
+  }
+})
+
+router.get('/datacenter/:id', async (req, res) => {
+  try {
+    const datacenter = await Datacenter.findById(req.params.id).lean();
+    if (!datacenter) {
+      return res.status(404).json({ 
+        status: 'error', 
+        message: 'Datacenter not found' 
+      });
+    }
+    return res.status(200).json({
+      status: 'ok',
+      data: datacenter
+    });
+  } catch (error) {
+    console.log('err@datacenter/:id', error);
+    return res.status(500).json({
+      status: 'error',
+      message: 'Internal Server Error',
+      error: error.message
+    });
+  }
+})
 
 export default router

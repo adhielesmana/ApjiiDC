@@ -21,6 +21,11 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
+    "/api/auth/check/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/auth/check/route.js"
+    ],
     "/customer/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -36,15 +41,35 @@
       "static/chunks/main-app.js",
       "static/chunks/app/customer/page.js"
     ],
-    "/api/auth/check/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/auth/check/route.js"
-    ],
     "/api/setting/route": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/api/setting/route.js"
+    ],
+    "/api/customer/get-datacenter/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/customer/get-datacenter/route.js"
+    ],
+    "/customer/catalog/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/customer/catalog/page.js"
+    ],
+    "/api/customer/catalog/provider/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/customer/catalog/provider/route.js"
+    ],
+    "/api/customer/catalog/datacenter/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/customer/catalog/datacenter/route.js"
+    ],
+    "/api/customer/catalog/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/customer/catalog/route.js"
     ]
   }
 }
