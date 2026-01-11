@@ -276,7 +276,7 @@ export default function CustomerHome() {
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
                   APJII
                 </h1>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight mb-6 text-white/90">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light leading-tight mb-6 text-white">
                   DATACENTER
                 </h1>
 
