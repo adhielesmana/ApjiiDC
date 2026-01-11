@@ -244,8 +244,7 @@ export default function CustomerHome() {
   }, [datacenters]);
 
   return (
-    <div className="min-h-screen ">
-      {" "}
+    <div className="min-h-screen">
       {/* Hero Section with side-by-side layout */}
       <section className="relative py-16 sm:py-20 lg:py-28 overflow-hidden min-h-[800px] flex items-center">
         {/* Background image with overlay */}
@@ -480,7 +479,7 @@ export default function CustomerHome() {
                     <h4 className="font-semibold text-base mb-1">
                       Peningkatan Trafik IIX
                     </h4>
-                    <p className="text-sm font-normal text-justify text-justify">
+                    <p className="text-sm font-normal text-justify">
                       Mendorong peningkatan lalu lintas interkoneksi di berbagai
                       wilayah
                     </p>
@@ -983,7 +982,7 @@ export default function CustomerHome() {
                         <h3 className="font-semibold text-blue-700 dark:text-blue-400 mb-1">
                           {item.service}
                         </h3>
-                        <p className="text-sm font-norma text-justify text-gray-700 dark:text-gray-300">
+                        <p className="text-sm font-normal text-justify text-gray-700 dark:text-gray-300">
                           {item.description}
                         </p>
                       </CardBody>

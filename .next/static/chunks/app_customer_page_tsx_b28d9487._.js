@@ -270,9 +270,8 @@ function CustomerHome() {
         datacenters
     ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "min-h-screen ",
+        className: "min-h-screen",
         children: [
-            " ",
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                 className: "relative py-16 sm:py-20 lg:py-28 overflow-hidden min-h-[800px] flex items-center",
                 children: [
@@ -287,20 +286,20 @@ function CustomerHome() {
                                 className: "object-cover object-center scale-130"
                             }, void 0, false, {
                                 fileName: "[project]/app/customer/page.tsx",
-                                lineNumber: 253,
+                                lineNumber: 252,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute inset-0 "
                             }, void 0, false, {
                                 fileName: "[project]/app/customer/page.tsx",
-                                lineNumber: 261,
+                                lineNumber: 260,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/customer/page.tsx",
-                        lineNumber: 252,
+                        lineNumber: 251,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -320,7 +319,7 @@ function CustomerHome() {
                                             children: "DIGITAL CONNECTIVITY"
                                         }, void 0, false, {
                                             fileName: "[project]/app/customer/page.tsx",
-                                            lineNumber: 273,
+                                            lineNumber: 272,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -328,7 +327,7 @@ function CustomerHome() {
                                             children: "APJII"
                                         }, void 0, false, {
                                             fileName: "[project]/app/customer/page.tsx",
-                                            lineNumber: 277,
+                                            lineNumber: 276,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -336,7 +335,7 @@ function CustomerHome() {
                                             children: "DATACENTER"
                                         }, void 0, false, {
                                             fileName: "[project]/app/customer/page.tsx",
-                                            lineNumber: 280,
+                                            lineNumber: 279,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -344,7 +343,7 @@ function CustomerHome() {
                                             children: "Program kolaborasi strategis untuk memperkuat infrastruktur internet nasional dan meningkatkan kualitas layanan internet di Indonesia"
                                         }, void 0, false, {
                                             fileName: "[project]/app/customer/page.tsx",
-                                            lineNumber: 284,
+                                            lineNumber: 283,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -364,12 +363,12 @@ function CustomerHome() {
                                                         children: "Pelajari Lebih Lanjut"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/customer/page.tsx",
-                                                        lineNumber: 294,
+                                                        lineNumber: 293,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/customer/page.tsx",
-                                                    lineNumber: 293,
+                                                    lineNumber: 292,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -385,39 +384,39 @@ function CustomerHome() {
                                                         children: "Jadi Mitra Kami"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/customer/page.tsx",
-                                                        lineNumber: 308,
+                                                        lineNumber: 307,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/customer/page.tsx",
-                                                    lineNumber: 307,
+                                                    lineNumber: 306,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/customer/page.tsx",
-                                            lineNumber: 289,
+                                            lineNumber: 288,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/customer/page.tsx",
-                                    lineNumber: 272,
+                                    lineNumber: 271,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/customer/page.tsx",
-                                lineNumber: 266,
+                                lineNumber: 265,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/customer/page.tsx",
-                            lineNumber: 264,
+                            lineNumber: 263,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/customer/page.tsx",
-                        lineNumber: 263,
+                        lineNumber: 262,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -427,20 +426,20 @@ function CustomerHome() {
                                 className: "absolute top-1/4 right-10 w-64 h-64 rounded-full bg-blue-400/10"
                             }, void 0, false, {
                                 fileName: "[project]/app/customer/page.tsx",
-                                lineNumber: 359,
+                                lineNumber: 358,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "absolute bottom-1/4 left-10 w-48 h-48 rounded-full bg-blue-400/10"
                             }, void 0, false, {
                                 fileName: "[project]/app/customer/page.tsx",
-                                lineNumber: 360,
+                                lineNumber: 359,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/customer/page.tsx",
-                        lineNumber: 358,
+                        lineNumber: 357,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -457,23 +456,23 @@ function CustomerHome() {
                                 d: "M0,128L48,122.7C96,117,192,107,288,101.3C384,96,480,96,576,112C672,128,768,160,864,154.7C960,149,1056,107,1152,90.7C1248,75,1344,85,1392,90.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
                             }, void 0, false, {
                                 fileName: "[project]/app/customer/page.tsx",
-                                lineNumber: 371,
+                                lineNumber: 370,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/customer/page.tsx",
-                            lineNumber: 365,
+                            lineNumber: 364,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/customer/page.tsx",
-                        lineNumber: 364,
+                        lineNumber: 363,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/customer/page.tsx",
-                lineNumber: 250,
+                lineNumber: 249,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -498,12 +497,12 @@ function CustomerHome() {
                                     children: "Lokasi Data Center"
                                 }, void 0, false, {
                                     fileName: "[project]/app/customer/page.tsx",
-                                    lineNumber: 390,
+                                    lineNumber: 389,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/customer/page.tsx",
-                                lineNumber: 389,
+                                lineNumber: 388,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -511,20 +510,20 @@ function CustomerHome() {
                                 children: "APJII Datacenter Partner di Indonesia"
                             }, void 0, false, {
                                 fileName: "[project]/app/customer/page.tsx",
-                                lineNumber: 392,
+                                lineNumber: 391,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$divider$2f$dist$2f$chunk$2d$IHO36JMK$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__divider_default__as__Divider$3e$__["Divider"], {
                                 className: "max-w-xs mx-auto my-4"
                             }, void 0, false, {
                                 fileName: "[project]/app/customer/page.tsx",
-                                lineNumber: 395,
+                                lineNumber: 394,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/customer/page.tsx",
-                        lineNumber: 382,
+                        lineNumber: 381,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -544,7 +543,7 @@ function CustomerHome() {
                                         className: "absolute inset-0 bg-gradient-to-br from-blue-50/50 to-blue-100/50 dark:from-blue-950/50 dark:to-blue-900/50 z-0"
                                     }, void 0, false, {
                                         fileName: "[project]/app/customer/page.tsx",
-                                        lineNumber: 406,
+                                        lineNumber: 405,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$card$2f$dist$2f$chunk$2d$SAEUDNWW$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__card_body_default__as__CardBody$3e$__["CardBody"], {
@@ -561,7 +560,7 @@ function CustomerHome() {
                                                 }
                                             }, void 0, false, {
                                                 fileName: "[project]/app/customer/page.tsx",
-                                                lineNumber: 408,
+                                                lineNumber: 407,
                                                 columnNumber: 15
                                             }, this),
                                             !isMapReady && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -573,7 +572,7 @@ function CustomerHome() {
                                                             className: "animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/customer/page.tsx",
-                                                            lineNumber: 422,
+                                                            lineNumber: 421,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -581,30 +580,30 @@ function CustomerHome() {
                                                             children: "Memuat peta..."
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/customer/page.tsx",
-                                                            lineNumber: 423,
+                                                            lineNumber: 422,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/customer/page.tsx",
-                                                    lineNumber: 421,
+                                                    lineNumber: 420,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/customer/page.tsx",
-                                                lineNumber: 420,
+                                                lineNumber: 419,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/customer/page.tsx",
-                                        lineNumber: 407,
+                                        lineNumber: 406,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/customer/page.tsx",
-                                lineNumber: 405,
+                                lineNumber: 404,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -614,7 +613,7 @@ function CustomerHome() {
                                         className: "inline mr-1"
                                     }, void 0, false, {
                                         fileName: "[project]/app/customer/page.tsx",
-                                        lineNumber: 433,
+                                        lineNumber: 432,
                                         columnNumber: 13
                                     }, this),
                                     "Menampilkan ",
@@ -623,19 +622,19 @@ function CustomerHome() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/customer/page.tsx",
-                                lineNumber: 432,
+                                lineNumber: 431,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/customer/page.tsx",
-                        lineNumber: 398,
+                        lineNumber: 397,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/customer/page.tsx",
-                lineNumber: 381,
+                lineNumber: 380,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -660,12 +659,12 @@ function CustomerHome() {
                                     children: "Mengapa Program Ini Penting"
                                 }, void 0, false, {
                                     fileName: "[project]/app/customer/page.tsx",
-                                    lineNumber: 449,
+                                    lineNumber: 448,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/customer/page.tsx",
-                                lineNumber: 448,
+                                lineNumber: 447,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -673,20 +672,20 @@ function CustomerHome() {
                                 children: "Program APJII Data Center"
                             }, void 0, false, {
                                 fileName: "[project]/app/customer/page.tsx",
-                                lineNumber: 451,
+                                lineNumber: 450,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$divider$2f$dist$2f$chunk$2d$IHO36JMK$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__divider_default__as__Divider$3e$__["Divider"], {
                                 className: "max-w-xs mx-auto my-4"
                             }, void 0, false, {
                                 fileName: "[project]/app/customer/page.tsx",
-                                lineNumber: 454,
+                                lineNumber: 453,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/customer/page.tsx",
-                        lineNumber: 441,
+                        lineNumber: 440,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -705,7 +704,7 @@ function CustomerHome() {
                                     className: "absolute inset-0 bg-gradient-to-br from-blue-50/50 to-blue-100/50 dark:from-blue-950/50 dark:to-blue-900/50 z-0"
                                 }, void 0, false, {
                                     fileName: "[project]/app/customer/page.tsx",
-                                    lineNumber: 465,
+                                    lineNumber: 464,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$card$2f$dist$2f$chunk$2d$SAEUDNWW$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__card_body_default__as__CardBody$3e$__["CardBody"], {
@@ -716,7 +715,7 @@ function CustomerHome() {
                                             children: "APJII memiliki peran strategis dalam mendukung pertumbuhan dan pemerataan infrastruktur internet di Indonesia. Melalui Program APJII Data Center, kami merumuskan kebijakan dan tata kelola layanan IIX dan Data Center yang lebih baik demi kepentingan seluruh Anggota."
                                         }, void 0, false, {
                                             fileName: "[project]/app/customer/page.tsx",
-                                            lineNumber: 467,
+                                            lineNumber: 466,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -731,12 +730,12 @@ function CustomerHome() {
                                                                 className: "text-xl text-blue-600 dark:text-blue-400"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/customer/page.tsx",
-                                                                lineNumber: 477,
+                                                                lineNumber: 476,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/customer/page.tsx",
-                                                            lineNumber: 476,
+                                                            lineNumber: 475,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -746,27 +745,27 @@ function CustomerHome() {
                                                                     children: "Peningkatan Trafik IIX"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/customer/page.tsx",
-                                                                    lineNumber: 480,
+                                                                    lineNumber: 479,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-sm font-normal text-justify text-justify",
+                                                                    className: "text-sm font-normal text-justify",
                                                                     children: "Mendorong peningkatan lalu lintas interkoneksi di berbagai wilayah"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/customer/page.tsx",
-                                                                    lineNumber: 483,
+                                                                    lineNumber: 482,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/customer/page.tsx",
-                                                            lineNumber: 479,
+                                                            lineNumber: 478,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/customer/page.tsx",
-                                                    lineNumber: 475,
+                                                    lineNumber: 474,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -778,12 +777,12 @@ function CustomerHome() {
                                                                 className: "text-xl text-blue-600 dark:text-blue-400"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/customer/page.tsx",
-                                                                lineNumber: 491,
+                                                                lineNumber: 490,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/customer/page.tsx",
-                                                            lineNumber: 490,
+                                                            lineNumber: 489,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -793,7 +792,7 @@ function CustomerHome() {
                                                                     children: "Efisiensi Jaringan"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/customer/page.tsx",
-                                                                    lineNumber: 494,
+                                                                    lineNumber: 493,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -801,19 +800,19 @@ function CustomerHome() {
                                                                     children: "Mendukung efisiensi dan kualitas layanan internet bagi pengguna akhir"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/customer/page.tsx",
-                                                                    lineNumber: 497,
+                                                                    lineNumber: 496,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/customer/page.tsx",
-                                                            lineNumber: 493,
+                                                            lineNumber: 492,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/customer/page.tsx",
-                                                    lineNumber: 489,
+                                                    lineNumber: 488,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -825,12 +824,12 @@ function CustomerHome() {
                                                                 className: "text-xl text-blue-600 dark:text-blue-400"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/customer/page.tsx",
-                                                                lineNumber: 505,
+                                                                lineNumber: 504,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/customer/page.tsx",
-                                                            lineNumber: 504,
+                                                            lineNumber: 503,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -840,7 +839,7 @@ function CustomerHome() {
                                                                     children: "Standar Terjamin"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/customer/page.tsx",
-                                                                    lineNumber: 508,
+                                                                    lineNumber: 507,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -848,19 +847,19 @@ function CustomerHome() {
                                                                     children: "Memastikan mitra Data Center memenuhi kualifikasi teknis dan operasional yang tinggi"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/customer/page.tsx",
-                                                                    lineNumber: 511,
+                                                                    lineNumber: 510,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/customer/page.tsx",
-                                                            lineNumber: 507,
+                                                            lineNumber: 506,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/customer/page.tsx",
-                                                    lineNumber: 503,
+                                                    lineNumber: 502,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -872,12 +871,12 @@ function CustomerHome() {
                                                                 className: "text-xl text-blue-600 dark:text-blue-400"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/customer/page.tsx",
-                                                                lineNumber: 519,
+                                                                lineNumber: 518,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/customer/page.tsx",
-                                                            lineNumber: 518,
+                                                            lineNumber: 517,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -887,7 +886,7 @@ function CustomerHome() {
                                                                     children: "Kolaborasi Strategis"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/customer/page.tsx",
-                                                                    lineNumber: 522,
+                                                                    lineNumber: 521,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -895,48 +894,48 @@ function CustomerHome() {
                                                                     children: "Membangun kemitraan dengan penyedia Data Center terkemuka untuk infrastruktur nasional yang kuat"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/customer/page.tsx",
-                                                                    lineNumber: 525,
+                                                                    lineNumber: 524,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/customer/page.tsx",
-                                                            lineNumber: 521,
+                                                            lineNumber: 520,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/customer/page.tsx",
-                                                    lineNumber: 517,
+                                                    lineNumber: 516,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/customer/page.tsx",
-                                            lineNumber: 474,
+                                            lineNumber: 473,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/customer/page.tsx",
-                                    lineNumber: 466,
+                                    lineNumber: 465,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/customer/page.tsx",
-                            lineNumber: 464,
+                            lineNumber: 463,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/customer/page.tsx",
-                        lineNumber: 457,
+                        lineNumber: 456,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/customer/page.tsx",
-                lineNumber: 440,
+                lineNumber: 439,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -963,12 +962,12 @@ function CustomerHome() {
                                         children: "Peluang Kemitraan"
                                     }, void 0, false, {
                                         fileName: "[project]/app/customer/page.tsx",
-                                        lineNumber: 547,
+                                        lineNumber: 546,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/customer/page.tsx",
-                                    lineNumber: 546,
+                                    lineNumber: 545,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -976,20 +975,20 @@ function CustomerHome() {
                                     children: "Menjadi Mitra APJII Data Center"
                                 }, void 0, false, {
                                     fileName: "[project]/app/customer/page.tsx",
-                                    lineNumber: 549,
+                                    lineNumber: 548,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$divider$2f$dist$2f$chunk$2d$IHO36JMK$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__divider_default__as__Divider$3e$__["Divider"], {
                                     className: "max-w-xs mx-auto my-4"
                                 }, void 0, false, {
                                     fileName: "[project]/app/customer/page.tsx",
-                                    lineNumber: 552,
+                                    lineNumber: 551,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/customer/page.tsx",
-                            lineNumber: 539,
+                            lineNumber: 538,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1010,7 +1009,7 @@ function CustomerHome() {
                                                 className: "absolute inset-0 bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-blue-900/30 z-0"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/customer/page.tsx",
-                                                lineNumber: 564,
+                                                lineNumber: 563,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$card$2f$dist$2f$chunk$2d$SAEUDNWW$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__card_body_default__as__CardBody$3e$__["CardBody"], {
@@ -1023,14 +1022,14 @@ function CustomerHome() {
                                                                 className: "mr-2 text-blue-600 dark:text-blue-400"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/customer/page.tsx",
-                                                                lineNumber: 567,
+                                                                lineNumber: 566,
                                                                 columnNumber: 21
                                                             }, this),
                                                             "Syarat Utama Menjadi Mitra"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/customer/page.tsx",
-                                                        lineNumber: 566,
+                                                        lineNumber: 565,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1045,12 +1044,12 @@ function CustomerHome() {
                                                                             className: "w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/customer/page.tsx",
-                                                                            lineNumber: 573,
+                                                                            lineNumber: 572,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/customer/page.tsx",
-                                                                        lineNumber: 572,
+                                                                        lineNumber: 571,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1058,13 +1057,13 @@ function CustomerHome() {
                                                                         children: "Merupakan Mitra Node IIX yang telah terdaftar"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/customer/page.tsx",
-                                                                        lineNumber: 575,
+                                                                        lineNumber: 574,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/customer/page.tsx",
-                                                                lineNumber: 571,
+                                                                lineNumber: 570,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1076,12 +1075,12 @@ function CustomerHome() {
                                                                             className: "w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/customer/page.tsx",
-                                                                            lineNumber: 581,
+                                                                            lineNumber: 580,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/customer/page.tsx",
-                                                                        lineNumber: 580,
+                                                                        lineNumber: 579,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1089,13 +1088,13 @@ function CustomerHome() {
                                                                         children: "Memiliki izin penyelenggaraan telekomunikasi yang resmi dan berlaku"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/customer/page.tsx",
-                                                                        lineNumber: 583,
+                                                                        lineNumber: 582,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/customer/page.tsx",
-                                                                lineNumber: 579,
+                                                                lineNumber: 578,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1107,12 +1106,12 @@ function CustomerHome() {
                                                                             className: "w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/customer/page.tsx",
-                                                                            lineNumber: 590,
+                                                                            lineNumber: 589,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/customer/page.tsx",
-                                                                        lineNumber: 589,
+                                                                        lineNumber: 588,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1120,13 +1119,13 @@ function CustomerHome() {
                                                                         children: "Mengikuti standar kualifikasi TIA-942 untuk Data Center"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/customer/page.tsx",
-                                                                        lineNumber: 592,
+                                                                        lineNumber: 591,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/customer/page.tsx",
-                                                                lineNumber: 588,
+                                                                lineNumber: 587,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1138,12 +1137,12 @@ function CustomerHome() {
                                                                             className: "w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/customer/page.tsx",
-                                                                            lineNumber: 598,
+                                                                            lineNumber: 597,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/customer/page.tsx",
-                                                                        lineNumber: 597,
+                                                                        lineNumber: 596,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1151,19 +1150,19 @@ function CustomerHome() {
                                                                         children: "Memenuhi standar ISO 27001 dan ISO 9001"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/customer/page.tsx",
-                                                                        lineNumber: 600,
+                                                                        lineNumber: 599,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/customer/page.tsx",
-                                                                lineNumber: 596,
+                                                                lineNumber: 595,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/customer/page.tsx",
-                                                        lineNumber: 570,
+                                                        lineNumber: 569,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1179,29 +1178,29 @@ function CustomerHome() {
                                                             children: "Pelajari Selengkapnya"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/customer/page.tsx",
-                                                            lineNumber: 606,
+                                                            lineNumber: 605,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/customer/page.tsx",
-                                                        lineNumber: 605,
+                                                        lineNumber: 604,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/customer/page.tsx",
-                                                lineNumber: 565,
+                                                lineNumber: 564,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/customer/page.tsx",
-                                        lineNumber: 563,
+                                        lineNumber: 562,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/customer/page.tsx",
-                                    lineNumber: 562,
+                                    lineNumber: 561,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1213,7 +1212,7 @@ function CustomerHome() {
                                                 className: "absolute inset-0 bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-blue-900/30 z-0"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/customer/page.tsx",
-                                                lineNumber: 625,
+                                                lineNumber: 624,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$card$2f$dist$2f$chunk$2d$SAEUDNWW$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__card_body_default__as__CardBody$3e$__["CardBody"], {
@@ -1226,14 +1225,14 @@ function CustomerHome() {
                                                                 className: "mr-2 text-blue-600 dark:text-blue-400"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/customer/page.tsx",
-                                                                lineNumber: 628,
+                                                                lineNumber: 627,
                                                                 columnNumber: 21
                                                             }, this),
                                                             "Layanan untuk Anggota APJII"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/customer/page.tsx",
-                                                        lineNumber: 627,
+                                                        lineNumber: 626,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1241,7 +1240,7 @@ function CustomerHome() {
                                                         children: "Anggota APJII kini dapat memanfaatkan layanan colocation di Data Center mitra kami yang telah terverifikasi."
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/customer/page.tsx",
-                                                        lineNumber: 631,
+                                                        lineNumber: 630,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -1249,7 +1248,7 @@ function CustomerHome() {
                                                         children: "Alur Pengajuan Layanan:"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/customer/page.tsx",
-                                                        lineNumber: 635,
+                                                        lineNumber: 634,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1265,12 +1264,12 @@ function CustomerHome() {
                                                                             children: "1"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/customer/page.tsx",
-                                                                            lineNumber: 641,
+                                                                            lineNumber: 640,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/customer/page.tsx",
-                                                                        lineNumber: 640,
+                                                                        lineNumber: 639,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1278,13 +1277,13 @@ function CustomerHome() {
                                                                         children: "Pengajuan: Anggota mengajukan permohonan layanan melalui Portal APJII DC"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/customer/page.tsx",
-                                                                        lineNumber: 645,
+                                                                        lineNumber: 644,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/customer/page.tsx",
-                                                                lineNumber: 639,
+                                                                lineNumber: 638,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1297,12 +1296,12 @@ function CustomerHome() {
                                                                             children: "2"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/customer/page.tsx",
-                                                                            lineNumber: 652,
+                                                                            lineNumber: 651,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/customer/page.tsx",
-                                                                        lineNumber: 651,
+                                                                        lineNumber: 650,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1310,13 +1309,13 @@ function CustomerHome() {
                                                                         children: "Proses: APJII akan memproses permintaan sesuai kapasitas yang tersedia dari Mitra"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/customer/page.tsx",
-                                                                        lineNumber: 656,
+                                                                        lineNumber: 655,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/customer/page.tsx",
-                                                                lineNumber: 650,
+                                                                lineNumber: 649,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -1329,12 +1328,12 @@ function CustomerHome() {
                                                                             children: "3"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/customer/page.tsx",
-                                                                            lineNumber: 663,
+                                                                            lineNumber: 662,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/customer/page.tsx",
-                                                                        lineNumber: 662,
+                                                                        lineNumber: 661,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1342,19 +1341,19 @@ function CustomerHome() {
                                                                         children: "Pembayaran: Seluruh pembayaran atas layanan dibayarkan oleh Anggota kepada APJII"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/customer/page.tsx",
-                                                                        lineNumber: 667,
+                                                                        lineNumber: 666,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/customer/page.tsx",
-                                                                lineNumber: 661,
+                                                                lineNumber: 660,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/customer/page.tsx",
-                                                        lineNumber: 638,
+                                                        lineNumber: 637,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1370,46 +1369,46 @@ function CustomerHome() {
                                                             children: "Akses Portal APJII DC"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/customer/page.tsx",
-                                                            lineNumber: 674,
+                                                            lineNumber: 673,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/customer/page.tsx",
-                                                        lineNumber: 673,
+                                                        lineNumber: 672,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/customer/page.tsx",
-                                                lineNumber: 626,
+                                                lineNumber: 625,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/customer/page.tsx",
-                                        lineNumber: 624,
+                                        lineNumber: 623,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/customer/page.tsx",
-                                    lineNumber: 623,
+                                    lineNumber: 622,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/customer/page.tsx",
-                            lineNumber: 555,
+                            lineNumber: 554,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/customer/page.tsx",
-                    lineNumber: 538,
+                    lineNumber: 537,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/customer/page.tsx",
-                lineNumber: 537,
+                lineNumber: 536,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1436,12 +1435,12 @@ function CustomerHome() {
                                         children: "Layanan Mitra"
                                     }, void 0, false, {
                                         fileName: "[project]/app/customer/page.tsx",
-                                        lineNumber: 882,
+                                        lineNumber: 881,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/customer/page.tsx",
-                                    lineNumber: 881,
+                                    lineNumber: 880,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1449,20 +1448,20 @@ function CustomerHome() {
                                     children: "Layanan APJII Data Center"
                                 }, void 0, false, {
                                     fileName: "[project]/app/customer/page.tsx",
-                                    lineNumber: 884,
+                                    lineNumber: 883,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$divider$2f$dist$2f$chunk$2d$IHO36JMK$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__divider_default__as__Divider$3e$__["Divider"], {
                                     className: "max-w-xs mx-auto my-4"
                                 }, void 0, false, {
                                     fileName: "[project]/app/customer/page.tsx",
-                                    lineNumber: 887,
+                                    lineNumber: 886,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/customer/page.tsx",
-                            lineNumber: 874,
+                            lineNumber: 873,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1479,7 +1478,7 @@ function CustomerHome() {
                                     description: "Penyediaan fasilitas data center yang memenuhi standar TIA-942 dan ISO",
                                     icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$hi$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["HiOutlineServer"], {}, void 0, false, {
                                         fileName: "[project]/app/customer/page.tsx",
-                                        lineNumber: 941,
+                                        lineNumber: 940,
                                         columnNumber: 25
                                     }, this)
                                 },
@@ -1488,7 +1487,7 @@ function CustomerHome() {
                                     description: "Layanan koneksi jaringan berkualitas tinggi dengan redundansi",
                                     icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiRefreshCw"], {}, void 0, false, {
                                         fileName: "[project]/app/customer/page.tsx",
-                                        lineNumber: 947,
+                                        lineNumber: 946,
                                         columnNumber: 25
                                     }, this)
                                 },
@@ -1497,7 +1496,7 @@ function CustomerHome() {
                                     description: "Layanan colocation server dan perangkat untuk anggota APJII",
                                     icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$hi$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["HiOutlineDatabase"], {}, void 0, false, {
                                         fileName: "[project]/app/customer/page.tsx",
-                                        lineNumber: 953,
+                                        lineNumber: 952,
                                         columnNumber: 25
                                     }, this)
                                 },
@@ -1506,7 +1505,7 @@ function CustomerHome() {
                                     description: "Layanan dukungan teknis 24/7 untuk memastikan ketersediaan layanan",
                                     icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$bs$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BsChatDots"], {}, void 0, false, {
                                         fileName: "[project]/app/customer/page.tsx",
-                                        lineNumber: 959,
+                                        lineNumber: 958,
                                         columnNumber: 25
                                     }, this)
                                 },
@@ -1515,7 +1514,7 @@ function CustomerHome() {
                                     description: "Sistem keamanan fisik dan digital untuk melindungi aset pelanggan",
                                     icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$fi$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FiShield"], {}, void 0, false, {
                                         fileName: "[project]/app/customer/page.tsx",
-                                        lineNumber: 965,
+                                        lineNumber: 964,
                                         columnNumber: 25
                                     }, this)
                                 },
@@ -1524,7 +1523,7 @@ function CustomerHome() {
                                     description: "Pemantauan performa dan pelaporan layanan secara berkala",
                                     icon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$bs$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BsFileEarmarkText"], {}, void 0, false, {
                                         fileName: "[project]/app/customer/page.tsx",
-                                        lineNumber: 971,
+                                        lineNumber: 970,
                                         columnNumber: 25
                                     }, this)
                                 }
@@ -1542,12 +1541,12 @@ function CustomerHome() {
                                                         children: item.icon
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/customer/page.tsx",
-                                                        lineNumber: 979,
+                                                        lineNumber: 978,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/customer/page.tsx",
-                                                    lineNumber: 978,
+                                                    lineNumber: 977,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1560,58 +1559,58 @@ function CustomerHome() {
                                                                 children: item.service
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/customer/page.tsx",
-                                                                lineNumber: 983,
+                                                                lineNumber: 982,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                className: "text-sm font-norma text-justify text-gray-700 dark:text-gray-300",
+                                                                className: "text-sm font-normal text-justify text-gray-700 dark:text-gray-300",
                                                                 children: item.description
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/customer/page.tsx",
-                                                                lineNumber: 986,
+                                                                lineNumber: 985,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/customer/page.tsx",
-                                                        lineNumber: 982,
+                                                        lineNumber: 981,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/customer/page.tsx",
-                                                    lineNumber: 981,
+                                                    lineNumber: 980,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/customer/page.tsx",
-                                            lineNumber: 977,
+                                            lineNumber: 976,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/customer/page.tsx",
-                                        lineNumber: 976,
+                                        lineNumber: 975,
                                         columnNumber: 17
                                     }, this)
                                 }, index, false, {
                                     fileName: "[project]/app/customer/page.tsx",
-                                    lineNumber: 975,
+                                    lineNumber: 974,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/app/customer/page.tsx",
-                            lineNumber: 890,
+                            lineNumber: 889,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/customer/page.tsx",
-                    lineNumber: 873,
+                    lineNumber: 872,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/customer/page.tsx",
-                lineNumber: 872,
+                lineNumber: 871,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1631,7 +1630,7 @@ function CustomerHome() {
                             children: "Bergabunglah dengan APJII"
                         }, void 0, false, {
                             fileName: "[project]/app/customer/page.tsx",
-                            lineNumber: 1007,
+                            lineNumber: 1006,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].p, {
@@ -1640,7 +1639,7 @@ function CustomerHome() {
                             children: "Dapatkan manfaat keanggotaan dan berkontribusilah dalam pengembangan internet Indonesia"
                         }, void 0, false, {
                             fileName: "[project]/app/customer/page.tsx",
-                            lineNumber: 1014,
+                            lineNumber: 1013,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1657,23 +1656,23 @@ function CustomerHome() {
                                 children: "Hubungi Kami"
                             }, void 0, false, {
                                 fileName: "[project]/app/customer/page.tsx",
-                                lineNumber: 1023,
+                                lineNumber: 1022,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/customer/page.tsx",
-                            lineNumber: 1022,
+                            lineNumber: 1021,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/customer/page.tsx",
-                    lineNumber: 1000,
+                    lineNumber: 999,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/customer/page.tsx",
-                lineNumber: 999,
+                lineNumber: 998,
                 columnNumber: 7
             }, this)
         ]
