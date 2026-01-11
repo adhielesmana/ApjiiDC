@@ -1,5 +1,7 @@
 # APJII DC - Data Center Management System
 
+**Last Updated:** January 11, 2026
+
 ## Overview
 This is a Next.js 15 application for APJII Data Center management. It includes customer, provider, and admin dashboards with authentication, order management, space rental, and more.
 
