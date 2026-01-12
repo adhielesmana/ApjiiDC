@@ -76,13 +76,20 @@ router.post('/login', [
       )
       delete user.password
       delete user._id
+      
+      // Ensure role is included for superadmin check
+      const userResponse = {
+        ...user,
+        role: user.role || ''
+      }
+      
       res.cookie('refreshToken', refreshToken, {
         httpOnly: true,
         path: '/',
       })
       res.json({
         token: `Bearer ${token}`,
-        user,
+        user: userResponse,
       });
     } catch (error) {
       return res.status(500).json({ status: 'error', message: 'Server error', error: error.message });
