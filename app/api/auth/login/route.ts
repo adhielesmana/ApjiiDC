@@ -81,7 +81,7 @@ export async function POST(req: Request) {
   } catch (error: any) {
     const statusCode = error.response?.status || 500;
     const errorMessage =
-      error.response?.data?.message || "Terjadi kesalahan pada server";
+      error.response?.data?.message || "A server error occurred";
     const errorData = error.response?.data;
 
     // Log detailed error for debugging
@@ -98,7 +98,7 @@ export async function POST(req: Request) {
         {
           success: false,
           message:
-            "Akses ditolak. Periksa konfigurasi CORS atau autentikasi di backend.",
+            "Access denied. Please check CORS configuration or backend authentication.",
         },
         { status: 403 }
       );
@@ -108,7 +108,7 @@ export async function POST(req: Request) {
       return NextResponse.json(
         {
           success: false,
-          message: "Username/email atau password tidak valid",
+          message: "Invalid username/email or password",
         },
         { status: 400 }
       );
@@ -119,7 +119,7 @@ export async function POST(req: Request) {
       return NextResponse.json(
         {
           success: false,
-          message: "Username/email atau password salah",
+          message: "Incorrect username/email or password",
         },
         { status: 401 }
       );
