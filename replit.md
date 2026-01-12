@@ -1,6 +1,6 @@
 # APJII DC - Data Center Management System
 
-**Last Updated:** January 11, 2026
+**Last Updated:** January 12, 2026
 
 ## Overview
 This is a full-stack Next.js 15 + Express.js application for APJII Data Center management. It includes customer, provider, and admin dashboards with authentication, order management, space rental, and more.
@@ -80,6 +80,13 @@ Development variables:
 - TypeScript and ESLint errors are ignored during builds
 - Images are unoptimized for compatibility
 - Uses `--legacy-peer-deps` flag for npm install due to HeroUI peer dependency conflicts
+
+## Authentication
+- Uses JWT tokens stored in HttpOnly cookies for security
+- Session persistence: Users remain logged in after page refresh via cookie-based auth restoration
+- The `useAuthData` hook automatically restores auth state from cookies on page load
+- Logout clears both Redux state and HttpOnly cookies via `/api/auth/logout`
+- "Remember me" option sets 30-day cookie expiration
 
 ## Deployment
 - Target: VM (Reserved Machine)

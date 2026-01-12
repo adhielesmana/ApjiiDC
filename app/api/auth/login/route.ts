@@ -52,7 +52,7 @@ export async function POST(req: Request) {
 
     // Set cookie expiration time based on remember option
     const cookieExpires =
-      remember === "true"
+      remember === true || remember === "true"
         ? new Date(Date.now() + 30 * 24 * 60 * 60 * 1000) // 30 days if remember is true
         : undefined; // Session cookie if remember is false
 

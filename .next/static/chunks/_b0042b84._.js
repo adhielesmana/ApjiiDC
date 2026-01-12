@@ -331,36 +331,60 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-redux/dist/react-redux.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$store$2f$auth$2f$authSlice$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/store/auth/authSlice.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/axios/lib/axios.js [app-client] (ecmascript)");
 var _s = __turbopack_context__.k.signature();
+;
+;
 ;
 ;
 const useAuthData = ()=>{
     _s();
-    const { user, token } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSelector"])({
+    const dispatch = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDispatch"])();
+    const { user, token, loading: authLoading } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSelector"])({
         "useAuthData.useSelector": (state)=>state.auth
     }["useAuthData.useSelector"]);
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
+    const hasAttemptedRestore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(false);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "useAuthData.useEffect": ()=>{
-            const checkAuth = {
-                "useAuthData.useEffect.checkAuth": async ()=>{
-                    setLoading(true);
+            const restoreAndCheckAuth = {
+                "useAuthData.useEffect.restoreAndCheckAuth": async ()=>{
+                    if (hasAttemptedRestore.current) {
+                        setLoading(authLoading);
+                        return;
+                    }
+                    hasAttemptedRestore.current = true;
+                    if (user && token) {
+                        setLoading(false);
+                        dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$store$2f$auth$2f$authSlice$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setLoading"])(false));
+                        return;
+                    }
                     try {
-                        if (!user || !token) {
-                            setLoading(false);
-                            return;
+                        const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].get("/api/auth/status");
+                        if (response.data.authenticated && response.data.user && response.data.token) {
+                            dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$store$2f$auth$2f$authSlice$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setCredentials"])({
+                                user: response.data.user,
+                                token: response.data.token
+                            }));
+                        } else {
+                            dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$store$2f$auth$2f$authSlice$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setLoading"])(false));
                         }
                     } catch (error) {
-                        console.error("Auth data check error:", error);
+                        console.error("Auth restore/check error:", error);
+                        dispatch((0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$store$2f$auth$2f$authSlice$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setLoading"])(false));
+                    } finally{
+                        setLoading(false);
                     }
-                    setLoading(false);
                 }
-            }["useAuthData.useEffect.checkAuth"];
-            checkAuth();
+            }["useAuthData.useEffect.restoreAndCheckAuth"];
+            restoreAndCheckAuth();
         }
     }["useAuthData.useEffect"], [
+        dispatch,
         user,
-        token
+        token,
+        authLoading
     ]);
     const isAdmin = (user === null || user === void 0 ? void 0 : user.roleType) === "admin";
     const isAdminStaff = (user === null || user === void 0 ? void 0 : user.roleType) === "admin" && (user === null || user === void 0 ? void 0 : user.role) === "staff";
@@ -378,8 +402,9 @@ const useAuthData = ()=>{
         isAuthenticated: !!user
     };
 };
-_s(useAuthData, "ftxfC3lJmaGsz6KE47yIEVO4jdg=", false, function() {
+_s(useAuthData, "L9XVjPVULHXNgKkxL9l0jsOXtUQ=", false, function() {
     return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useDispatch"],
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$redux$2f$dist$2f$react$2d$redux$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSelector"]
     ];
 });

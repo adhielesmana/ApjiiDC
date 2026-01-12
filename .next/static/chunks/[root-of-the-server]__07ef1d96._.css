@@ -8943,6 +8943,11 @@ img, video {
   background-color: rgba(249, 250, 251, .6);
 }
 
+.hover\:bg-green-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(22, 163, 74, var(--tw-bg-opacity, 1));
+}
+
 .hover\:bg-green-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(21, 128, 61, var(--tw-bg-opacity, 1));
@@ -8993,11 +8998,6 @@ img, video {
 
 .hover\:bg-white\/30:hover {
   background-color: rgba(255, 255, 255, .3);
-}
-
-.hover\:bg-green-600:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgba(22, 163, 74, var(--tw-bg-opacity, 1));
 }
 
 .hover\:text-blue-200:hover {
