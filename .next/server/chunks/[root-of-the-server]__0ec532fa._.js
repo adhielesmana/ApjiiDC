@@ -204,7 +204,7 @@ async function POST(req) {
         return response;
     } catch (error) {
         const statusCode = error.response?.status || 500;
-        const errorMessage = error.response?.data?.message || "Terjadi kesalahan pada server";
+        const errorMessage = error.response?.data?.message || "A server error occurred";
         const errorData = error.response?.data;
         // Log detailed error for debugging
         console.error("Backend login error details:", {
@@ -217,7 +217,7 @@ async function POST(req) {
         if (statusCode === 403) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 success: false,
-                message: "Akses ditolak. Periksa konfigurasi CORS atau autentikasi di backend."
+                message: "Access denied. Please check CORS configuration or backend authentication."
             }, {
                 status: 403
             });
@@ -225,7 +225,7 @@ async function POST(req) {
         if (error.response?.status === 400) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 success: false,
-                message: "Username/email atau password tidak valid"
+                message: "Invalid username/email or password"
             }, {
                 status: 400
             });
@@ -234,7 +234,7 @@ async function POST(req) {
         if (statusCode === 401) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
                 success: false,
-                message: "Username/email atau password salah"
+                message: "Incorrect username/email or password"
             }, {
                 status: 401
             });
