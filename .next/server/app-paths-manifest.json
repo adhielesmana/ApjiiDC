@@ -1,7 +1,18 @@
 {
+  "/admin/dashboard/page": "app/admin/dashboard/page.js",
+  "/admin/setting/page": "app/admin/setting/page.js",
+  "/admin/system-environment/page": "app/admin/system-environment/page.js",
+  "/admin/user-management/page": "app/admin/user-management/page.js",
+  "/api/admin/providers/route": "app/api/admin/providers/route.js",
+  "/api/admin/system-env/route": "app/api/admin/system-env/route.js",
+  "/api/admin/user-management/route": "app/api/admin/user-management/route.js",
   "/api/auth/check/route": "app/api/auth/check/route.js",
+  "/api/auth/login/route": "app/api/auth/login/route.js",
+  "/api/auth/logout/route": "app/api/auth/logout/route.js",
+  "/api/auth/status/route": "app/api/auth/status/route.js",
   "/api/customer/get-datacenter/route": "app/api/customer/get-datacenter/route.js",
   "/api/setting/route": "app/api/setting/route.js",
   "/customer/page": "app/customer/page.js",
+  "/login/page": "app/login/page.js",
   "/page": "app/page.js"
 }
