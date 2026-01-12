@@ -96,6 +96,22 @@ function AdminProvidersPage() {
         province: "",
         pos: ""
     });
+    // Add Provider Modal State
+    const [isAddModalOpen, setIsAddModalOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [isAddSubmitting, setIsAddSubmitting] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [addFormData, setAddFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
+        name: "",
+        description: "",
+        email: "",
+        phone: "",
+        address: "",
+        city: "",
+        province: "",
+        pos: "",
+        adminUsername: "",
+        adminEmail: "",
+        adminPassword: ""
+    });
     // Add state for confirmation dialog
     const [isConfirmDialogOpen, setIsConfirmDialogOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [providerToDeactivate, setProviderToDeactivate] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
@@ -388,6 +404,90 @@ function AdminProvidersPage() {
         const phoneRegex = /^(?:\+62|08)[0-9]{9,13}$/;
         return phoneRegex.test(phone);
     };
+    // Handle add provider form input changes
+    const handleAddInputChange = (e)=>{
+        const { name, value } = e.target;
+        setAddFormData((prev)=>({
+                ...prev,
+                [name]: value
+            }));
+    };
+    // Reset add form when modal closes
+    const handleAddModalClose = ()=>{
+        setAddFormData({
+            name: "",
+            description: "",
+            email: "",
+            phone: "",
+            address: "",
+            city: "",
+            province: "",
+            pos: "",
+            adminUsername: "",
+            adminEmail: "",
+            adminPassword: ""
+        });
+        setIsAddModalOpen(false);
+    };
+    // Handle add provider form submission
+    const handleAddProviderSubmit = async ()=>{
+        setIsAddSubmitting(true);
+        try {
+            if (!addFormData.name.trim()) {
+                throw new Error("Provider name is required");
+            }
+            if (!isValidEmail(addFormData.email)) {
+                throw new Error("Invalid email format");
+            }
+            if (!addFormData.phone.trim()) {
+                throw new Error("Phone number is required");
+            }
+            if (!addFormData.address.trim()) {
+                throw new Error("Address is required");
+            }
+            if (!addFormData.city.trim()) {
+                throw new Error("City is required");
+            }
+            if (!addFormData.province.trim()) {
+                throw new Error("Province is required");
+            }
+            if (!addFormData.pos.trim()) {
+                throw new Error("Postal code is required");
+            }
+            if (addFormData.adminUsername || addFormData.adminEmail || addFormData.adminPassword) {
+                if (!addFormData.adminUsername.trim()) {
+                    throw new Error("Admin username is required when creating admin account");
+                }
+                if (!isValidEmail(addFormData.adminEmail)) {
+                    throw new Error("Invalid admin email format");
+                }
+                if (addFormData.adminPassword.length < 6) {
+                    throw new Error("Admin password must be at least 6 characters");
+                }
+            }
+            const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].post("/api/admin/providers/create", addFormData);
+            if (response.data.status === "ok") {
+                (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$toast$2f$dist$2f$chunk$2d$ZPZBECKL$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["addToast"])({
+                    title: "Success",
+                    color: "success",
+                    description: "Provider registered successfully"
+                });
+                handleAddModalClose();
+                fetchProviders();
+            } else {
+                throw new Error(response.data.message || "Failed to create provider");
+            }
+        } catch (error) {
+            console.error("Error creating provider:", error);
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$toast$2f$dist$2f$chunk$2d$ZPZBECKL$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["addToast"])({
+                title: "Error",
+                color: "danger",
+                description: error.message || "Failed to create provider"
+            });
+        } finally{
+            setIsAddSubmitting(false);
+        }
+    };
     // Modify to show confirmation dialog first
     const showDeactivateConfirmation = (provider)=>{
         setProviderToDeactivate({
@@ -475,7 +575,7 @@ function AdminProvidersPage() {
                             children: "Partners"
                         }, void 0, false, {
                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                            lineNumber: 569,
+                            lineNumber: 679,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -483,47 +583,85 @@ function AdminProvidersPage() {
                             children: "Manage partner activation requests. Review and approve partner applications to join the platform."
                         }, void 0, false, {
                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                            lineNumber: 570,
+                            lineNumber: 680,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$button$2f$dist$2f$chunk$2d$KCYYJJH4$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__button_default__as__Button$3e$__["Button"], {
-                            color: "default",
-                            className: "bg-white text-blue-700 font-medium px-6 py-3 rounded-xl hover:bg-blue-50 flex items-center gap-2 shadow-md transition-transform hover:scale-[1.02] active:scale-[0.98]",
-                            onPress: fetchProviders,
-                            startContent: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                xmlns: "http://www.w3.org/2000/svg",
-                                className: "h-5 w-5",
-                                viewBox: "0 0 20 20",
-                                fill: "currentColor",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                    fillRule: "evenodd",
-                                    d: "M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z",
-                                    clipRule: "evenodd"
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex gap-3",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$button$2f$dist$2f$chunk$2d$KCYYJJH4$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__button_default__as__Button$3e$__["Button"], {
+                                    color: "default",
+                                    className: "bg-white text-blue-700 font-medium px-6 py-3 rounded-xl hover:bg-blue-50 flex items-center gap-2 shadow-md transition-transform hover:scale-[1.02] active:scale-[0.98]",
+                                    onPress: fetchProviders,
+                                    startContent: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                        xmlns: "http://www.w3.org/2000/svg",
+                                        className: "h-5 w-5",
+                                        viewBox: "0 0 20 20",
+                                        fill: "currentColor",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                            fillRule: "evenodd",
+                                            d: "M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z",
+                                            clipRule: "evenodd"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/admin/provider-request/page.tsx",
+                                            lineNumber: 697,
+                                            columnNumber: 19
+                                        }, void 0)
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/admin/provider-request/page.tsx",
+                                        lineNumber: 691,
+                                        columnNumber: 17
+                                    }, void 0),
+                                    children: "Refresh"
                                 }, void 0, false, {
                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                    lineNumber: 586,
-                                    columnNumber: 17
-                                }, void 0)
-                            }, void 0, false, {
-                                fileName: "[project]/app/admin/provider-request/page.tsx",
-                                lineNumber: 580,
-                                columnNumber: 15
-                            }, void 0),
-                            children: "Refresh Partners"
-                        }, void 0, false, {
+                                    lineNumber: 686,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$button$2f$dist$2f$chunk$2d$KCYYJJH4$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__button_default__as__Button$3e$__["Button"], {
+                                    color: "default",
+                                    className: "bg-green-500 text-white font-medium px-6 py-3 rounded-xl hover:bg-green-600 flex items-center gap-2 shadow-md transition-transform hover:scale-[1.02] active:scale-[0.98]",
+                                    onPress: ()=>setIsAddModalOpen(true),
+                                    startContent: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                        xmlns: "http://www.w3.org/2000/svg",
+                                        className: "h-5 w-5",
+                                        viewBox: "0 0 20 20",
+                                        fill: "currentColor",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                            fillRule: "evenodd",
+                                            d: "M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z",
+                                            clipRule: "evenodd"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/admin/provider-request/page.tsx",
+                                            lineNumber: 718,
+                                            columnNumber: 19
+                                        }, void 0)
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/admin/provider-request/page.tsx",
+                                        lineNumber: 712,
+                                        columnNumber: 17
+                                    }, void 0),
+                                    children: "Register New Partner"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/admin/provider-request/page.tsx",
+                                    lineNumber: 707,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                            lineNumber: 575,
+                            lineNumber: 685,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                    lineNumber: 568,
+                    lineNumber: 678,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                lineNumber: 567,
+                lineNumber: 677,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -548,7 +686,7 @@ function AdminProvidersPage() {
                                             children: "All Partners"
                                         }, void 0, false, {
                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                            lineNumber: 615,
+                                            lineNumber: 748,
                                             columnNumber: 17
                                         }, void 0),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$chip$2f$dist$2f$chunk$2d$EIRINNCE$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__chip_default__as__Chip$3e$__["Chip"], {
@@ -562,18 +700,18 @@ function AdminProvidersPage() {
                                             children: statusCounts.all
                                         }, void 0, false, {
                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                            lineNumber: 616,
+                                            lineNumber: 749,
                                             columnNumber: 17
                                         }, void 0)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                    lineNumber: 614,
+                                    lineNumber: 747,
                                     columnNumber: 15
                                 }, void 0)
                             }, "all", false, {
                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                lineNumber: 611,
+                                lineNumber: 744,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$tabs$2f$dist$2f$chunk$2d$ML27DD5T$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__tab_item_base_default__as__Tab$3e$__["Tab"], {
@@ -584,7 +722,7 @@ function AdminProvidersPage() {
                                             children: "Active"
                                         }, void 0, false, {
                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                            lineNumber: 634,
+                                            lineNumber: 767,
                                             columnNumber: 17
                                         }, void 0),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$chip$2f$dist$2f$chunk$2d$EIRINNCE$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__chip_default__as__Chip$3e$__["Chip"], {
@@ -598,18 +736,18 @@ function AdminProvidersPage() {
                                             children: statusCounts.active
                                         }, void 0, false, {
                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                            lineNumber: 635,
+                                            lineNumber: 768,
                                             columnNumber: 17
                                         }, void 0)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                    lineNumber: 633,
+                                    lineNumber: 766,
                                     columnNumber: 15
                                 }, void 0)
                             }, "active", false, {
                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                lineNumber: 630,
+                                lineNumber: 763,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$tabs$2f$dist$2f$chunk$2d$ML27DD5T$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__tab_item_base_default__as__Tab$3e$__["Tab"], {
@@ -620,7 +758,7 @@ function AdminProvidersPage() {
                                             children: "Requests"
                                         }, void 0, false, {
                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                            lineNumber: 653,
+                                            lineNumber: 786,
                                             columnNumber: 17
                                         }, void 0),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$chip$2f$dist$2f$chunk$2d$EIRINNCE$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__chip_default__as__Chip$3e$__["Chip"], {
@@ -634,24 +772,24 @@ function AdminProvidersPage() {
                                             children: statusCounts.inactive
                                         }, void 0, false, {
                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                            lineNumber: 654,
+                                            lineNumber: 787,
                                             columnNumber: 17
                                         }, void 0)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                    lineNumber: 652,
+                                    lineNumber: 785,
                                     columnNumber: 15
                                 }, void 0)
                             }, "inactive", false, {
                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                lineNumber: 649,
+                                lineNumber: 782,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                        lineNumber: 600,
+                        lineNumber: 733,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -675,28 +813,28 @@ function AdminProvidersPage() {
                                     d: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                                 }, void 0, false, {
                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                    lineNumber: 685,
+                                    lineNumber: 818,
                                     columnNumber: 17
                                 }, void 0)
                             }, void 0, false, {
                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                lineNumber: 678,
+                                lineNumber: 811,
                                 columnNumber: 15
                             }, void 0)
                         }, void 0, false, {
                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                            lineNumber: 671,
+                            lineNumber: 804,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                        lineNumber: 670,
+                        lineNumber: 803,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                lineNumber: 599,
+                lineNumber: 732,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -714,7 +852,7 @@ function AdminProvidersPage() {
                                         className: "h-6 w-1/3 rounded mb-4"
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                        lineNumber: 707,
+                                        lineNumber: 840,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -726,20 +864,20 @@ function AdminProvidersPage() {
                                                         className: "h-4 w-3/4 rounded mb-2"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                        lineNumber: 710,
+                                                        lineNumber: 843,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$skeleton$2f$dist$2f$chunk$2d$P7ACKWSP$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__skeleton_default__as__Skeleton$3e$__["Skeleton"], {
                                                         className: "h-4 w-1/2 rounded"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                        lineNumber: 711,
+                                                        lineNumber: 844,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                lineNumber: 709,
+                                                lineNumber: 842,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -748,20 +886,20 @@ function AdminProvidersPage() {
                                                         className: "h-4 w-3/4 rounded mb-2"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                        lineNumber: 714,
+                                                        lineNumber: 847,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$skeleton$2f$dist$2f$chunk$2d$P7ACKWSP$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__skeleton_default__as__Skeleton$3e$__["Skeleton"], {
                                                         className: "h-4 w-1/2 rounded"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                        lineNumber: 715,
+                                                        lineNumber: 848,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                lineNumber: 713,
+                                                lineNumber: 846,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -770,42 +908,42 @@ function AdminProvidersPage() {
                                                         className: "h-4 w-3/4 rounded mb-2"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                        lineNumber: 718,
+                                                        lineNumber: 851,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$skeleton$2f$dist$2f$chunk$2d$P7ACKWSP$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__skeleton_default__as__Skeleton$3e$__["Skeleton"], {
                                                         className: "h-4 w-1/2 rounded"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                        lineNumber: 719,
+                                                        lineNumber: 852,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                lineNumber: 717,
+                                                lineNumber: 850,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                        lineNumber: 708,
+                                        lineNumber: 841,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                lineNumber: 706,
+                                lineNumber: 839,
                                 columnNumber: 17
                             }, this)
                         }, i, false, {
                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                            lineNumber: 702,
+                            lineNumber: 835,
                             columnNumber: 15
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                    lineNumber: 700,
+                    lineNumber: 833,
                     columnNumber: 11
                 }, this) : filteredProviders.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$card$2f$dist$2f$chunk$2d$QNLCCAKT$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__card_default__as__Card$3e$__["Card"], {
                     className: "border-0 shadow-md rounded-xl overflow-hidden",
@@ -829,17 +967,17 @@ function AdminProvidersPage() {
                                             d: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
                                         }, void 0, false, {
                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                            lineNumber: 738,
+                                            lineNumber: 871,
                                             columnNumber: 21
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                        lineNumber: 731,
+                                        lineNumber: 864,
                                         columnNumber: 19
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                    lineNumber: 730,
+                                    lineNumber: 863,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -847,7 +985,7 @@ function AdminProvidersPage() {
                                     children: "No Partners Found"
                                 }, void 0, false, {
                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                    lineNumber: 746,
+                                    lineNumber: 879,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -855,23 +993,23 @@ function AdminProvidersPage() {
                                     children: "No partners matching your criteria were found. Try adjusting your filters or check back later."
                                 }, void 0, false, {
                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                    lineNumber: 749,
+                                    lineNumber: 882,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                            lineNumber: 729,
+                            lineNumber: 862,
                             columnNumber: 15
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                        lineNumber: 728,
+                        lineNumber: 861,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                    lineNumber: 727,
+                    lineNumber: 860,
                     columnNumber: 11
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$card$2f$dist$2f$chunk$2d$QNLCCAKT$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__card_default__as__Card$3e$__["Card"], {
                     className: "border-0 shadow-md rounded-xl overflow-hidden",
@@ -898,7 +1036,7 @@ function AdminProvidersPage() {
                                                 children: "PARTNER NAME"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                lineNumber: 773,
+                                                lineNumber: 906,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$table$2f$dist$2f$chunk$2d$TSPNSPCL$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__table_column_default__as__TableColumn$3e$__["TableColumn"], {
@@ -906,7 +1044,7 @@ function AdminProvidersPage() {
                                                 children: "CONTACT INFO"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                lineNumber: 774,
+                                                lineNumber: 907,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$table$2f$dist$2f$chunk$2d$TSPNSPCL$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__table_column_default__as__TableColumn$3e$__["TableColumn"], {
@@ -914,7 +1052,7 @@ function AdminProvidersPage() {
                                                 children: "LOCATION"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                lineNumber: 775,
+                                                lineNumber: 908,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$table$2f$dist$2f$chunk$2d$TSPNSPCL$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__table_column_default__as__TableColumn$3e$__["TableColumn"], {
@@ -922,7 +1060,7 @@ function AdminProvidersPage() {
                                                 children: "DESCRIPTION"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                lineNumber: 776,
+                                                lineNumber: 909,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$table$2f$dist$2f$chunk$2d$TSPNSPCL$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__table_column_default__as__TableColumn$3e$__["TableColumn"], {
@@ -930,7 +1068,7 @@ function AdminProvidersPage() {
                                                 children: "STATUS"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                lineNumber: 777,
+                                                lineNumber: 910,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$table$2f$dist$2f$chunk$2d$TSPNSPCL$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__table_column_default__as__TableColumn$3e$__["TableColumn"], {
@@ -939,13 +1077,13 @@ function AdminProvidersPage() {
                                                 children: "ACTIONS"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                lineNumber: 778,
+                                                lineNumber: 911,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                        lineNumber: 772,
+                                        lineNumber: 905,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$table$2f$dist$2f$chunk$2d$FKPXBCGS$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__table_body_default__as__TableBody$3e$__["TableBody"], {
@@ -958,12 +1096,12 @@ function AdminProvidersPage() {
                                                             children: provider.name
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                            lineNumber: 787,
+                                                            lineNumber: 920,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                        lineNumber: 786,
+                                                        lineNumber: 919,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$table$2f$dist$2f$chunk$2d$F3UDT23P$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__table_cell_default__as__TableCell$3e$__["TableCell"], {
@@ -986,25 +1124,25 @@ function AdminProvidersPage() {
                                                                                 d: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                                                lineNumber: 801,
+                                                                                lineNumber: 934,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                                            lineNumber: 794,
+                                                                            lineNumber: 927,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                             children: provider.contact.email
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                                            lineNumber: 808,
+                                                                            lineNumber: 941,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                                    lineNumber: 793,
+                                                                    lineNumber: 926,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1023,36 +1161,36 @@ function AdminProvidersPage() {
                                                                                 d: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                                                lineNumber: 818,
+                                                                                lineNumber: 951,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                                            lineNumber: 811,
+                                                                            lineNumber: 944,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                             children: provider.contact.phone
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                                            lineNumber: 825,
+                                                                            lineNumber: 958,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                                    lineNumber: 810,
+                                                                    lineNumber: 943,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                            lineNumber: 792,
+                                                            lineNumber: 925,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                        lineNumber: 791,
+                                                        lineNumber: 924,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$table$2f$dist$2f$chunk$2d$F3UDT23P$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__table_cell_default__as__TableCell$3e$__["TableCell"], {
@@ -1073,7 +1211,7 @@ function AdminProvidersPage() {
                                                                             d: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                                            lineNumber: 838,
+                                                                            lineNumber: 971,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -1083,31 +1221,31 @@ function AdminProvidersPage() {
                                                                             d: "M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                                            lineNumber: 844,
+                                                                            lineNumber: 977,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                                    lineNumber: 831,
+                                                                    lineNumber: 964,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     children: provider.address
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                                    lineNumber: 851,
+                                                                    lineNumber: 984,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                            lineNumber: 830,
+                                                            lineNumber: 963,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                        lineNumber: 829,
+                                                        lineNumber: 962,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$table$2f$dist$2f$chunk$2d$F3UDT23P$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__table_cell_default__as__TableCell$3e$__["TableCell"], {
@@ -1116,12 +1254,12 @@ function AdminProvidersPage() {
                                                             children: provider.description
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                            lineNumber: 855,
+                                                            lineNumber: 988,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                        lineNumber: 854,
+                                                        lineNumber: 987,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$table$2f$dist$2f$chunk$2d$F3UDT23P$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__table_cell_default__as__TableCell$3e$__["TableCell"], {
@@ -1138,17 +1276,17 @@ function AdminProvidersPage() {
                                                                 children: provider.status === "granted" ? "Approved" : provider.status === "in review" ? "Pending Review" : "Unknown"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                                lineNumber: 862,
+                                                                lineNumber: 995,
                                                                 columnNumber: 27
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                            lineNumber: 860,
+                                                            lineNumber: 993,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                        lineNumber: 859,
+                                                        lineNumber: 992,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$table$2f$dist$2f$chunk$2d$F3UDT23P$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__table_cell_default__as__TableCell$3e$__["TableCell"], {
@@ -1173,18 +1311,18 @@ function AdminProvidersPage() {
                                                                             clipRule: "evenodd"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                                            lineNumber: 901,
+                                                                            lineNumber: 1034,
                                                                             columnNumber: 37
                                                                         }, void 0)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                                        lineNumber: 895,
+                                                                        lineNumber: 1028,
                                                                         columnNumber: 35
                                                                     }, void 0),
                                                                     children: activatingProvider === provider._id ? "Activating..." : "Initial Activate"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                                    lineNumber: 884,
+                                                                    lineNumber: 1017,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 provider.status === "granted" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -1204,18 +1342,18 @@ function AdminProvidersPage() {
                                                                                     d: "M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                                                    lineNumber: 933,
+                                                                                    lineNumber: 1066,
                                                                                     columnNumber: 37
                                                                                 }, void 0)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                                                lineNumber: 927,
+                                                                                lineNumber: 1060,
                                                                                 columnNumber: 35
                                                                             }, void 0),
                                                                             children: "Edit"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                                            lineNumber: 920,
+                                                                            lineNumber: 1053,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$button$2f$dist$2f$chunk$2d$KCYYJJH4$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__button_default__as__Button$3e$__["Button"], {
@@ -1237,7 +1375,7 @@ function AdminProvidersPage() {
                                                                                     clipRule: "evenodd"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                                                    lineNumber: 970,
+                                                                                    lineNumber: 1103,
                                                                                     columnNumber: 41
                                                                                 }, void 0) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                                                                     fillRule: "evenodd",
@@ -1245,18 +1383,18 @@ function AdminProvidersPage() {
                                                                                     clipRule: "evenodd"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                                                    lineNumber: 976,
+                                                                                    lineNumber: 1109,
                                                                                     columnNumber: 41
                                                                                 }, void 0)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                                                lineNumber: 963,
+                                                                                lineNumber: 1096,
                                                                                 columnNumber: 37
                                                                             }, void 0),
                                                                             children: deactivatingProvider === provider._id ? "Processing..." : provider._isActive ? "Deactivate" : "Activate"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                                            lineNumber: 941,
+                                                                            lineNumber: 1074,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     ]
@@ -1264,29 +1402,29 @@ function AdminProvidersPage() {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                            lineNumber: 881,
+                                                            lineNumber: 1014,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                        lineNumber: 880,
+                                                        lineNumber: 1013,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, provider._id, true, {
                                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                lineNumber: 785,
+                                                lineNumber: 918,
                                                 columnNumber: 21
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                        lineNumber: 782,
+                                        lineNumber: 915,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                lineNumber: 759,
+                                lineNumber: 892,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1302,7 +1440,7 @@ function AdminProvidersPage() {
                                                 children: providers.length > 0 ? (parseInt(paginationData.page) - 1) * paginationData.limit + 1 : 0
                                             }, void 0, false, {
                                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                lineNumber: 1005,
+                                                lineNumber: 1138,
                                                 columnNumber: 19
                                             }, this),
                                             " - ",
@@ -1311,7 +1449,7 @@ function AdminProvidersPage() {
                                                 children: Math.min(parseInt(paginationData.page) * paginationData.limit, paginationData.total)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                lineNumber: 1013,
+                                                lineNumber: 1146,
                                                 columnNumber: 19
                                             }, this),
                                             " of ",
@@ -1320,7 +1458,7 @@ function AdminProvidersPage() {
                                                 children: paginationData.total
                                             }, void 0, false, {
                                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                lineNumber: 1020,
+                                                lineNumber: 1153,
                                                 columnNumber: 19
                                             }, this),
                                             " ",
@@ -1328,7 +1466,7 @@ function AdminProvidersPage() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                        lineNumber: 1003,
+                                        lineNumber: 1136,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1346,12 +1484,12 @@ function AdminProvidersPage() {
                                             }
                                         }, void 0, false, {
                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                            lineNumber: 1027,
+                                            lineNumber: 1160,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                        lineNumber: 1026,
+                                        lineNumber: 1159,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1371,68 +1509,68 @@ function AdminProvidersPage() {
                                                     children: "5"
                                                 }, "5", false, {
                                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                    lineNumber: 1053,
+                                                    lineNumber: 1186,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$select$2f$node_modules$2f40$heroui$2f$listbox$2f$dist$2f$chunk$2d$BJFJ4DRR$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__listbox_item_base_default__as__SelectItem$3e$__["SelectItem"], {
                                                     children: "10"
                                                 }, "10", false, {
                                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                    lineNumber: 1054,
+                                                    lineNumber: 1187,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$select$2f$node_modules$2f40$heroui$2f$listbox$2f$dist$2f$chunk$2d$BJFJ4DRR$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__listbox_item_base_default__as__SelectItem$3e$__["SelectItem"], {
                                                     children: "15"
                                                 }, "15", false, {
                                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                    lineNumber: 1055,
+                                                    lineNumber: 1188,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$select$2f$node_modules$2f40$heroui$2f$listbox$2f$dist$2f$chunk$2d$BJFJ4DRR$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__listbox_item_base_default__as__SelectItem$3e$__["SelectItem"], {
                                                     children: "20"
                                                 }, "20", false, {
                                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                    lineNumber: 1056,
+                                                    lineNumber: 1189,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$select$2f$node_modules$2f40$heroui$2f$listbox$2f$dist$2f$chunk$2d$BJFJ4DRR$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__listbox_item_base_default__as__SelectItem$3e$__["SelectItem"], {
                                                     children: "25"
                                                 }, "25", false, {
                                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                    lineNumber: 1057,
+                                                    lineNumber: 1190,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                            lineNumber: 1042,
+                                            lineNumber: 1175,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                        lineNumber: 1041,
+                                        lineNumber: 1174,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                lineNumber: 1002,
+                                lineNumber: 1135,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                        lineNumber: 758,
+                        lineNumber: 891,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                    lineNumber: 757,
+                    lineNumber: 890,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                lineNumber: 697,
+                lineNumber: 830,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$modal$2f$dist$2f$chunk$2d$TW2E3XVA$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_default__as__Modal$3e$__["Modal"], {
@@ -1452,7 +1590,7 @@ function AdminProvidersPage() {
                                     children: "Edit Partner"
                                 }, void 0, false, {
                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                    lineNumber: 1077,
+                                    lineNumber: 1210,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1460,13 +1598,13 @@ function AdminProvidersPage() {
                                     children: "Update partner information and details."
                                 }, void 0, false, {
                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                    lineNumber: 1078,
+                                    lineNumber: 1211,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                            lineNumber: 1076,
+                            lineNumber: 1209,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$modal$2f$dist$2f$chunk$2d$HNQZEMGR$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_body_default__as__ModalBody$3e$__["ModalBody"], {
@@ -1486,12 +1624,12 @@ function AdminProvidersPage() {
                                             labelPlacement: "outside"
                                         }, void 0, false, {
                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                            lineNumber: 1086,
+                                            lineNumber: 1219,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                        lineNumber: 1085,
+                                        lineNumber: 1218,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1502,7 +1640,7 @@ function AdminProvidersPage() {
                                                 children: "Logo Partner"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                lineNumber: 1100,
+                                                lineNumber: 1233,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1519,12 +1657,12 @@ function AdminProvidersPage() {
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                            lineNumber: 1107,
+                                                            lineNumber: 1240,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                        lineNumber: 1106,
+                                                        lineNumber: 1239,
                                                         columnNumber: 21
                                                     }, this),
                                                     isLogoLoading && !logoPreview && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1533,12 +1671,12 @@ function AdminProvidersPage() {
                                                             className: "w-32 h-32 rounded-lg"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                            lineNumber: 1119,
+                                                            lineNumber: 1252,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                        lineNumber: 1118,
+                                                        lineNumber: 1251,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1548,7 +1686,7 @@ function AdminProvidersPage() {
                                                         className: "block w-full text-sm text-gray-500 file:mr-4 file:py-3 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100  cursor-pointer"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                        lineNumber: 1123,
+                                                        lineNumber: 1256,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1556,19 +1694,19 @@ function AdminProvidersPage() {
                                                         children: "Upload a new logo (format JPG/PNG, max 2MB) or keep existing"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                        lineNumber: 1135,
+                                                        lineNumber: 1268,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                lineNumber: 1103,
+                                                lineNumber: 1236,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                        lineNumber: 1099,
+                                        lineNumber: 1232,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1584,12 +1722,12 @@ function AdminProvidersPage() {
                                             labelPlacement: "outside"
                                         }, void 0, false, {
                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                            lineNumber: 1142,
+                                            lineNumber: 1275,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                        lineNumber: 1141,
+                                        lineNumber: 1274,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1605,12 +1743,12 @@ function AdminProvidersPage() {
                                             labelPlacement: "outside"
                                         }, void 0, false, {
                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                            lineNumber: 1155,
+                                            lineNumber: 1288,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                        lineNumber: 1154,
+                                        lineNumber: 1287,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1625,12 +1763,12 @@ function AdminProvidersPage() {
                                             labelPlacement: "outside"
                                         }, void 0, false, {
                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                            lineNumber: 1169,
+                                            lineNumber: 1302,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                        lineNumber: 1168,
+                                        lineNumber: 1301,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1644,12 +1782,12 @@ function AdminProvidersPage() {
                                             labelPlacement: "outside"
                                         }, void 0, false, {
                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                            lineNumber: 1182,
+                                            lineNumber: 1315,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                        lineNumber: 1181,
+                                        lineNumber: 1314,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1663,12 +1801,12 @@ function AdminProvidersPage() {
                                             labelPlacement: "outside"
                                         }, void 0, false, {
                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                            lineNumber: 1194,
+                                            lineNumber: 1327,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                        lineNumber: 1193,
+                                        lineNumber: 1326,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1682,12 +1820,12 @@ function AdminProvidersPage() {
                                             labelPlacement: "outside"
                                         }, void 0, false, {
                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                            lineNumber: 1206,
+                                            lineNumber: 1339,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                        lineNumber: 1205,
+                                        lineNumber: 1338,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1702,23 +1840,23 @@ function AdminProvidersPage() {
                                             labelPlacement: "outside"
                                         }, void 0, false, {
                                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                                            lineNumber: 1218,
+                                            lineNumber: 1351,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                        lineNumber: 1217,
+                                        lineNumber: 1350,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                lineNumber: 1084,
+                                lineNumber: 1217,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                            lineNumber: 1083,
+                            lineNumber: 1216,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$modal$2f$dist$2f$chunk$2d$5LXTSPS7$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_footer_default__as__ModalFooter$3e$__["ModalFooter"], {
@@ -1730,7 +1868,7 @@ function AdminProvidersPage() {
                                     children: "Cancel"
                                 }, void 0, false, {
                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                    lineNumber: 1232,
+                                    lineNumber: 1365,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$button$2f$dist$2f$chunk$2d$KCYYJJH4$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__button_default__as__Button$3e$__["Button"], {
@@ -1741,24 +1879,24 @@ function AdminProvidersPage() {
                                     children: "Update Partner"
                                 }, void 0, false, {
                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                    lineNumber: 1239,
+                                    lineNumber: 1372,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                            lineNumber: 1231,
+                            lineNumber: 1364,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                    lineNumber: 1075,
+                    lineNumber: 1208,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                lineNumber: 1067,
+                lineNumber: 1200,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$modal$2f$dist$2f$chunk$2d$TW2E3XVA$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_default__as__Modal$3e$__["Modal"], {
@@ -1776,12 +1914,12 @@ function AdminProvidersPage() {
                                 children: (providerToDeactivate === null || providerToDeactivate === void 0 ? void 0 : providerToDeactivate.isActive) ? "Deactivate Provider" : providerToDeactivate ? "Activate Provider" : "Initial Activation"
                             }, void 0, false, {
                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                lineNumber: 1261,
+                                lineNumber: 1394,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                            lineNumber: 1260,
+                            lineNumber: 1393,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$modal$2f$dist$2f$chunk$2d$HNQZEMGR$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_body_default__as__ModalBody$3e$__["ModalBody"], {
@@ -1797,14 +1935,14 @@ function AdminProvidersPage() {
                                                 children: providerToDeactivate === null || providerToDeactivate === void 0 ? void 0 : providerToDeactivate.name
                                             }, void 0, false, {
                                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                lineNumber: 1274,
+                                                lineNumber: 1407,
                                                 columnNumber: 19
                                             }, this),
                                             "?"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                        lineNumber: 1272,
+                                        lineNumber: 1405,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1812,13 +1950,13 @@ function AdminProvidersPage() {
                                         children: "Deactivated providers will not be able to access the system or provide services."
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                        lineNumber: 1279,
+                                        lineNumber: 1412,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                lineNumber: 1271,
+                                lineNumber: 1404,
                                 columnNumber: 15
                             }, this) : providerToDeactivate ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "py-2",
@@ -1832,14 +1970,14 @@ function AdminProvidersPage() {
                                                 children: providerToDeactivate === null || providerToDeactivate === void 0 ? void 0 : providerToDeactivate.name
                                             }, void 0, false, {
                                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                lineNumber: 1288,
+                                                lineNumber: 1421,
                                                 columnNumber: 19
                                             }, this),
                                             "?"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                        lineNumber: 1286,
+                                        lineNumber: 1419,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1847,13 +1985,13 @@ function AdminProvidersPage() {
                                         children: "Activated providers will be able to access the system and provide services."
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                        lineNumber: 1293,
+                                        lineNumber: 1426,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                lineNumber: 1285,
+                                lineNumber: 1418,
                                 columnNumber: 15
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "py-2",
@@ -1867,14 +2005,14 @@ function AdminProvidersPage() {
                                                 children: providerToActivate === null || providerToActivate === void 0 ? void 0 : providerToActivate.name
                                             }, void 0, false, {
                                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                                lineNumber: 1302,
+                                                lineNumber: 1435,
                                                 columnNumber: 19
                                             }, this),
                                             "?"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                        lineNumber: 1300,
+                                        lineNumber: 1433,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1882,18 +2020,18 @@ function AdminProvidersPage() {
                                         children: "This provider will be approved and able to access the system and provide services."
                                     }, void 0, false, {
                                         fileName: "[project]/app/admin/provider-request/page.tsx",
-                                        lineNumber: 1307,
+                                        lineNumber: 1440,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                                lineNumber: 1299,
+                                lineNumber: 1432,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                            lineNumber: 1269,
+                            lineNumber: 1402,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$modal$2f$dist$2f$chunk$2d$5LXTSPS7$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_footer_default__as__ModalFooter$3e$__["ModalFooter"], {
@@ -1905,7 +2043,7 @@ function AdminProvidersPage() {
                                     children: "Cancel"
                                 }, void 0, false, {
                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                    lineNumber: 1315,
+                                    lineNumber: 1448,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$button$2f$dist$2f$chunk$2d$KCYYJJH4$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__button_default__as__Button$3e$__["Button"], {
@@ -1923,34 +2061,351 @@ function AdminProvidersPage() {
                                     children: (providerToDeactivate === null || providerToDeactivate === void 0 ? void 0 : providerToDeactivate.isActive) ? "Yes, Deactivate" : providerToDeactivate ? "Yes, Activate" : "Yes, Grant Access"
                                 }, void 0, false, {
                                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                                    lineNumber: 1322,
+                                    lineNumber: 1455,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/admin/provider-request/page.tsx",
-                            lineNumber: 1314,
+                            lineNumber: 1447,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/admin/provider-request/page.tsx",
-                    lineNumber: 1259,
+                    lineNumber: 1392,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/admin/provider-request/page.tsx",
-                lineNumber: 1252,
+                lineNumber: 1385,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$modal$2f$dist$2f$chunk$2d$TW2E3XVA$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_default__as__Modal$3e$__["Modal"], {
+                isOpen: isAddModalOpen,
+                onOpenChange: (isOpen)=>{
+                    if (!isOpen) handleAddModalClose();
+                },
+                scrollBehavior: "inside",
+                size: "3xl",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$modal$2f$dist$2f$chunk$2d$NWAOTABO$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_content_default__as__ModalContent$3e$__["ModalContent"], {
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$modal$2f$dist$2f$chunk$2d$R7OT77UN$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_header_default__as__ModalHeader$3e$__["ModalHeader"], {
+                            className: "flex flex-col gap-1",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                    className: "text-xl font-bold",
+                                    children: "Register New Partner"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/admin/provider-request/page.tsx",
+                                    lineNumber: 1496,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-sm text-gray-500",
+                                    children: "Add a new data center partner to the platform."
+                                }, void 0, false, {
+                                    fileName: "[project]/app/admin/provider-request/page.tsx",
+                                    lineNumber: 1497,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/app/admin/provider-request/page.tsx",
+                            lineNumber: 1495,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$modal$2f$dist$2f$chunk$2d$HNQZEMGR$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_body_default__as__ModalBody$3e$__["ModalBody"], {
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "space-y-6",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                className: "text-md font-semibold text-gray-700 mb-3",
+                                                children: "Partner Information"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/admin/provider-request/page.tsx",
+                                                lineNumber: 1505,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "grid grid-cols-1 md:grid-cols-2 gap-4",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$input$2f$dist$2f$chunk$2d$SQIAVXJX$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__input_default__as__Input$3e$__["Input"], {
+                                                        label: "Partner Name",
+                                                        name: "name",
+                                                        value: addFormData.name,
+                                                        onChange: handleAddInputChange,
+                                                        placeholder: "Enter partner/company name",
+                                                        isRequired: true,
+                                                        variant: "bordered",
+                                                        labelPlacement: "outside"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/admin/provider-request/page.tsx",
+                                                        lineNumber: 1507,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$input$2f$dist$2f$chunk$2d$SQIAVXJX$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__input_default__as__Input$3e$__["Input"], {
+                                                        label: "Email",
+                                                        name: "email",
+                                                        type: "email",
+                                                        value: addFormData.email,
+                                                        onChange: handleAddInputChange,
+                                                        placeholder: "contact@company.com",
+                                                        isRequired: true,
+                                                        variant: "bordered",
+                                                        labelPlacement: "outside"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/admin/provider-request/page.tsx",
+                                                        lineNumber: 1517,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$input$2f$dist$2f$chunk$2d$SQIAVXJX$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__input_default__as__Input$3e$__["Input"], {
+                                                        label: "Phone",
+                                                        name: "phone",
+                                                        value: addFormData.phone,
+                                                        onChange: handleAddInputChange,
+                                                        placeholder: "08xxxxxxxxxx",
+                                                        isRequired: true,
+                                                        variant: "bordered",
+                                                        labelPlacement: "outside"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/admin/provider-request/page.tsx",
+                                                        lineNumber: 1528,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$input$2f$dist$2f$chunk$2d$SQIAVXJX$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__input_default__as__Input$3e$__["Input"], {
+                                                        label: "Province",
+                                                        name: "province",
+                                                        value: addFormData.province,
+                                                        onChange: handleAddInputChange,
+                                                        placeholder: "Enter province",
+                                                        isRequired: true,
+                                                        variant: "bordered",
+                                                        labelPlacement: "outside"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/admin/provider-request/page.tsx",
+                                                        lineNumber: 1538,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$input$2f$dist$2f$chunk$2d$SQIAVXJX$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__input_default__as__Input$3e$__["Input"], {
+                                                        label: "City",
+                                                        name: "city",
+                                                        value: addFormData.city,
+                                                        onChange: handleAddInputChange,
+                                                        placeholder: "Enter city",
+                                                        isRequired: true,
+                                                        variant: "bordered",
+                                                        labelPlacement: "outside"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/admin/provider-request/page.tsx",
+                                                        lineNumber: 1548,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$input$2f$dist$2f$chunk$2d$SQIAVXJX$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__input_default__as__Input$3e$__["Input"], {
+                                                        label: "Postal Code",
+                                                        name: "pos",
+                                                        value: addFormData.pos,
+                                                        onChange: handleAddInputChange,
+                                                        placeholder: "Enter postal code",
+                                                        isRequired: true,
+                                                        variant: "bordered",
+                                                        labelPlacement: "outside"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/admin/provider-request/page.tsx",
+                                                        lineNumber: 1558,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "md:col-span-2",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$input$2f$dist$2f$chunk$2d$WEIB4WXA$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__textarea_default__as__Textarea$3e$__["Textarea"], {
+                                                            label: "Address",
+                                                            name: "address",
+                                                            value: addFormData.address,
+                                                            onChange: handleAddInputChange,
+                                                            placeholder: "Enter full address",
+                                                            isRequired: true,
+                                                            variant: "bordered",
+                                                            labelPlacement: "outside"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/admin/provider-request/page.tsx",
+                                                            lineNumber: 1569,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/admin/provider-request/page.tsx",
+                                                        lineNumber: 1568,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "md:col-span-2",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$input$2f$dist$2f$chunk$2d$WEIB4WXA$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__textarea_default__as__Textarea$3e$__["Textarea"], {
+                                                            label: "Description",
+                                                            name: "description",
+                                                            value: addFormData.description,
+                                                            onChange: handleAddInputChange,
+                                                            placeholder: "Enter partner description",
+                                                            isRequired: true,
+                                                            variant: "bordered",
+                                                            labelPlacement: "outside"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/admin/provider-request/page.tsx",
+                                                            lineNumber: 1581,
+                                                            columnNumber: 21
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/admin/provider-request/page.tsx",
+                                                        lineNumber: 1580,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/app/admin/provider-request/page.tsx",
+                                                lineNumber: 1506,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/admin/provider-request/page.tsx",
+                                        lineNumber: 1504,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "border-t pt-4",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                className: "text-md font-semibold text-gray-700 mb-3",
+                                                children: "Partner Admin Account (Optional)"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/admin/provider-request/page.tsx",
+                                                lineNumber: 1596,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-sm text-gray-500 mb-3",
+                                                children: "Create an admin account for this partner to manage their dashboard."
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/admin/provider-request/page.tsx",
+                                                lineNumber: 1597,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "grid grid-cols-1 md:grid-cols-3 gap-4",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$input$2f$dist$2f$chunk$2d$SQIAVXJX$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__input_default__as__Input$3e$__["Input"], {
+                                                        label: "Admin Username",
+                                                        name: "adminUsername",
+                                                        value: addFormData.adminUsername,
+                                                        onChange: handleAddInputChange,
+                                                        placeholder: "admin_username",
+                                                        variant: "bordered",
+                                                        labelPlacement: "outside"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/admin/provider-request/page.tsx",
+                                                        lineNumber: 1601,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$input$2f$dist$2f$chunk$2d$SQIAVXJX$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__input_default__as__Input$3e$__["Input"], {
+                                                        label: "Admin Email",
+                                                        name: "adminEmail",
+                                                        type: "email",
+                                                        value: addFormData.adminEmail,
+                                                        onChange: handleAddInputChange,
+                                                        placeholder: "admin@company.com",
+                                                        variant: "bordered",
+                                                        labelPlacement: "outside"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/admin/provider-request/page.tsx",
+                                                        lineNumber: 1610,
+                                                        columnNumber: 19
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$input$2f$dist$2f$chunk$2d$SQIAVXJX$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__input_default__as__Input$3e$__["Input"], {
+                                                        label: "Admin Password",
+                                                        name: "adminPassword",
+                                                        type: "password",
+                                                        value: addFormData.adminPassword,
+                                                        onChange: handleAddInputChange,
+                                                        placeholder: "Min 6 characters",
+                                                        variant: "bordered",
+                                                        labelPlacement: "outside"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/admin/provider-request/page.tsx",
+                                                        lineNumber: 1620,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/app/admin/provider-request/page.tsx",
+                                                lineNumber: 1600,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/admin/provider-request/page.tsx",
+                                        lineNumber: 1595,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/admin/provider-request/page.tsx",
+                                lineNumber: 1503,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/app/admin/provider-request/page.tsx",
+                            lineNumber: 1502,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$modal$2f$dist$2f$chunk$2d$5LXTSPS7$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__modal_footer_default__as__ModalFooter$3e$__["ModalFooter"], {
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$button$2f$dist$2f$chunk$2d$KCYYJJH4$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__button_default__as__Button$3e$__["Button"], {
+                                    color: "default",
+                                    variant: "flat",
+                                    onPress: handleAddModalClose,
+                                    children: "Cancel"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/admin/provider-request/page.tsx",
+                                    lineNumber: 1636,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$heroui$2f$button$2f$dist$2f$chunk$2d$KCYYJJH4$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__button_default__as__Button$3e$__["Button"], {
+                                    color: "success",
+                                    onPress: handleAddProviderSubmit,
+                                    isLoading: isAddSubmitting,
+                                    disabled: isAddSubmitting,
+                                    className: "bg-green-500 text-white",
+                                    children: "Register Partner"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/admin/provider-request/page.tsx",
+                                    lineNumber: 1639,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/app/admin/provider-request/page.tsx",
+                            lineNumber: 1635,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/app/admin/provider-request/page.tsx",
+                    lineNumber: 1494,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/app/admin/provider-request/page.tsx",
+                lineNumber: 1486,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/admin/provider-request/page.tsx",
-        lineNumber: 565,
+        lineNumber: 675,
         columnNumber: 5
     }, this);
 }
-_s(AdminProvidersPage, "Kj2N9FtHVIUNnegm2PUKkjVF6rQ=", false, function() {
+_s(AdminProvidersPage, "wBWVaE2vqO3HUGjWB0dj5HOW7D0=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"],
         __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$useS3Image$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useS3Image"]

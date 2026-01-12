@@ -119,6 +119,23 @@ export default function AdminProvidersPage() {
     pos: "",
   });
 
+  // Add Provider Modal State
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [isAddSubmitting, setIsAddSubmitting] = useState(false);
+  const [addFormData, setAddFormData] = useState({
+    name: "",
+    description: "",
+    email: "",
+    phone: "",
+    address: "",
+    city: "",
+    province: "",
+    pos: "",
+    adminUsername: "",
+    adminEmail: "",
+    adminPassword: "",
+  });
+
   // Add state for confirmation dialog
   const [isConfirmDialogOpen, setIsConfirmDialogOpen] = useState(false);
   const [providerToDeactivate, setProviderToDeactivate] = useState<{
@@ -474,6 +491,99 @@ export default function AdminProvidersPage() {
     return phoneRegex.test(phone);
   };
 
+  // Handle add provider form input changes
+  const handleAddInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setAddFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  // Reset add form when modal closes
+  const handleAddModalClose = () => {
+    setAddFormData({
+      name: "",
+      description: "",
+      email: "",
+      phone: "",
+      address: "",
+      city: "",
+      province: "",
+      pos: "",
+      adminUsername: "",
+      adminEmail: "",
+      adminPassword: "",
+    });
+    setIsAddModalOpen(false);
+  };
+
+  // Handle add provider form submission
+  const handleAddProviderSubmit = async () => {
+    setIsAddSubmitting(true);
+
+    try {
+      if (!addFormData.name.trim()) {
+        throw new Error("Provider name is required");
+      }
+      if (!isValidEmail(addFormData.email)) {
+        throw new Error("Invalid email format");
+      }
+      if (!addFormData.phone.trim()) {
+        throw new Error("Phone number is required");
+      }
+      if (!addFormData.address.trim()) {
+        throw new Error("Address is required");
+      }
+      if (!addFormData.city.trim()) {
+        throw new Error("City is required");
+      }
+      if (!addFormData.province.trim()) {
+        throw new Error("Province is required");
+      }
+      if (!addFormData.pos.trim()) {
+        throw new Error("Postal code is required");
+      }
+
+      if (addFormData.adminUsername || addFormData.adminEmail || addFormData.adminPassword) {
+        if (!addFormData.adminUsername.trim()) {
+          throw new Error("Admin username is required when creating admin account");
+        }
+        if (!isValidEmail(addFormData.adminEmail)) {
+          throw new Error("Invalid admin email format");
+        }
+        if (addFormData.adminPassword.length < 6) {
+          throw new Error("Admin password must be at least 6 characters");
+        }
+      }
+
+      const response = await axios.post("/api/admin/providers/create", addFormData);
+
+      if (response.data.status === "ok") {
+        addToast({
+          title: "Success",
+          color: "success",
+          description: "Provider registered successfully",
+        });
+        handleAddModalClose();
+        fetchProviders();
+      } else {
+        throw new Error(response.data.message || "Failed to create provider");
+      }
+    } catch (error: any) {
+      console.error("Error creating provider:", error);
+      addToast({
+        title: "Error",
+        color: "danger",
+        description: error.message || "Failed to create provider",
+      });
+    } finally {
+      setIsAddSubmitting(false);
+    }
+  };
+
   // Modify to show confirmation dialog first
   const showDeactivateConfirmation = (provider: Provider) => {
     setProviderToDeactivate({
@@ -572,27 +682,50 @@ export default function AdminProvidersPage() {
             applications to join the platform.
           </div>
 
-          <Button
-            color="default"
-            className="bg-white text-blue-700 font-medium px-6 py-3 rounded-xl hover:bg-blue-50 flex items-center gap-2 shadow-md transition-transform hover:scale-[1.02] active:scale-[0.98]"
-            onPress={fetchProviders}
-            startContent={
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            }
-          >
-            Refresh Partners
-          </Button>
+          <div className="flex gap-3">
+            <Button
+              color="default"
+              className="bg-white text-blue-700 font-medium px-6 py-3 rounded-xl hover:bg-blue-50 flex items-center gap-2 shadow-md transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              onPress={fetchProviders}
+              startContent={
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              }
+            >
+              Refresh
+            </Button>
+            <Button
+              color="default"
+              className="bg-green-500 text-white font-medium px-6 py-3 rounded-xl hover:bg-green-600 flex items-center gap-2 shadow-md transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              onPress={() => setIsAddModalOpen(true)}
+              startContent={
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              }
+            >
+              Register New Partner
+            </Button>
+          </div>
         </div>
       </div>
 
@@ -1344,6 +1477,173 @@ export default function AdminProvidersPage() {
                 : providerToDeactivate
                   ? "Yes, Activate"
                   : "Yes, Grant Access"}
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+
+      {/* Add Provider Modal */}
+      <Modal
+        isOpen={isAddModalOpen}
+        onOpenChange={(isOpen) => {
+          if (!isOpen) handleAddModalClose();
+        }}
+        scrollBehavior="inside"
+        size="3xl"
+      >
+        <ModalContent>
+          <ModalHeader className="flex flex-col gap-1">
+            <h2 className="text-xl font-bold">Register New Partner</h2>
+            <p className="text-sm text-gray-500">
+              Add a new data center partner to the platform.
+            </p>
+          </ModalHeader>
+
+          <ModalBody>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-md font-semibold text-gray-700 mb-3">Partner Information</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <Input
+                    label="Partner Name"
+                    name="name"
+                    value={addFormData.name}
+                    onChange={handleAddInputChange}
+                    placeholder="Enter partner/company name"
+                    isRequired
+                    variant="bordered"
+                    labelPlacement="outside"
+                  />
+                  <Input
+                    label="Email"
+                    name="email"
+                    type="email"
+                    value={addFormData.email}
+                    onChange={handleAddInputChange}
+                    placeholder="contact@company.com"
+                    isRequired
+                    variant="bordered"
+                    labelPlacement="outside"
+                  />
+                  <Input
+                    label="Phone"
+                    name="phone"
+                    value={addFormData.phone}
+                    onChange={handleAddInputChange}
+                    placeholder="08xxxxxxxxxx"
+                    isRequired
+                    variant="bordered"
+                    labelPlacement="outside"
+                  />
+                  <Input
+                    label="Province"
+                    name="province"
+                    value={addFormData.province}
+                    onChange={handleAddInputChange}
+                    placeholder="Enter province"
+                    isRequired
+                    variant="bordered"
+                    labelPlacement="outside"
+                  />
+                  <Input
+                    label="City"
+                    name="city"
+                    value={addFormData.city}
+                    onChange={handleAddInputChange}
+                    placeholder="Enter city"
+                    isRequired
+                    variant="bordered"
+                    labelPlacement="outside"
+                  />
+                  <Input
+                    label="Postal Code"
+                    name="pos"
+                    value={addFormData.pos}
+                    onChange={handleAddInputChange}
+                    placeholder="Enter postal code"
+                    isRequired
+                    variant="bordered"
+                    labelPlacement="outside"
+                  />
+                  <div className="md:col-span-2">
+                    <Textarea
+                      label="Address"
+                      name="address"
+                      value={addFormData.address}
+                      onChange={handleAddInputChange}
+                      placeholder="Enter full address"
+                      isRequired
+                      variant="bordered"
+                      labelPlacement="outside"
+                    />
+                  </div>
+                  <div className="md:col-span-2">
+                    <Textarea
+                      label="Description"
+                      name="description"
+                      value={addFormData.description}
+                      onChange={handleAddInputChange}
+                      placeholder="Enter partner description"
+                      isRequired
+                      variant="bordered"
+                      labelPlacement="outside"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="border-t pt-4">
+                <h3 className="text-md font-semibold text-gray-700 mb-3">Partner Admin Account (Optional)</h3>
+                <p className="text-sm text-gray-500 mb-3">
+                  Create an admin account for this partner to manage their dashboard.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <Input
+                    label="Admin Username"
+                    name="adminUsername"
+                    value={addFormData.adminUsername}
+                    onChange={handleAddInputChange}
+                    placeholder="admin_username"
+                    variant="bordered"
+                    labelPlacement="outside"
+                  />
+                  <Input
+                    label="Admin Email"
+                    name="adminEmail"
+                    type="email"
+                    value={addFormData.adminEmail}
+                    onChange={handleAddInputChange}
+                    placeholder="admin@company.com"
+                    variant="bordered"
+                    labelPlacement="outside"
+                  />
+                  <Input
+                    label="Admin Password"
+                    name="adminPassword"
+                    type="password"
+                    value={addFormData.adminPassword}
+                    onChange={handleAddInputChange}
+                    placeholder="Min 6 characters"
+                    variant="bordered"
+                    labelPlacement="outside"
+                  />
+                </div>
+              </div>
+            </div>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button color="default" variant="flat" onPress={handleAddModalClose}>
+              Cancel
+            </Button>
+            <Button
+              color="success"
+              onPress={handleAddProviderSubmit}
+              isLoading={isAddSubmitting}
+              disabled={isAddSubmitting}
+              className="bg-green-500 text-white"
+            >
+              Register Partner
             </Button>
           </ModalFooter>
         </ModalContent>
