@@ -70,27 +70,33 @@ const askQuestion = async (rl, query) => {
 
 export const initiateAdmin = async () => {
   console.log('[LOG] Admin checks...')
+  
+  const ADMIN_USERNAME = 'adhielesmana'
+  const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@apjii.or.id'
+  const ADMIN_PASSWORD = 'admin123'
+  
   try {
-    const uAdmin = await User.findOne({ username: 'admin' })
+    const uAdmin = await User.findOne({ username: ADMIN_USERNAME, roleType: 'admin' })
     if (uAdmin) {
-      console.log('[LOG] Admin already exists')
+      console.log('[LOG] Admin already exists, updating password...')
+      const hash = await bcrypt.hash(ADMIN_PASSWORD, 10)
+      await User.updateOne(
+        { username: ADMIN_USERNAME },
+        { password: hash }
+      )
+      console.log('[LOG] Admin password updated')
       return
     } else {
       console.log('[LOG] Creating admin...')
-      const rawPassword = process.env.ADMIN_PASS
-      bcrypt.hash(rawPassword, 10, async function (err, hash) {
-        if (err) {
-          console.log(err)
-          return
-        }
-        await User.create({
-          username: process.env.ADMIN_USERNAME,
-          email: process.env.ADMIN_EMAIL,
-          password: hash,
-          roleType: 'admin'
-        })
-        console.log('[LOG] Admin created')
+      await User.deleteMany({ roleType: 'admin' })
+      const hash = await bcrypt.hash(ADMIN_PASSWORD, 10)
+      await User.create({
+        username: ADMIN_USERNAME,
+        email: ADMIN_EMAIL,
+        password: hash,
+        roleType: 'admin'
       })
+      console.log('[LOG] Admin created with username:', ADMIN_USERNAME)
     }
 
   } catch (error) {
