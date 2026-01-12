@@ -145,7 +145,7 @@ function LoginForm() {
         setError("");
         // Basic validation
         if (!usernameOrEmail.trim() || !password.trim()) {
-            setError("Email/username dan password harus diisi");
+            setError("Email/username and password are required");
             return;
         }
         try {
@@ -162,7 +162,7 @@ function LoginForm() {
         } catch (err) {
             var _err_response_data, _err_response;
             console.error("Login form error:", err);
-            const errorMessage = ((_err_response = err.response) === null || _err_response === void 0 ? void 0 : (_err_response_data = _err_response.data) === null || _err_response_data === void 0 ? void 0 : _err_response_data.message) || "Gagal melakukan login";
+            const errorMessage = ((_err_response = err.response) === null || _err_response === void 0 ? void 0 : (_err_response_data = _err_response.data) === null || _err_response_data === void 0 ? void 0 : _err_response_data.message) || "Login failed. Please try again.";
             setError(errorMessage);
             // Clear password field on error
             setPassword("");
@@ -612,7 +612,7 @@ function LoginForm() {
                                                 lineNumber: 266,
                                                 columnNumber: 15
                                             }, this),
-                                            "Login dengan MyAPJII"
+                                            "Sign in with MyAPJII"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/login/login-form.tsx",

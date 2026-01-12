@@ -58,7 +58,7 @@ export default function LoginForm() {
 
     // Basic validation
     if (!usernameOrEmail.trim() || !password.trim()) {
-      setError("Email/username dan password harus diisi");
+      setError("Email/username and password are required");
       return;
     }
 
@@ -79,7 +79,7 @@ export default function LoginForm() {
     } catch (err: any) {
       console.error("Login form error:", err);
       const errorMessage =
-        err.response?.data?.message || "Gagal melakukan login";
+        err.response?.data?.message || "Login failed. Please try again.";
       setError(errorMessage);
 
       // Clear password field on error
@@ -270,7 +270,7 @@ export default function LoginForm() {
                 height={24}
                 className="object-contain"
               />
-              Login dengan MyAPJII
+              Sign in with MyAPJII
             </Button>
             <p className="text-center text-sm text-default-500">
               Don&apos;t have an account?{" "}
