@@ -78,25 +78,31 @@ export const initiateAdmin = async () => {
   try {
     const uAdmin = await User.findOne({ username: ADMIN_USERNAME, roleType: 'admin' })
     if (uAdmin) {
-      console.log('[LOG] Admin already exists, updating password...')
+      console.log('[LOG] Admin already exists, updating password and ensuring superadmin role...')
       const hash = await bcrypt.hash(ADMIN_PASSWORD, 10)
       await User.updateOne(
         { username: ADMIN_USERNAME },
-        { password: hash }
+        { 
+          password: hash,
+          role: 'admin',
+          _isActive: true
+        }
       )
-      console.log('[LOG] Admin password updated')
+      console.log('[LOG] Admin password updated and superadmin role ensured')
       return
     } else {
-      console.log('[LOG] Creating admin...')
+      console.log('[LOG] Creating superadmin...')
       await User.deleteMany({ roleType: 'admin' })
       const hash = await bcrypt.hash(ADMIN_PASSWORD, 10)
       await User.create({
         username: ADMIN_USERNAME,
         email: ADMIN_EMAIL,
         password: hash,
-        roleType: 'admin'
+        roleType: 'admin',
+        role: 'admin',
+        _isActive: true
       })
-      console.log('[LOG] Admin created with username:', ADMIN_USERNAME)
+      console.log('[LOG] Superadmin created with username:', ADMIN_USERNAME)
     }
 
   } catch (error) {
