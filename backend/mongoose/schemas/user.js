@@ -48,6 +48,12 @@ const UserScheme = new mongoose.Schema({
     enum: ['admin', 'user', 'provider'],
     default: 'user'
   },
+  role: {
+    type: mongoose.SchemaTypes.String,
+    required: false,
+    enum: ['admin', 'staff', ''],
+    default: ''
+  },
   provider: {
     type: mongoose.SchemaTypes.ObjectId,
     ref: 'Provider',
