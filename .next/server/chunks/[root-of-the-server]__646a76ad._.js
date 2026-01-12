@@ -1,5 +1,5 @@
 module.exports = [
-"[project]/.next-internal/server/app/api/auth/login/route/actions.js [app-rsc] (server actions loader, ecmascript)", ((__turbopack_context__, module, exports) => {
+"[project]/.next-internal/server/app/api/setting/user-setting/route/actions.js [app-rsc] (server actions loader, ecmascript)", ((__turbopack_context__, module, exports) => {
 
 }),
 "[externals]/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js [external] (next/dist/compiled/next-server/app-route-turbo.runtime.dev.js, cjs)", ((__turbopack_context__, module, exports) => {
@@ -134,120 +134,80 @@ const mod = __turbopack_context__.x("events", () => require("events"));
 
 module.exports = mod;
 }),
-"[project]/app/api/auth/login/route.ts [app-route] (ecmascript)", ((__turbopack_context__) => {
+"[project]/app/api/setting/user-setting/route.ts [app-route] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-// app/api/login/route.ts
 __turbopack_context__.s([
     "POST",
     ()=>POST
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/server.js [app-route] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/axios/lib/axios.js [app-route] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/headers.js [app-route] (ecmascript)");
+;
 ;
 ;
 async function POST(req) {
-    const { usernameOrEmail, password, remember } = await req.json();
-    const BACKEND_URL = ("TURBOPACK compile-time value", "http://localhost:3000/v1");
-    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
-    ;
     try {
-        console.log("Sending login request to:", `${BACKEND_URL}/auth/login`);
-        console.log("Request payload:", {
-            usernameOrEmail: usernameOrEmail?.trim(),
-            password: "***",
-            remember
-        });
-        const backendRes = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].post(`${BACKEND_URL}/auth/login`, {
-            usernameOrEmail: usernameOrEmail.trim(),
-            password: password.trim(),
-            remember: Boolean(remember)
-        }, {
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-                "User-Agent": "MitraDC-Frontend"
-            },
-            timeout: 10000,
-            withCredentials: true
-        });
-        const { token, user } = backendRes.data;
-        // Create response first
-        const response = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            success: true,
-            message: "Login berhasil",
-            token,
-            user
-        });
-        // Set cookie expiration time based on remember option
-        const cookieExpires = remember === true || remember === "true" ? new Date(Date.now() + 30 * 24 * 60 * 60 * 1000) // 30 days if remember is true
-         : undefined; // Session cookie if remember is false
-        // Set cookies with proper configuration
-        response.cookies.set({
-            name: "token",
-            value: token,
-            httpOnly: true,
-            secure: ("TURBOPACK compile-time value", "development") === "production",
-            sameSite: "lax",
-            path: "/",
-            expires: cookieExpires
-        });
-        response.cookies.set({
-            name: "user",
-            value: JSON.stringify(user),
-            httpOnly: true,
-            secure: ("TURBOPACK compile-time value", "development") === "production",
-            sameSite: "lax",
-            path: "/",
-            expires: cookieExpires
-        });
-        return response;
-    } catch (error) {
-        const statusCode = error.response?.status || 500;
-        const errorMessage = error.response?.data?.message || "A server error occurred";
-        const errorData = error.response?.data;
-        // Log detailed error for debugging
-        console.error("Backend login error details:", {
-            status: statusCode,
-            message: errorMessage,
-            data: errorData,
-            headers: error.config?.headers
-        });
-        // Handle 403 Forbidden
-        if (statusCode === 403) {
+        const cookieStore = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$headers$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["cookies"])();
+        const token = cookieStore.get("token");
+        const BACKEND_URL = ("TURBOPACK compile-time value", "http://localhost:3000/v1");
+        if (!token?.value) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                success: false,
-                message: "Access denied. Please check CORS configuration or backend authentication."
-            }, {
-                status: 403
-            });
-        }
-        if (error.response?.status === 400) {
-            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                success: false,
-                message: "Invalid username/email or password"
-            }, {
-                status: 400
-            });
-        }
-        // Handle 401 specifically
-        if (statusCode === 401) {
-            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                success: false,
-                message: "Incorrect username/email or password"
+                status: "error",
+                message: "Unauthorized"
             }, {
                 status: 401
             });
         }
+        // Get form data from request
+        const formData = await req.formData();
+        console.log("Form data received:", Object.fromEntries(formData.entries())); // Debug form data
+        // Create a new FormData to pass to the backend
+        const backendFormData = new FormData();
+        // Get username from form data
+        const username = formData.get("username");
+        if (username) {
+            backendFormData.append("username", username.toString());
+        }
+        // Get fullName from form data
+        const fullName = formData.get("fullName");
+        if (fullName) {
+            backendFormData.append("fullName", fullName.toString());
+        }
+        // Get phone from form data
+        const phone = formData.get("phone");
+        if (phone) {
+            backendFormData.append("phone", phone.toString());
+        }
+        // Get profile picture from form data
+        const profilePicture = formData.get("pp");
+        if (profilePicture && profilePicture instanceof File) {
+            backendFormData.append("pp", profilePicture);
+        }
+        // Send request to backend
+        const response = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].post(`${BACKEND_URL}/my/update`, backendFormData, {
+            headers: {
+                Authorization: token.value.startsWith("Bearer ") ? token.value : `Bearer ${token.value}`,
+                "Content-Type": "multipart/form-data"
+            }
+        });
+        console.log("Backend response:", response.data); // Debug backend response
+        return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json(response.data);
+    } catch (error) {
+        console.error("User setting update error:", {
+            message: error.message,
+            response: error.response?.data
+        });
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            success: false,
-            message: errorMessage
+            status: "error",
+            message: error.response?.data?.message || "Failed to update user settings"
         }, {
-            status: statusCode
+            status: error.response?.status || 500
         });
     }
 }
 }),
 ];
 
-//# sourceMappingURL=%5Broot-of-the-server%5D__0ec532fa._.js.map
+//# sourceMappingURL=%5Broot-of-the-server%5D__646a76ad._.js.map
